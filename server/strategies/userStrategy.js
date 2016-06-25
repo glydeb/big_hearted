@@ -1,11 +1,11 @@
 var passport = require('passport');
-var localStrategy = require('passport-local').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 var User = require('../models/user');
 
 // Store this user's unique id in the session for later reference
 // Only runs during authentication
 // Stores info on req.session.passport.user
-passport.serializeUser(function(user, done) {
+passport.serializeUser(function (user, done) {
   console.log('serialized: ', user);
   done(null, user.id);
 });
@@ -13,9 +13,9 @@ passport.serializeUser(function(user, done) {
 // Runs on every request after user is authenticated
 // Look up the user's id in the session and use it to find them in the DB for each request
 // result is stored on req.user
-passport.deserializeUser(function(id, done) {
-  User.findById(id, function(err, user) {
-    if(err) {
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
+    if (err) {
       done(err);
     }
 
@@ -26,35 +26,35 @@ passport.deserializeUser(function(id, done) {
 
 // Does actual work of logging in
 // Called by middleware stack
-passport.use('local', new localStrategy({
+passport.use('local', new LocalStrategy({
   passReqToCallback: true,
   usernameField: 'username'
-  }, function(req, username, password, done) {
+}, function (req, username, password, done) {
     // mongoose stuff
-    User.findOne({username: username}, function(err, user) {
-      if(err) {
+    User.findOne({ username: username }, function (err, user) {
+      if (err) {
         throw err;
       }
 
-      if(!user) {
+      if (!user) {
         // user not found
         console.log('userStrategy.js :: no user found');
-        return done(null, false, {message: 'Incorrect credentials.'});
+        return done(null, false, { message: 'Incorrect credentials.' });
       } else {
         // found user! Now check their given password against the one stored in the DB
-        user.comparePassword(password, function(err, isMatch) {
-          if(err) {
+        user.comparePassword(password, function (err, isMatch) {
+          if (err) {
             throw err;
           }
 
-          if(isMatch) {
+          if (isMatch) {
             // all good, populate user object on the session through serializeUser
             console.log('userStrategy.js :: all good');
-            return(done(null, user));
+            return (done(null, user));
           } else {
             // no good.
             console.log('userStrategy.js :: password incorrect');
-            done(null, false, {message: 'Incorrect credentials.'});
+            done(null, false, { message: 'Incorrect credentials.' });
           }
         });
       } // end else
