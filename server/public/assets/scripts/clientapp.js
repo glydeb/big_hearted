@@ -11,11 +11,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/register.html',
       controller: "LoginController"
     })
-<<<<<<< HEAD
-    .when('/user', {
-      templateUrl: '/views/user.html',
-      controller: "landingpageController"
-=======
     .when('/landingpage', {
       templateUrl: '/views/landingpage.html',
       controller: "landingpageController"
@@ -27,7 +22,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
     .when('/tracker', {
       templateUrl: '/views/tracker.html',
       controller: "trackerController"
->>>>>>> thomas_branch
+
     })
     .otherwise({
       redirectTo: 'login'
