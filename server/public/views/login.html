@@ -1,21 +1,24 @@
-<<<<<<< HEAD:server/public/views/login.html
+
 <div class="container">
-  <h1 class="lead">Login</h1>
+    <h3 class="lead">Big-Hearted Hangout</h3>
     <h1 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
     <form ng-submit="login()">
-=======
 
->>>>>>> thomas_branch:server/public/views/home.html
       <div class= "col s3 input-field">
+
+      <div class= "input-field">
+
           <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" />
       </div>
-      <div class= "col s3 input-field">
+      <div class= "input-field">
           <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" />
       </div>
-      <div>
-          <button class="waves-effect waves-light btn" type="submit" name="submit" value="Log In">Submit</button>
-
+      <div class="row">
+          <button class="col s2 waves-effect waves-light btn" type="submit" name="submit" value="Log In">Submit<i class="material-icons right">send</i>
+          </button>
+          <div class="col s1 push-s2">
           <a href="#register">Register</a>
+          </div>
       </div>
     </form>
 </div>

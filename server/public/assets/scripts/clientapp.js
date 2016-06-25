@@ -3,8 +3,8 @@ var myApp = angular.module('myApp', ['ngRoute']);
 
 myApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider
-    .when('/home', {
-      templateUrl: '/views/home.html',
+    .when('/login', {
+      templateUrl: '/views/login.html',
       controller: "LoginController"
     })
     .when('/register', {
@@ -30,6 +30,6 @@ myApp.config(['$routeProvider', function($routeProvider) {
 >>>>>>> thomas_branch
     })
     .otherwise({
-      redirectTo: 'home'
+      redirectTo: 'login'
     })
 }]);
