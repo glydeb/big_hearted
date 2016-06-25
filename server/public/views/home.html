@@ -2,10 +2,10 @@
   <h1 class="lead">Login</h1>
     <h1 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
     <form ng-submit="login()">
-      <div class= "input-field col s6">
+      <div class= "col s3 input-field">
           <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" />
       </div>
-      <div class= "input-field col s6">
+      <div class= "col s3 input-field">
           <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" />
       </div>
       <div>
