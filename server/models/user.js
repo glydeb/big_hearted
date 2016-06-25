@@ -9,12 +9,13 @@ var UserSchema = new Schema({
   username: { type: String, required: true, index: { unique: true } },
   password: { type: String, required: true },
   verification: { type: String, required: true },
-  enable_texts: { type: Boolean, required: true },
+  textnotifications: { type: Boolean, required: true },
   email: { type: String, required: true },
-  first_name: String,
-  last_name: String,
+  firstname: String,
+  lastname: String,
   phone: String,
-  timeZone: String
+  timezone: String
+
 });
 
 // Called before adding a new user to the DB. Encrypts password.
