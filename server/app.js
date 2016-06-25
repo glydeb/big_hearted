@@ -14,7 +14,7 @@ var register = require('./routes/register');
 
 // Body parser middleware
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Catch direct requests and make sure the user can view this page
 // app.use('/views/user.html', user);
@@ -24,11 +24,11 @@ app.use(express.static(path.join(__dirname, './public')));
 
 // Passport Session Configuration //
 app.use(session({
-   secret: 'secret',
-   key: 'user',
-   resave: 'true',
-   saveUninitialized: false,
-   cookie: { maxage: 60000, secure: false }
+  secret: 'secret',
+  key: 'user',
+  resave: 'true',
+  saveUninitialized: false,
+  cookie: { maxage: 60000, secure: false }
 }));
 
 // start up passport sessions
@@ -41,24 +41,25 @@ app.use('/user', user);
 app.use('/*', index);
 
 // Mongo Connection //
-var mongoURI = "mongodb://localhost:27017/mu-passport";
+var mongoURI = 'mongodb://localhost:27017/bighearted';
 var mongoDB = mongoose.connect(mongoURI).connection;
 
-mongoDB.on('error', function(err){
-   if(err) {
-     console.log("MONGO ERROR: ", err);
-   }
-   res.sendStatus(500);
+mongoDB.on('error', function (err) {
+  if (err) {
+    console.log('MONGO ERROR: ', err);
+  }
+
+  res.sendStatus(500);
 });
 
-mongoDB.once('open', function(){
-   console.log("Connected to Mongo, meow!");
+mongoDB.once('open', function () {
+  console.log('Connected to Mongo, meow!');
 });
 
 // App Set //
 app.set('port', (process.env.PORT || 5000));
 
 // Listen //
-app.listen(app.get("port"), function(){
-   console.log("Listening on port: " + app.get("port"));
+app.listen(app.get('port'), function () {
+  console.log('Listening on port: ' + app.get('port'));
 });
