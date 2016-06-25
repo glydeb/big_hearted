@@ -1,5 +1,6 @@
-myApp.controller('UserController', ['$scope', '$http', '$window', '$location',
-  function ($scope, $http, $window, $location) {
+myApp.controller('landingpageController', ['$scope', '$http', '$window',
+  '$location', function ($scope, $http, $window, $location) {
+
   // This happens after view/controller loads -- not ideal
   console.log('checking user');
   $http.get('/user').then(function (response) {
