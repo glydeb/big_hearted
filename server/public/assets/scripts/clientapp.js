@@ -11,9 +11,17 @@ myApp.config(['$routeProvider', function($routeProvider) {
       templateUrl: '/views/register.html',
       controller: "LoginController"
     })
-    .when('/user', {
-      templateUrl: '/views/user.html',
-      controller: "UserController"
+    .when('/landingpage', {
+      templateUrl: '/views/landingpage.html',
+      controller: "landingpageController"
+    })
+    .when('/communityroom', {
+      templateUrl: '/views/communityroom.html',
+      controller: "communityroomController"
+    })
+    .when('/tracker', {
+      templateUrl: '/views/tracker.html',
+      controller: "trackerController"
     })
     .otherwise({
       redirectTo: 'home'
