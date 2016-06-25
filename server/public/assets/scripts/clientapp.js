@@ -13,7 +13,7 @@ myApp.config(['$routeProvider', function($routeProvider) {
     })
     .when('/user', {
       templateUrl: '/views/user.html',
-      controller: "UserController"
+      controller: "landingpageController"
     })
     .otherwise({
       redirectTo: 'home'
