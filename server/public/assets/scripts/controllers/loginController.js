@@ -17,7 +17,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
             $location.path('/user');
           } else {
             console.log('failure: ', response);
-            $scope.message = "Incorrecy";
+            $scope.message = "Incorrect";
           }
         });
       }
