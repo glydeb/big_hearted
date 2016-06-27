@@ -2,7 +2,8 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
   $scope.user = {
     username: '',
     password: '',
-    is_admin: false
+    is_admin: false,
+    textnotifications: false
   };
   $scope.message = '';
 
