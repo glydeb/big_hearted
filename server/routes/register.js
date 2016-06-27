@@ -5,19 +5,19 @@ var Users = require('../models/user');
 var path = require('path');
 
 // Handles request for HTML file
-router.get('/', function(req, res, next) {
-    res.sendFile(path.resolve(__dirname, '../public/views/register.html'));
+router.get('/', function (req, res, next) {
+  res.sendFile(path.resolve(__dirname, '../public/views/register.html'));
 });
 
 // Handles POST request with new user data
-router.post('/', function(req, res, next) {
-    Users.create(req.body, function(err, post) {
-         if(err) {
-             next(err);
-         } else {
-             res.redirect('/');
-         }
-    });
+router.post('/', function (req, res, next) {
+  Users.create(req.body, function (err, post) {
+    if (err) {
+      next(err);
+    } else {
+      res.redirect('/');
+    }
+  });
 });
 
 
