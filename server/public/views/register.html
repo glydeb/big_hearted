@@ -1,6 +1,5 @@
 <div class="container">
     <h3 class="lead">Register New User</h3>
-    <h5 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h5>
     <form ng-submit="registerUser()">
         <div class="input-field">
             <input type="text" placeholder="Verification Code (from your email)" ng-model="user.verification" required />
@@ -15,7 +14,8 @@
           </br>
             <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" required />
           </br>
-            <input type="password" placeholder="Confirm Password" ng-model="user.password2" autocomplete="off" required />
+            <input type="password" placeholder="Confirm Password" ng-model="user.password2" ng-blur"comparePassword()" autocomplete="off" required />
+            <p ng-if="mismatch">Passwords do not match! Please re-enter.</p>
 
         </div>
     </form>
@@ -41,11 +41,12 @@
     </form>
 
     <div class="row">
-        <button class="col s2 waves-effect waves-light btn" type="submit" name="submit" value="Register" ng-click="registerUser()">Submit<i class="material-icons right">send</i>
-        </button>
-        <div class="col s1 push-s2">
-            <a href="#login">Cancel</a>
-        </div>
+      <h5 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h5>
+      <button class="col s2 waves-effect waves-light btn" type="submit" name="submit" value="Register" ng-click="registerUser()" ng-disable="mismatch">Submit<i class="material-icons right">send</i>
+      </button>
+      <div class="col s1 push-s2">
+          <a href="#login">Cancel</a>
+      </div>
     </div>
 
 

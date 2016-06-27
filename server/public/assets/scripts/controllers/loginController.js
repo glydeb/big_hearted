@@ -7,8 +7,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
   };
   $scope.message = '';
 
-  // variable to allow form submission - not used yet
-  // $scope.complete = false;
+  $scope.mismatch = false;
 
   $scope.login = function () {
     if ($scope.user.username === '' || $scope.user.password === '') {
@@ -47,4 +46,12 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
       });
     }
   };
+
+  $scope.comparePassword = function () {
+    if ($scope.user.password !== $scope.user.password2) {
+      $scope.mismatch = true;
+      $scope.password = '';
+      $scope.password2 = '';
+    }
+
 }]);
