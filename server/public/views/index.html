@@ -1,22 +1,30 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Express / Passport</title>
-        <link rel="stylesheet" href="/vendors/bootstrap.min.css">
-        <link rel="stylesheet" href="/assets/styles/style.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <title>Big-Hearted Hangout</title>
 
-        <script type="text/javascript" src="/vendors/angular.min.js"></script>
-        <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
-        <script type="text/javascript" src="/assets/scripts/clientapp.js"></script>
-        <script type="text/javascript" src="/assets/scripts/controllers/loginController.js"></script>
-        <script type="text/javascript" src="/assets/scripts/controllers/userController.js"></script>
-        <script type="text/javascript" src="/assests/scripts/controllers/landingPage.js"></script>
-    </head>
+    <!-- CSS  -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="assets/styles/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="assets/styles/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="/assets/scripts/clientapp.js"></script>
+    <script type="text/javascript" src="/assets/scripts/controllers/loginController.js"></script>
 
-    <body ng-app="myApp">
-      <header ng-include="'/views/templates/header.html'"></header>
-      <div class="navbar" ng-include="'/views/templates/nav.html'"></div>
-      <main ng-view></main>
+  </head>
+  <body ng-app="myApp">
+    <header ng-include="'/views/templates/header.html'" ></header>
 
-    </body>
+    <main ng-view></main>
+    <footer ng-include="'/views/templates/footer.html'" class="page-footer orange"></footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="vendors/materialize.js"></script>
+  <script src="vendors/init.js"></script>
+
+  </body>
 </html>
