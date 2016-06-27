@@ -1,9 +1,13 @@
 myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', function ($scope, $http, $window, $location) {
   $scope.user = {
     username: '',
-    password: ''
+    password: '',
+    is_admin: false
   };
   $scope.message = '';
+
+  // variable to allow form submission - not used yet
+  // $scope.complete = false;
 
   $scope.login = function () {
     if ($scope.user.username === '' || $scope.user.password === '') {
@@ -26,7 +30,9 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
 
   $scope.registerUser = function () {
     if ($scope.user.username === '' || $scope.user.password === '') {
-      $scope.message = 'Please enter in all required information';
+      $scope.message = 'Please enter all required information';
+    } else if ($scope.user.password !== $scope.user.password2) {
+      $scope.message = 'Passwords do not match - please re-type';
     } else {
       console.log('sending to server...', $scope.user);
       $http.post('/register', $scope.user).then(function (response) {
