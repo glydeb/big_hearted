@@ -2,20 +2,29 @@
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
 	font-size: inherit;
-<<<<<<< HEAD
-=======
-
->>>>>>> thomas_branch
 }
 
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
+
+.timezone {
+  width: 40%;
+  outline: none;
+  height: 3rem;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 0.3s;
+}
