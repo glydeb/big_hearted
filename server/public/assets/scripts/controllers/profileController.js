@@ -1,5 +1,7 @@
-myApp.controller('landingpageController', ['$scope', '$http', '$window',
+myApp.controller('profileController', ['$scope', '$http', '$window',
   '$location', function ($scope, $http, $window, $location) {
+
+    console.log('profileController working');
 
   // This happens after view/controller loads -- not ideal
   console.log('checking user');

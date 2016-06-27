@@ -45,3 +45,11 @@ body {
   transition: all 0.3s;
 
 }
+
+.profile-picture {
+  margin-left: 0px;
+}
+
+.upload-button {
+  font-size: 12px;
+}
