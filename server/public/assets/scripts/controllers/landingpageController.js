@@ -1,5 +1,15 @@
 myApp.controller('landingpageController', ['$scope', '$http', '$window',
   '$location', function ($scope, $http, $window, $location) {
+    $scope.downloadsArray = [];
+    getDownloads();
+
+    function getDownloads () {
+    $http.get('/download').then(function (response) {
+      console.log('getting downloads');
+      console.log(response.data);
+      $scope.downloadsArray = response.data;
+    });
+  };
 
   // This happens after view/controller loads -- not ideal
   console.log('checking user');
