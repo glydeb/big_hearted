@@ -3,6 +3,8 @@
     <h5 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h5>
     <form ng-submit="registerUser()">
         <div class="input-field">
+            <input type="text" placeholder="Verification Code (from your email)" ng-model="user.verification" required />
+          </br>
             <input type="text" placeholder="First Name" ng-model="user.firstname" required />
           </br>
             <input type="text" placeholder="Last Name" ng-model="user.lastname" required />
@@ -19,23 +21,23 @@
     </form>
 
     <form action="#">
-        <p>
-            <input type="checkbox" id="textnotifications" ng-model="user.textnotifications" required />
-            <label for="textnotifications">Would you like to receive occasional </br> text messages from Big-Hearted Families?</label>
-            </br>
-            <input ng-show="user.textnotifications" type="tel" placeholder="Phone Number" ng-model="user.phonenumber" />
-            <div class="input-field">
-                <select ng-show="user.textnotifications" ng-model="user.timezone">
-                    <option value="" disabled selected>Select your time-zone</option>
-                    <option value="1">Eastern</option>
-                    <option value="2">Central</option>
-                    <option value="3">Mountain</option>
-                    <option value="4">Pacific</option>
-                    <option value="5">Hawaiian</option>
-                    <option value="6">Alaskan</option>
-                </select>
-            </div>
-        </p>
+      <p>
+        <input type="checkbox" id="textnotifications" ng-model="user.textnotifications" required />
+        <label for="textnotifications">Would you like to receive occasional <br/> text messages from Big-Hearted Families?</label>
+        <br/>
+        <input ng-show="user.textnotifications" type="tel" placeholder="Phone Number" ng-model="user.phonenumber" />
+        <div ng-show="user.textnotifications" class="input-field">
+            <select ng-model="user.timezone" class="browser-default timezone">
+                <option value="" disabled selected>Select your time-zone</option>
+                <option value="1">Eastern</option>
+                <option value="2">Central</option>
+                <option value="3">Mountain</option>
+                <option value="4">Pacific</option>
+                <option value="5">Hawaiian</option>
+                <option value="6">Alaskan</option>
+            </select>
+        </div>
+      </p>
     </form>
 
     <div class="row">
