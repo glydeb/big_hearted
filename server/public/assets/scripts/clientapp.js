@@ -2,6 +2,7 @@ var myApp = angular.module('myApp', ['ngRoute']);
 /// Routes ///
 
 myApp.config(['$routeProvider', function($routeProvider) {
+
   $routeProvider
     .when('/login', {
       templateUrl: '/views/login.html',
@@ -26,9 +27,14 @@ myApp.config(['$routeProvider', function($routeProvider) {
     .when('/tracker', {
       templateUrl: '/views/tracker.html',
       controller: "trackerController"
+    })
+    .when('/profile', {
+      templateUrl: '/views/profile.html',
+      controller: "profileController"
 
     })
     .otherwise({
       redirectTo: 'login'
     })
+
 }]);
