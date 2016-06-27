@@ -12,8 +12,25 @@ body {
   flex-direction: column;
 }
 
-main {
-  flex: 1 0 auto;
+  main {
+    flex: 1 0 auto;
+  }
+
+#logo-container > img {
+  width: 55px;
+  margin-top: 6px;
+}
+
+.social-icons > img {
+  width: 35px;
+}
+
+.footer-city, .footer-email {
+  margin-left: 2em;
+}
+
+.footer-link, .footer-city, .footer-email {
+  text-align: center;
 }
 
 .timezone {
@@ -26,4 +43,5 @@ main {
   box-shadow: none;
   box-sizing: content-box;
   transition: all 0.3s;
+
 }
