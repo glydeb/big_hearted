@@ -308,11 +308,11 @@
 }
 
 .purple {
-  background-color: #9c27b0 !important;
+  background-color: #8752a2 !important;
 }
 
 .purple-text {
-  color: #9c27b0 !important;
+  color: #8752a2 !important;
 }
 
 .purple.lighten-5 {
@@ -644,11 +644,11 @@
 }
 
 .blue {
-  background-color: #2196F3 !important;
+  background-color: #0ca3dc !important;
 }
 
 .blue-text {
-  color: #2196F3 !important;
+  color: #0ca3dc !important;
 }
 
 .blue.lighten-5 {
@@ -980,11 +980,11 @@
 }
 
 .teal {
-  background-color: #009688 !important;
+  background-color: #039F92 !important;
 }
 
 .teal-text {
-  color: #009688 !important;
+  color: #039F92 !important;
 }
 
 .teal.lighten-5 {
@@ -1132,19 +1132,19 @@
 }
 
 .green.lighten-1 {
-  background-color: #66BB6A !important;
+  background-color: #73BF43 !important;
 }
 
 .green-text.text-lighten-1 {
-  color: #66BB6A !important;
+  color: #73BF43 !important;
 }
 
 .green.darken-1 {
-  background-color: #43A047 !important;
+  background-color: #00AF59 !important;
 }
 
 .green-text.text-darken-1 {
-  color: #43A047 !important;
+  color: #00AF59 !important;
 }
 
 .green.darken-2 {
@@ -1428,11 +1428,11 @@
 }
 
 .yellow {
-  background-color: #ffeb3b !important;
+  background-color: #eedb58 !important;
 }
 
 .yellow-text {
-  color: #ffeb3b !important;
+  color: #eedb58 !important;
 }
 
 .yellow.lighten-5 {
@@ -1652,11 +1652,11 @@
 }
 
 .orange {
-  background-color: #ff9800 !important;
+  background-color: #f48a24 !important;
 }
 
 .orange-text {
-  color: #ff9800 !important;
+  color: #f48a24 !important;
 }
 
 .orange.lighten-5 {
@@ -1700,11 +1700,11 @@
 }
 
 .orange.darken-1 {
-  background-color: #fb8c00 !important;
+  background-color: #f25826 !important;
 }
 
 .orange-text.text-darken-1 {
-  color: #fb8c00 !important;
+  color: #f25826 !important;
 }
 
 .orange.darken-2 {
@@ -5521,7 +5521,7 @@ textarea.materialize-textarea {
   border-radius: 0;
   outline: none;
   height: 3rem;
-  width: 100%;
+  width: 40%;
   font-size: 1rem;
   margin: 0 0 15px 0;
   padding: 0;

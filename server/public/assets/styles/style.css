@@ -1,58 +1,29 @@
-<<<<<<< HEAD
-.instructions .container h1 {
-    font-size: 24px;
-    font-weight: 700;
-}
-
-.instructions {
-    background-color: #333333;
-    color: #DDDDDD;
-}
-
-#entryForm {
-    margin-top: 14px;
-}
-
-#container {
-    margin-top: 10px;
-}
-
-.container p{
-    margin-top : 14px;
-}
-
-.message {
-    padding: 10px 0;
-}
-
-.message p {
-    margin-left: 10px;
-}
-
-.message:nth-child(odd) {
-     background-color: #eeeeee;
-}
-
-.message:nth-child(even) {
-    background-color: #f8f8f8;
-}
-
-.btn-danger{
-    margin-left: 10px;
-}
-=======
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
-
 .icon-block {
   padding: 0 15px;
 }
+
 .icon-block .material-icons {
 	font-size: inherit;
 }
->>>>>>> 14c8f51b8c07595f35f3382dadddb34239bb9082
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.timezone {
+  width: 40%;
+  outline: none;
+  height: 3rem;
+  font-size: 1rem;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  box-sizing: content-box;
+  transition: all 0.3s;
+}
