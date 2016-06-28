@@ -1,6 +1,6 @@
-<div class="row profile-picture">
-    <div class="section col s8">
-        <div class="section card">
+<div class="container row our-profile">
+    <div class="section col s4">
+        <div class="profile-picture section card ">
             <img materialboxed class="materialboxed responsive-img" width="300" src="/assets/images/Quinn Nelson +.jpg" />
         </div>
         <form action="#">
@@ -8,23 +8,25 @@
                 <div class="btn">
                     <span class="upload-button">Upload Picture</span>
                     <input type="file" ng-model="user.profilepicture">
-                </div>
-                </br>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                </div>
             </div>
         </form>
     </div>
 </div>
 <div class="row new-post">
-    <form class="col s12">
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea id="textarea" class="materialize-textarea"></textarea>
-                <label for="textarea">Tell us about your project!</label>
+    <form>
+            <div class="card small col s6">
+                <textarea id="textarea" class="materialize-textarea" placeholder="Tell us about your family or project!"></textarea>
+                <input type="checkbox" id="dgd-project" />
+                <label for="dgd-project">Is this project part of the Do Good Dozen?</label>
+                <div class="switch">
+                <label>Off<input type="checkbox"><span class="lever"></span>On</label>
+              </br>
+                <input type="file"/>
+              </div>
+              </br> </br>
+                <button class="waves-effect waves-light btn post-button" type="submit" name="submit">Post<i class="material-icons right">send</i>
+                </button>
             </div>
-        </div>
     </form>
 </div>
 </div>
