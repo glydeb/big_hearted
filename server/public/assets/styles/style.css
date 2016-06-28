@@ -18,8 +18,16 @@ body {
 
 #community-posts {
   resize: none;
-  display: block;
-  margin: auto auto;
+  /*display: block;
+  margin: auto auto;*/
+  border: 5px solid #73bf43;
+  border-radius: 15px;
+  padding: 10px 10px;
+  overflow: auto;
+}
+
+#community-posts button {
+  float: right;
 }
 
 #logo-container > img {
@@ -62,6 +70,10 @@ body {
 
 #DGD{
   text-align: center;
+}
+
+.lever {
+  display: inline-block;
 }
 
 #nav-mobile{

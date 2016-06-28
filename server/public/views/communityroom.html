@@ -1,5 +1,34 @@
-<div class="container row align-center">
-  <form >
-    <textarea id="community-posts" maxlength="8000" placeholder="Tell us about your family!" required></textarea>
-  </form>
-</div>
+<div class="container row">
+  <h3>{{userName}}'s posts!</h3>
+  <div id="community-posts">
+      <h5>Make a post!</h5>
+      <form action="#">
+        <textarea class="validate materialize-textarea" id="textarea1" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
+
+          <div class="btn file-field">
+            <span>Upload a picture!</span>
+            <input type="file" />
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" />
+          </div>
+          <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
+          <label for="test6">Is this a Do Good Dozen accomplishment?</label>
+
+          <div>
+            <p>Post this anonymously?</p>
+            <div class="switch">
+              <label>
+              Off
+              <input type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Post
+        <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
