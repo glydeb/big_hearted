@@ -1,52 +1,56 @@
 <div class="container">
     <h3 class="lead">Register New User</h3>
-    <h5 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h5>
     <form ng-submit="registerUser()">
-        <div class="input-field">
-            <input type="text" placeholder="Verification Code (from your email)" ng-model="user.verification" required />
-          </br>
-            <input type="text" placeholder="First Name" ng-model="user.firstname" required />
-          </br>
-            <input type="text" placeholder="Last Name" ng-model="user.lastname" required />
-          </br>
-            <input type="email" placeholder="Email" ng-model="user.email" required class="validate" />
-          </br>
-            <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" required />
-          </br>
-            <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" required />
-          </br>
-            <input type="password" placeholder="Confirm Password" ng-model="user.password2" autocomplete="off" required />
-
+        <div class="row input-field">
+            <div class="col s5">
+                <input type="text" placeholder="Verification Code (from your email)" ng-model="user.verification" required />
+                </br>
+                <input type="text" placeholder="First Name" ng-model="user.firstname" required />
+                </br>
+                <input type="text" placeholder="Last Name" ng-model="user.lastname" required />
+                </br>
+                <input type="email" placeholder="Email" ng-model="user.email" required class="validate" />
+                </br>
+                <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" required />
+                </br>
+                <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" required />
+                </br>
+                <input type="password" placeholder="Confirm Password" ng-model="user.password2" ng-blur="comparePassword()" autocomplete="off" required />
+                <p ng-if="mismatch">Passwords do not match! Please re-enter.</p>
+            </div>
         </div>
     </form>
-
-    <form action="#">
-      <p>
-        <input type="checkbox" id="textnotifications" ng-model="user.textnotifications" required />
-        <label for="textnotifications">Would you like to receive occasional <br/> text messages from Big-Hearted Families?</label>
-        <br/>
-        <input ng-show="user.textnotifications" type="tel" placeholder="Phone Number" ng-model="user.phonenumber" />
-        <div ng-show="user.textnotifications" class="input-field">
-            <select ng-model="user.timezone" class="browser-default timezone">
-                <option value="" disabled selected>Select your time-zone</option>
-                <option value="1">Eastern</option>
-                <option value="2">Central</option>
-                <option value="3">Mountain</option>
-                <option value="4">Pacific</option>
-                <option value="5">Hawaiian</option>
-                <option value="6">Alaskan</option>
-            </select>
-        </div>
-      </p>
-    </form>
-
     <div class="row">
-        <button class="col s2 waves-effect waves-light btn" type="submit" name="submit" value="Register" ng-click="registerUser()">Submit<i class="material-icons right">send</i>
+        <form action="#">
+            <p>
+                <input type="checkbox" id="textnotifications" ng-model="user.textnotifications" required />
+                <label for="textnotifications">Would you like to receive occasional
+                    <br/> text messages from Big-Hearted Families?</label>
+                <br/>
+                <div class="col s5">
+                    <input ng-show="user.textnotifications" type="tel" placeholder="Phone Number" ng-model="user.phonenumber" />
+
+                    <div ng-show="user.textnotifications" class="input-field">
+                        <select ng-model="user.timezone" class="timezone">
+                            <option value="" disabled selected>Select your time-zone</option>
+                            <option value="1">Eastern</option>
+                            <option value="2">Central</option>
+                            <option value="3">Mountain</option>
+                            <option value="4">Pacific</option>
+                            <option value="5">Hawaiian</option>
+                            <option value="6">Alaskan</option>
+                        </select>
+                    </div>
+            </p>
+        </form>
+        </div>
+    </div>
+    <div class="row">
+        <h5 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h5>
+        <button class="col s2 waves-effect waves-light btn" type="submit" name="submit" value="Register" ng-click="registerUser()" ng-disabled="mismatch">Submit<i class="material-icons right">send</i>
         </button>
         <div class="col s1 push-s2">
             <a href="#login">Cancel</a>
         </div>
     </div>
-
-
 </div>

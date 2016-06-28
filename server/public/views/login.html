@@ -1,24 +1,21 @@
-
 <div class="container">
     <h3 class="lead">Big-Hearted Hangout</h3>
     <h1 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
     <form ng-submit="login()">
-
-      <div class= "col s3 input-field">
-
-      <div class= "input-field">
-
+      <div class= "row">
+      <div class= "col s4 input-field">
           <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" />
-      </div>
-      <div class= "input-field">
           <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" />
-      </div>
-      <div class="row">
-          <button class="col s2 waves-effect waves-light btn" type="submit" name="submit" value="Log In">Submit<i class="material-icons right">send</i>
+          <div class="row">
+          <div class="col s7">
+          <button class="waves-effect waves-light btn" type="submit" name="submit" value="Log In">Submit<i class="material-icons right">send</i>
           </button>
+          </div>
           <div class="col s1 push-s2">
           <a href="#register">Register</a>
           </div>
+          </div>
       </div>
     </form>
+</div>
 </div>

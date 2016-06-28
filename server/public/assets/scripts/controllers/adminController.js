@@ -1,15 +1,10 @@
-myApp.controller('profileController', ['$scope', '$http', '$window',
-  '$location', function ($scope, $http, $window, $location) {
-
-    $(document).ready(function(){
-        $('.materialboxed').materialbox();
-        console.log('materialbox');
-      });
-
-      
+myApp.controller('adminController', ['$scope', '$http', '$window', '$location',
+  function ($scope, $http, $window, $location) {
+  $scope.verification = '';
 
   // This happens after view/controller loads -- not ideal
   console.log('checking user');
+
   $http.get('/user').then(function (response) {
     if (response.data.username) {
       $scope.userName = response.data.username;
@@ -25,4 +20,12 @@ myApp.controller('profileController', ['$scope', '$http', '$window',
       $location.path('/home');
     });
   };
+
+  $scope.generateCode = function () {
+    $http.get('/verification').then(function (response) {
+      console.log('generateCode response', response);
+      $scope.verification = response.data.verification;
+    });
+  };
+
 }]);

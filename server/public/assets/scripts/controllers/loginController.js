@@ -6,9 +6,12 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
     textnotifications: false
   };
   $scope.message = '';
+  $scope.mismatch = false;
 
-  // variable to allow form submission - not used yet
-  // $scope.complete = false;
+  // select elements need jQuery to work properly
+  $(document).ready(function () {
+    $('select').material_select();
+  });
 
   $scope.login = function () {
     if ($scope.user.username === '' || $scope.user.password === '') {
@@ -49,5 +52,16 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
   };
 
 $(".dropdown-button").dropdown();
+
+  $scope.comparePassword = function () {
+    if ($scope.user.password !== $scope.user.password2) {
+      $scope.mismatch = true;
+      $scope.password = '';
+      $scope.password2 = '';
+    } else {
+      $scope.mismatch = false;
+    }
+  };
+
 
 }]);

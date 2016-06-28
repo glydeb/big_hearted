@@ -16,6 +16,20 @@ body {
     flex: 1 0 auto;
   }
 
+#community-posts {
+  resize: none;
+  /*display: block;
+  margin: auto auto;*/
+  border: 5px solid #73bf43;
+  border-radius: 15px;
+  padding: 10px 10px;
+  overflow: auto;
+}
+
+#community-posts button {
+  float: right;
+}
+
 #logo-container > img {
   width: 55px;
   margin-top: 6px;
@@ -25,16 +39,16 @@ body {
   width: 35px;
 }
 
-.footer-city, .footer-email {
+.footer-city, .footer-projects, .footer-contact {
   margin-left: 2em;
 }
 
-.footer-link, .footer-city, .footer-email {
+.footer-blog, .footer-city, .footer-contact {
   text-align: center;
 }
 
 .timezone {
-  width: 40%;
+  width: 100%;
   outline: none;
   height: 3rem;
   font-size: 1rem;
@@ -46,10 +60,28 @@ body {
 
 }
 
+.profile-picture, .new-post {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+.upload-button {
+  font-size: 12px;
+
 #DGD{
   text-align: center;
 }
  #badgesPic{
    background-image: url("/assets/images/badgesBackground.jpg")
 
+<<<<<<< HEAD
  }
+=======
+.lever {
+  display: inline-block;
+}
+
+#nav-mobile{
+position: sticky;
+}
+>>>>>>> a5921fcc65a33de73f9fa0156b45244a3626081a
