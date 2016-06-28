@@ -36,6 +36,10 @@ myApp.config(['$routeProvider', function ($routeProvider) {
       templateUrl: '/views/ourpost.html',
       controller: "ourpostController"
     })
+    .when('/admin', {
+      templateUrl: '/views/admin.html',
+      controller: "adminController"
+    })
     .otherwise({
       redirectTo: 'login'
     })
