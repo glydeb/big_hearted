@@ -16,6 +16,20 @@ body {
     flex: 1 0 auto;
   }
 
+#community-posts {
+  resize: none;
+  /*display: block;
+  margin: auto auto;*/
+  border: 5px solid #73bf43;
+  border-radius: 15px;
+  padding: 10px 10px;
+  overflow: auto;
+}
+
+#community-posts button {
+  float: right;
+}
+
 #logo-container > img {
   width: 55px;
   margin-top: 6px;
@@ -56,6 +70,10 @@ body {
 
 #DGD{
   text-align: center;
+}
+
+.lever {
+  display: inline-block;
 }
 
 #nav-mobile{
