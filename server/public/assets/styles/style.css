@@ -46,14 +46,13 @@ body {
 
 }
 
-<<<<<<< HEAD
 .profile-picture {
   margin-left: 0px;
 }
 
 .upload-button {
   font-size: 12px;
-=======
+
 #DGD{
   text-align: center;
 }
@@ -61,5 +60,4 @@ body {
 #nav-mobile{
 position: sticky;
 
->>>>>>> 9344aab114fe0bd5336bbf6aeb3807c8ebab2e77
 }

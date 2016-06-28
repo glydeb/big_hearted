@@ -6,6 +6,8 @@ myApp.controller('profileController', ['$scope', '$http', '$window',
         console.log('materialbox');
       });
 
+      
+
   // This happens after view/controller loads -- not ideal
   console.log('checking user');
   $http.get('/user').then(function (response) {
