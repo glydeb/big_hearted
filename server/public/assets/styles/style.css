@@ -16,6 +16,12 @@ body {
     flex: 1 0 auto;
   }
 
+#community-posts {
+  resize: none;
+  display: block;
+  margin: auto auto;
+}
+
 #logo-container > img {
   width: 55px;
   margin-top: 6px;
