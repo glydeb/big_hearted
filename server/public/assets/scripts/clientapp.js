@@ -27,7 +27,14 @@ myApp.config(['$routeProvider', function($routeProvider) {
     .when('/profile', {
       templateUrl: '/views/profile.html',
       controller: "profileController"
-
+    })
+    .when('/badges', {
+      templateUrl: '/views/badges.html',
+      controller: "badgesController"
+    })
+    .when('/ourpost', {
+      templateUrl: '/views/ourpost.html',
+      controller: "ourpostController"
     })
     .otherwise({
       redirectTo: 'login'

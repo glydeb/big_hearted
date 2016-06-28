@@ -1,4 +1,4 @@
-myApp.controller('landingpageController', ['$scope', '$http', '$window',
+myApp.controller('profileController', ['$scope', '$http', '$window',
   '$location', function ($scope, $http, $window, $location) {
 
   // This happens after view/controller loads -- not ideal

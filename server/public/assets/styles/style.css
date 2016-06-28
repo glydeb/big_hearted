@@ -28,3 +28,12 @@ main {
   box-sizing: content-box;
   transition: all 0.3s;
 }
+
+#DGD{
+  text-align: center;
+}
+
+#nav-mobile{
+position: sticky;
+
+}
