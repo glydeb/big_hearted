@@ -6,8 +6,12 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
     textnotifications: false
   };
   $scope.message = '';
-
   $scope.mismatch = false;
+
+  // select elements need jQuery to work properly
+  $(document).ready(function () {
+    $('select').material_select();
+  });
 
   $scope.login = function () {
     if ($scope.user.username === '' || $scope.user.password === '') {
@@ -52,6 +56,9 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
       $scope.mismatch = true;
       $scope.password = '';
       $scope.password2 = '';
+    } else {
+      $scope.mismatch = false;
     }
+  };
 
 }]);
