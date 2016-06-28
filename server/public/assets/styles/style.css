@@ -25,16 +25,16 @@ body {
   width: 35px;
 }
 
-.footer-city, .footer-email {
+.footer-city, .footer-projects, .footer-contact {
   margin-left: 2em;
 }
 
-.footer-link, .footer-city, .footer-email {
+.footer-blog, .footer-city, .footer-contact {
   text-align: center;
 }
 
 .timezone {
-  width: 40%;
+  width: 100%;
   outline: none;
   height: 3rem;
   font-size: 1rem;
@@ -46,8 +46,9 @@ body {
 
 }
 
-.profile-picture {
+.profile-picture, .new-post {
   margin-left: 0px;
+  margin-right: 0px;
 }
 
 .upload-button {
@@ -59,5 +60,4 @@ body {
 
 #nav-mobile{
 position: sticky;
-
 }
