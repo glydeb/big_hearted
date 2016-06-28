@@ -47,4 +47,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
       });
     }
   };
+
+$(".dropdown-button").dropdown();
+
 }]);
