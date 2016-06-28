@@ -1,4 +1,4 @@
-myApp.controller('trackerController', ['$scope', '$http', '$window', '$location', function($scope, $http, $window, $location) {
+myApp.controller('ourpostController', ['$scope', '$http', '$window', '$location', function($scope, $http, $window, $location) {
   // This happens after view/controller loads -- not ideal
   console.log('checking user');
   $http.get('/user').then(function(response) {
@@ -16,5 +16,4 @@ myApp.controller('trackerController', ['$scope', '$http', '$window', '$location'
       $location.path("/home");
     });
   }
-
 }]);
