@@ -1,7 +1,37 @@
 <div class="row">
-  <h1>Administrative Functions</h1>
-  <h2>Generate verification codes:</h2>
-  <button class="waves-effect waves-light btn" ng-click="generateCode()" >Create code<i class="material-icons right">vpn_key</i>
-  </button>
-  <span>Code: {{verification}}</span>
+    <h3 class="center-align">Administrative Functions</h3>
+    <div class="generate-code">
+        <h4>Generate verification codes</h4>
+        <button class="waves-effect waves-light btn" ng-click="generateCode()">Create code<i class="material-icons right">vpn_key</i>
+        </button>
+        </br>
+        </br>
+        <h5 class="bold">Code: {{verification}}</h5>
+    </div>
+    </br>
+    <div class="flagged-content">
+        <h4>Flagged Content</h4>
+        <button class="waves-effect waves-light btn" ng-click="clearFlags()">Clear Flags<i class="material-icons right">flag</i></button>
+        <button class="waves-effect waves-light btn" ng-click="deleteSelected()">Delete Selected<i class="material-icons right">clear</i></button>
+        <button class="waves-effect waves-light btn modal-trigger" data-target="review-modal">Review<i class="material-icons right">sort</i></button>
+        <div id="review-modal" class="modal">
+            <div class="modal-content">
+                <h4>Review/Suspend Users</h4>
+                <div class="row">
+                  <h6 class="col s4">User</h6>
+                  <h6 class="col s4">Flagged Posts</h6>
+                  <a class="waves-effect waves-light btn col s3" ng-click="suspendUser()">Suspend User<i class="material-icons right">report</i></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </br>
+    <div class="inactive-users">
+        <h4>Inactive Users</h4>
+        <p>Username</p>
+        <button class="waves-effect waves-light btn" ng-click="activateUser()">Activate User<i class="material-icons right">person add</i></button>
+        <button class="waves-effect waves-light btn" ng-click="deleteUser()">Delete User<i class="material-icons right">block</i></button>
+    </div>
+
 </div>

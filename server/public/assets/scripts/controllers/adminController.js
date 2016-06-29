@@ -2,6 +2,10 @@ myApp.controller('adminController', ['$scope', '$http', '$window', '$location',
   function ($scope, $http, $window, $location) {
   $scope.verification = '';
 
+  $(document).ready(function(){
+    $('.modal-trigger').leanModal();
+  });
+
   // This happens after view/controller loads -- not ideal
   console.log('checking user');
 
