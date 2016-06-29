@@ -71,6 +71,10 @@ body {
 #DGD{
   text-align: center;
 }
+ #badgesPic{
+   background-image: url("/assets/images/badgesBackground.jpg")
+
+ }
 
 .lever {
   display: inline-block;
