@@ -71,6 +71,10 @@ body {
 #DGD{
   text-align: center;
 }
+ #badgesPic{
+   background-image: url("/assets/images/badgesBackground.jpg")
+
+ }
 
 .lever {
   display: inline-block;
@@ -78,8 +82,4 @@ body {
 
 #nav-mobile{
 position: sticky;
-}
-
-.body > main > div > div.section.col.s4 > div > div > img {
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.16);
 }

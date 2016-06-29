@@ -51,6 +51,8 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
     }
   };
 
+$(".dropdown-button").dropdown();
+
   $scope.comparePassword = function () {
     if ($scope.user.password !== $scope.user.password2) {
       $scope.mismatch = true;
@@ -60,5 +62,6 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
       $scope.mismatch = false;
     }
   };
+
 
 }]);
