@@ -1,9 +1,9 @@
 <div class="container row our-profile">
     <div class="section col s4">
-        <div class="profile-picture section card ">
+        <div class="section">
             <img materialboxed class="materialboxed responsive-img" width="300" src="/assets/images/Quinn Nelson +.jpg" />
         </div>
-        <form action="#">
+        <form>
             <div class="file-field input-field">
                 <div class="btn">
                     <span class="upload-button">Upload Picture</span>
@@ -12,21 +12,38 @@
         </form>
     </div>
 </div>
-<div class="row new-post">
-    <form>
-            <div class="card small col s6">
-                <textarea id="textarea" class="materialize-textarea" placeholder="Tell us about your family or project!"></textarea>
-                <input type="checkbox" id="dgd-project" />
-                <label for="dgd-project">Is this project part of the Do Good Dozen?</label>
-                <div class="switch">
-                <label>Off<input type="checkbox"><span class="lever"></span>On</label>
-              </br>
-                <input type="file"/>
-              </div>
-              </br> </br>
-                <button class="waves-effect waves-light btn post-button" type="submit" name="submit">Post<i class="material-icons right">send</i>
-                </button>
-            </div>
-    </form>
-</div>
+<div class="container row">
+  <h3>{{userName}}'s Profile</h3>
+  <div id="community-posts">
+      <h5>Create New Post</h5>
+      <form>
+        <textarea class="validate materialize-textarea" id="textarea1" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
+
+          <div class="btn file-field">
+            <span>Upload a picture!</span>
+            <input type="file" />
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text" />
+          </div>
+          <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
+          <label for="test6">Is this a Do Good Dozen accomplishment?</label>
+
+          <div>
+            <p>Post this anonymously?</p>
+            <div class="switch">
+              <label>
+              Off
+              <input type="checkbox">
+              <span class="lever"></span>
+              On
+            </label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">Post
+        <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+  </div>
 </div>
