@@ -67,21 +67,15 @@ body {
 
 .upload-button {
   font-size: 12px;
+}
 
 #DGD{
   text-align: center;
 }
  #badgesPic{
-   background-image: url("/assets/images/badgesBackground.jpg")
-
-<<<<<<< HEAD
+   background-image: url("/assets/images/badgesBackground.jpg");
  }
-=======
+
 .lever {
   display: inline-block;
 }
-
-#nav-mobile{
-position: sticky;
-}
->>>>>>> a5921fcc65a33de73f9fa0156b45244a3626081a
