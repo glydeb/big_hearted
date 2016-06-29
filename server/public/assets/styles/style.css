@@ -60,7 +60,7 @@ body {
 
 }
 
-.profile-picture, .new-post {
+.our-profile {
   margin-left: 0px;
   margin-right: 0px;
 }
@@ -74,9 +74,8 @@ body {
  #badgesPic{
    background-image: url("/assets/images/badgesBackground.jpg")
 
-<<<<<<< HEAD
  }
-=======
+
 .lever {
   display: inline-block;
 }
@@ -84,4 +83,3 @@ body {
 #nav-mobile{
 position: sticky;
 }
->>>>>>> a5921fcc65a33de73f9fa0156b45244a3626081a
