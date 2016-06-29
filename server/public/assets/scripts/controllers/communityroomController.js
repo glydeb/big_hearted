@@ -1,4 +1,12 @@
 myApp.controller('communityroomController', ['$scope', '$http', '$window', '$location', function($scope, $http, $window, $location) {
+
+  $scope.post = {};
+
+  $scope.sendPost = function () {
+    $scope.post = $scope.post;
+    console.log($scope.post);
+  }
+
   // This happens after view/controller loads -- not ideal
   console.log('checking user');
   $http.get('/user').then(function(response) {

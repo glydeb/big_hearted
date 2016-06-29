@@ -2,7 +2,7 @@
   <h3>{{userName}}'s posts!</h3>
   <div id="community-posts">
       <h5>Make a post!</h5>
-      <form action="#">
+      <form ng-submit="sendPost()">
         <textarea class="validate materialize-textarea" id="textarea1" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
 
           <div class="btn file-field">
@@ -20,7 +20,7 @@
             <div class="switch">
               <label>
               Off
-              <input type="checkbox">
+              <input type="checkbox" ng-model="post.anonymous">
               <span class="lever"></span>
               On
             </label>
@@ -31,4 +31,8 @@
         </button>
       </form>
     </div>
+  </div>
+
+  <div class="row">
+    
   </div>
