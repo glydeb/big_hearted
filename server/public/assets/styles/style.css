@@ -72,10 +72,26 @@ body {
 #DGD{
   text-align: center;
 }
- #badgesPic{
-   background-image: url("/assets/images/badgesBackground.jpg");
- }
+
 
 .lever {
   display: inline-block;
+}
+
+#badgesPic{
+background-image: url("/assets/images/badgesBackground.jpg");
+display: inherit !important;
+width: 1800px;
+height:901px;
+background-repeat: no-repeat;
+opacity: .7;
+}
+
+#landingPage{
+background-image: url("/assets/images/landingPage.jpg");
+background-repeat: repeat-x;
+width: 1600px;
+height:1200px;
+box-shadow: 0px 8px 5px gray,
+        -10px 8px 10px gray, 10px 8px 10px gray;
 }

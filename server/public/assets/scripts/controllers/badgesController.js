@@ -16,4 +16,8 @@ myApp.controller('badgesController', ['$scope', '$http', '$window', '$location',
       $location.path("/home");
     });
   }
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+
 }]);
