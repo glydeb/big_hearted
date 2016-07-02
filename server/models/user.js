@@ -14,7 +14,7 @@ var UserSchema = new Schema({
   firstname: String,
   lastname: String,
   phone: String,
-  timezone: String
+  timezone: String,
   family_members: String,
   about_us: String,
   our_projects: String
