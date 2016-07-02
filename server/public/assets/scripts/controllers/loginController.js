@@ -57,6 +57,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
             $location.path('/login');
           },
 
+          // error handling for registration
           function (response) {
             console.log('Registration error', response);
             $scope.message = 'Registration failed - please try again';
@@ -68,6 +69,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
 
       },
 
+      // error handling for verification code check
       function (response) {
         console.log('code verification error', response);
         $scope.message = 'Code verification failed - please check your code';
@@ -76,6 +78,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
     }
   };
 
+// jQuery for select element
 $(".dropdown-button").dropdown();
 
   $scope.comparePassword = function () {
