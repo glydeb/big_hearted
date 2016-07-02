@@ -20,6 +20,10 @@ myApp.factory('doGoodFactory', ['$http', function ($http) {
 
     factoryGetUserData: function () {
       return user;
+    },
+
+    factoryClearUser: function () {
+      user = undefined;
     }
 
   };

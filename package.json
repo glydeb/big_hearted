@@ -4,7 +4,7 @@
   "description": "Group Project",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node-debug server/app.js",
     "start": "node server/app.js"
   },
   "author": "Logan Lieberg, Quinn Nelson, Thomas Geisinger, Glydewell Burdick",

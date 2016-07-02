@@ -5,6 +5,7 @@ myApp.controller('navController', ['doGoodFactory', '$scope', '$http',
   $scope.logout = function () {
     $http.get('/user/logout').then(function (response) {
       console.log('logged out');
+      doGoodFactory.factoryClearUser();
       $location.path('/home');
     });
   };
