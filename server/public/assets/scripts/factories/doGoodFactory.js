@@ -6,7 +6,7 @@ myApp.factory('FantasyFactory', ['$http', function ($http) {
     var promise = $http.get('/user').then(function(response) {
 
       user = response.data;
-      
+
     });
 
     return promise;
