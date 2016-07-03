@@ -13,7 +13,9 @@ var user = require('./routes/user');
 var register = require('./routes/register');
 var download = require('./routes/download');
 var verification = require('./routes/verification');
+var post = require('./routes/post');
 var sms = require('./routes/sms');
+
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -44,6 +46,7 @@ app.use('/verification', verification);
 app.use('/register', register);
 app.use('/user', user);
 app.use('/download', download);
+app.use('/post', post);
 app.use('/*', index);
 
 // Mongo Connection //
