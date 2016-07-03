@@ -14,6 +14,8 @@ var register = require('./routes/register');
 var download = require('./routes/download');
 var verification = require('./routes/verification');
 var post = require('./routes/post');
+var sms = require('./routes/sms');
+
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -39,6 +41,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
+app.use('/sms', sms);
 app.use('/verification', verification);
 app.use('/register', register);
 app.use('/user', user);

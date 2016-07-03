@@ -1,5 +1,8 @@
-myApp.controller('communityroomController', ['$scope', '$http', '$window', '$location', 'BhhFactory', function($scope, $http, $window, $location, BhhFactory) {
+myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
+  '$window', '$location', function (doGoodFactory, $scope, $http, $window,
+  $location) {
 
+  console.log('checking user');
   $scope.post = {
     dgd: false,
     dgdnumber: 0,
@@ -65,10 +68,23 @@ myApp.controller('communityroomController', ['$scope', '$http', '$window', '$loc
       }
   });
 
-  $scope.logout = function() {
-    $http.get('/user/logout').then(function(response) {
-      console.log('logged out');
-      $location.path("/home");
+
+  // go to factory to verify user
+  if (doGoodFactory.factoryGetUserData() === undefined) {
+    doGoodFactory.factoryRefreshUserData().then(function () {
+      $scope.userName = doGoodFactory.factoryGetUserData().username;
+
+      // if it's still undefined after refresh, send them to login page
+      if ($scope.userName === undefined || $scope.userName === '') {
+        $location.path('/home');
+      }
     });
+  } else {
+    $scope.userName = doGoodFactory.factoryGetUserData().username;
+    if ($scope.userName === undefined || $scope.userName === '') {
+      $location.path('/home');
+    }
+
   }
+
 }]);

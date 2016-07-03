@@ -32,10 +32,6 @@ myApp.config(['$routeProvider', function ($routeProvider) {
       templateUrl: '/views/badges.html',
       controller: "badgesController"
     })
-    .when('/ourpost', {
-      templateUrl: '/views/ourpost.html',
-      controller: "ourpostController"
-    })
     .when('/admin', {
       templateUrl: '/views/admin.html',
       controller: "adminController"

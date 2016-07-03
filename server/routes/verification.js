@@ -18,7 +18,30 @@ Verifications.find({}, function (err, codes) {
   console.log(usedCodes);
 });
 
-// Handles Ajax request for user information if user is authenticated
+// authenticate verification code
+router.get('/:candidate', function (req, res) {
+  console.log('checking verification code');
+  var candidate = req.params.candidate;
+
+  Verifications.find({ used: false, verification: candidate },
+    function (err, codes) {
+      if (err) {
+        console.log('Error retrieving verification code:', err);
+        res.sendStatus(500);
+        return;
+      }
+
+      if (codes.length > 0) {
+        res.send({ result: true });
+      } else {
+        res.send({ result: false });
+      }
+    }
+  );
+
+});
+
+// produce new verification code
 router.get('/', function (req, res) {
   console.log('get new verification code');
 

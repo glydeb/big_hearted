@@ -1,20 +1,45 @@
 <div class="container row our-profile">
     <div class="section col s4">
         <div class="section">
-            <img materialboxed class="materialboxed responsive-img" width="300" src="/assets/images/Quinn Nelson +.jpg" />
+            <img materialboxed class="materialboxed responsive-img profile-picture" width="300" src="/assets/images/Quinn Nelson +.jpg" />
         </div>
         <form>
-            <div class="file-field input-field">
-                <div class="btn">
+
+                <div class="btn file-field">
                     <span class="upload-button">Upload Picture</span>
-                    <input type="file" ng-model="user.profilepicture">
+                    <input type="file" />
+                    <input class="file-path validate" type="text" ng-model="user.profilepicture">
             </div>
         </form>
-    </div>
+          <div class="section family-info">
+          <h5 class="center-align">Our Family Members</h5>
+          <div class="divider"></div>
+          <h6 ng-show="visible" ng-model="user.family_members">{{user.family_members}}</h6>
+          <textarea class="materialize-textarea" ng-show="edit" ng-model="user.family_members"></textarea>
+
+          <div class="divider"></div>
+          <h5 class="center-align">About Us</h5>
+          <div class="divider"></div>
+          <h6 ng-show="visible" ng-model="user.about_us">{{user.about_us}}</h6>
+          <textarea class="materialize-textarea" ng-show="edit" ng-model="user.about_us"></textarea>
+          <div class="divider"></div>
+          <h5 class="center-align">Our Projects</h5>
+          <div class="divider"></div>
+          <h6 ng-show="visible" ng-model="user.our_projects">{{user.our_projects}}</h6>
+          <textarea class="materialize-textarea" ng-show="edit" ng-model="user.our_projects"></textarea>
+          <div class="divider"></div>
+          <div class="family-info-buttons center-align">
+          <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="visible">Edit</button>
+          <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="edit">Save</button>
+          </div>
+          </div>
+
 </div>
-<div class="container row">
+<div class="row">
+  <div class="col s7 push-s3">
   <h3>{{userName}}'s Profile</h3>
-  <div id="community-posts">
+  </div>
+  <div class="col s7 push-s3" id="community-posts">
       <h5>Create New Post</h5>
       <form>
         <textarea class="validate materialize-textarea" id="textarea1" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>

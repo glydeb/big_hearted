@@ -1,25 +1,32 @@
-myApp.controller('adminController', ['$scope', '$http', '$window', '$location', 'BhhFactory',
-  function ($scope, $http, $window, $location, BhhFactory) {
+myApp.controller('adminController', ['doGoodFactory','$scope', '$http',
+  '$window', '$location', function (doGoodFactory, $scope, $http, $window,
+  $location) {
+
   $scope.verification = '';
 
-  // This happens after view/controller loads -- not ideal
-  console.log('checking user');
-
-  $http.get('/user').then(function (response) {
-    if (response.data.username) {
-      $scope.userName = response.data.username;
-      console.log('User Data: ', $scope.userName);
-    } else {
-      $location.path('/home');
-    }
+  $(document).ready(function(){
+    $('.modal-trigger').leanModal();
   });
 
-  $scope.logout = function () {
-    $http.get('/user/logout').then(function (response) {
-      console.log('logged out');
-      $location.path('/home');
+  console.log('checking user');
+
+  // go to factory to verify user
+  if (doGoodFactory.factoryGetUserData() === undefined) {
+    doGoodFactory.factoryRefreshUserData().then(function () {
+      $scope.userName = doGoodFactory.factoryGetUserData().username;
+
+      // if it's still undefined after refresh, send them to login page
+      if ($scope.userName === undefined || $scope.userName === '') {
+        $location.path('/home');
+      }
     });
-  };
+  } else {
+    $scope.userName = doGoodFactory.factoryGetUserData().username;
+    if ($scope.userName === undefined || $scope.userName === '') {
+      $location.path('/home');
+    }
+
+  }
 
   $scope.generateCode = function () {
     $http.get('/verification').then(function (response) {

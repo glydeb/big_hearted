@@ -4,7 +4,7 @@
   "description": "Group Project",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node-debug server/app.js",
     "start": "node server/app.js"
   },
   "author": "Logan Lieberg, Quinn Nelson, Thomas Geisinger, Glydewell Burdick",
@@ -18,9 +18,6 @@
     "bootstrap": "^3.3.6",
     "express": "^4.14.0",
     "express-session": "^1.13.0",
-    "moment": "^2.13.0",
-    "mongoose": "^4.5.1",
-    "passport": "^0.3.2",
     "jquery": "^3.0.0",
     "materialize-css": "^0.97.6",
     "moment": "^2.13.0",
@@ -29,6 +26,8 @@
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
-    "request": "^2.72.0"
+    "request": "^2.72.0",
+    "s3-uploader": "^2.0.1",
+    "twilio": "^2.9.1"
   }
 }
