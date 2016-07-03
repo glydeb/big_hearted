@@ -4,7 +4,6 @@
             <img materialboxed class="materialboxed responsive-img profile-picture" width="300" src="/assets/images/Quinn Nelson +.jpg" />
         </div>
         <form>
-
             <div class="btn file-field">
                 <span class="upload-button">Upload Picture</span>
                 <input type="file" />
@@ -31,16 +30,17 @@
             </div>
           </div>
         </div>
-
     </div>
+
     <div class="row">
         <div class="col s7 push-s3">
+          <div class="post-input">
             <h3>{{userName}}'s Profile</h3>
         </div>
-        <div class="col s7 push-s3" id="our-posts">
+        <div class="col s12" id="our-posts">
             <h5>Create New Post</h5>
-            <form>
-                <textarea class="validate materialize-textarea" id="textarea1" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
+            <form ng-submit="sendPost(post)">
+                <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
 
                 <div class="btn file-field">
                     <span>Upload a picture!</span>
@@ -67,5 +67,20 @@
                 </button>
             </form>
         </div>
+        <div class="row">
+        <div class="col s12">
+        <section class="display_profile_posts">
+          <div ng-repeat="post in profilePosts track by $index">
+            <div class="individual_profile_posts">
+              <img class="profile-picture" src="{{post.image}}" />
+              <span class="postsusername">{{post.username}}</span>
+              <p>{{post.description}}</p>
+              <p>likes: {{post.likes}}</p>
+            </div>
+          </div>
+        </section>
+        </div>
+        </div>
+      </div>
     </div>
 </div>
