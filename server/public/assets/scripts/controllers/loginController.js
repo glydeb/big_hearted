@@ -1,4 +1,6 @@
-myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', function ($scope, $http, $window, $location) {
+myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
+  '$window', '$location', function (doGoodFactory, $scope, $http, $window,
+  $location) {
   $scope.user = {
     username: '',
     password: '',
@@ -21,6 +23,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
       $http.post('/', $scope.user).then(function (response) {
         if (response.data.username) {
           console.log('success: ', response.data);
+          doGoodFactory.factorySaveUser(response.data);
 
           // location works with SPA (ng-route)
           $location.path('/landingpage');

@@ -24,6 +24,10 @@ myApp.factory('doGoodFactory', ['$http', function ($http) {
 
     factoryClearUser: function () {
       user = undefined;
+    },
+
+    factorySaveUser: function (newUser) {
+      user = newUser;
     }
 
   };
