@@ -4,6 +4,7 @@
             <img materialboxed class="materialboxed responsive-img profile-picture" width="300" src="/assets/images/Quinn Nelson +.jpg" />
         </div>
         <form>
+
             <div class="btn file-field">
                 <span class="upload-button">Upload Picture</span>
                 <input type="file" />
@@ -11,25 +12,24 @@
             </div>
         </form>
         <div class="section family-info">
-            <div class="container">
-
-
-                <h5 class="center-align">Our Family Members</h5>
-                <h6 class="section" ng-show="visible" ng-model="user.family_members">{{user.family_members}}</h6>
-                <textarea class="materialize-textarea" ng-show="edit" ng-model="user.family_members" onclick="this.focus();this.select()"></textarea>
-                <div class="divider"></div>
-                <h5 class="center-align">About Us</h5>
-                <h6 class="section" ng-show="visible" ng-model="user.about_us">{{user.about_us}}</h6>
-                <textarea class="materialize-textarea" ng-show="edit" ng-model="user.about_us" onclick="this.focus();this.select()"></textarea>
-                <div class="divider"></div>
-                <h5 class="center-align">Our Projects</h5>
-                <h6 class="section" ng-show="visible" ng-model="user.our_projects">{{user.our_projects}}</h6>
-                <textarea class="materialize-textarea section" ng-show="edit" ng-model="user.our_projects" onclick="this.focus();this.select()"></textarea>
-                <div class="family-info-buttons center-align">
-                    <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="visible">Edit</button>
-                    <button class="waves-effect waves-light btn" type="submit" ng-click="toggle()" ng-show="edit">Save</button>
-                </div>
+          <div class="container">
+            <h5 class="center-align">Our Family Members</h5>
+            <h6 class="section" ng-show="visible" ng-model="user.family_members">{{user.family_members}}</h6>
+            <textarea class="materialize-textarea" ng-show="edit" ng-model="user.family_members" onclick="this.focus();this.select()"></textarea>
+            <div class="divider"></div>
+            <h5 class="center-align">About Us</h5>
+            <h6 class="section" ng-show="visible" ng-model="user.about_us">{{user.about_us}}</h6>
+            <textarea class="materialize-textarea" ng-show="edit" ng-model="user.about_us" onclick="this.focus();this.select()"></textarea>
+            <div class="divider"></div>
+            <h5 class="center-align">Our Projects</h5>
+            <h6 class="section" ng-show="visible" ng-model="user.our_projects">{{user.our_projects}}</h6>
+            <textarea class="materialize-textarea" ng-show="edit" ng-model="user.our_projects" onclick="this.focus();this.select()"></textarea>
+            <div class="divider"></div>
+            <div class="family-info-buttons center-align">
+                <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="visible">Edit</button>
+                <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="edit">Save</button>
             </div>
+          </div>
         </div>
 
     </div>
@@ -41,6 +41,7 @@
             <h5>Create New Post</h5>
             <form>
                 <textarea class="validate materialize-textarea" id="textarea1" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
+
                 <div class="btn file-field">
                     <span>Upload a picture!</span>
                     <input type="file" />
@@ -50,6 +51,7 @@
                 </div>
                 <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
                 <label for="test6">Is this a Do Good Dozen accomplishment?</label>
+
                 <div>
                     <p>Post this anonymously?</p>
                     <div class="switch">

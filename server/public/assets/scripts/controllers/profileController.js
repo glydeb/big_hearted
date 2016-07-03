@@ -14,9 +14,10 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
     $scope.toggle = function() {
       $scope.visible = !$scope.visible
       $scope.edit = !$scope.edit
+      if ($scope.visible == true) {
       $http.put('/register', $scope.user).then(function (response) {
         console.log("family info saved");
-    })};
+    })}};
 
 //     $scope.saveInfo = function() {
 //       console.log("saveinfo");
@@ -36,7 +37,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
   if (doGoodFactory.factoryGetUserData() === undefined) {
     doGoodFactory.factoryRefreshUserData().then(function () {
       $scope.userName = doGoodFactory.factoryGetUserData().username;
-
+      $scope.user = doGoodFactory.factoryGetUserData();
       // if it's still undefined after refresh, send them to login page
       if ($scope.userName === undefined || $scope.userName === '') {
         $location.path('/home');
@@ -44,6 +45,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
     });
   } else {
     $scope.userName = doGoodFactory.factoryGetUserData().username;
+    $scope.user = doGoodFactory.factoryGetUserData();
     if ($scope.userName === undefined || $scope.userName === '') {
       $location.path('/home');
     }
