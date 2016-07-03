@@ -18,14 +18,26 @@ myApp.controller('adminController', ['doGoodFactory','$scope', '$http',
       // if it's still undefined after refresh, send them to login page
       if ($scope.userName === undefined || $scope.userName === '') {
         $location.path('/home');
+      } else if (!(checkAdmin())) {
+        $location.path('/landingpage');
       }
     });
   } else {
     $scope.userName = doGoodFactory.factoryGetUserData().username;
     if ($scope.userName === undefined || $scope.userName === '') {
       $location.path('/home');
+    } else if (!(checkAdmin())) {
+      $location.path('/landingpage');
     }
 
+  }
+
+  function checkAdmin() {
+    if (doGoodFactory.factoryGetUserData().is_admin) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   $scope.generateCode = function () {
