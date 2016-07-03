@@ -16,10 +16,8 @@ body {
     flex: 1 0 auto;
   }
 
-#community-posts {
+#our-posts {
   resize: none;
-  /*display: block;
-  margin: auto auto;*/
   border: 2px solid #197FD2;
   border-radius: 10px;
   padding: 15px 15px;
@@ -27,7 +25,7 @@ body {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12)
 }
 
-#community-posts button {
+#community-posts, #our-posts button {
   float: right;
 }
 
