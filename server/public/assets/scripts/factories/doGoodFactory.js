@@ -1,5 +1,6 @@
 myApp.factory('doGoodFactory', ['$http', function ($http) {
   console.log('doGood Factory online!');
+
   var user = undefined;
 
   function refreshUserData() {

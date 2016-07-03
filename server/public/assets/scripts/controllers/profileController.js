@@ -2,6 +2,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {
 
+
   console.log('profileController running');
 
     $scope.user = {};
@@ -27,6 +28,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
     $('.materialboxed').materialbox();
     console.log('materialbox');
   });
+
 
   console.log('checking user');
 
