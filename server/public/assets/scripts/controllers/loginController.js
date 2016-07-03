@@ -3,7 +3,8 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
     username: '',
     password: '',
     is_admin: false,
-    textnotifications: false
+    textnotifications: false,
+    dgdnumber: 0
   };
   $scope.message = '';
   $scope.mismatch = false;

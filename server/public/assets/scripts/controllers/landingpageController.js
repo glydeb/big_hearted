@@ -1,5 +1,5 @@
 myApp.controller('landingpageController', ['$scope', '$http', '$window',
-  '$location', function ($scope, $http, $window, $location) {
+  '$location', 'BhhFactory', function ($scope, $http, $window, $location, BhhFactory) {
     $scope.downloadsArray = [];
     getDownloads();
 

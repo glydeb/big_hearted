@@ -24,6 +24,8 @@ body {
   border-radius: 15px;
   padding: 10px 10px;
   overflow: auto;
+  background-color: #73bf43;
+  color: white;
 }
 
 #community-posts button {
@@ -33,6 +35,14 @@ body {
 #logo-container > img {
   width: 55px;
   margin-top: 6px;
+}
+
+#textarea1 {
+  color: white;
+}
+
+#textarea1::-webkit-input-placeholder {
+  color: white;
 }
 
 .social-icons > img {
@@ -67,10 +77,44 @@ body {
 
 .upload-button {
   font-size: 12px;
-
-#DGD{
-  text-align: center;
 }
+
+.profilepicture {
+  height: 128px;
+  width: 128px;
+  border: 3px solid #f25826;
+  display: inline;
+}
+
+.postsusername {
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.displayallposts {
+  background-color: #0ca3dc;
+  border: 5px solid #0ca3dc;
+  border-radius: 15px;
+  padding: 20px 20px;
+}
+
+.individualposts {
+  background-color: #8752a2;
+  border: 5px solid #8752a2;
+  border-radius: 15px;
+  padding: 15px 15px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+#button {
+  background-color: #f25826;
+}
+
+#checkboxlabel {
+  color: white;
+}
+
  #badgesPic{
    background-image: url("/assets/images/badgesBackground.jpg")
 
@@ -78,6 +122,10 @@ body {
 
 .lever {
   display: inline-block;
+}
+
+.switchlabel {
+  color: white;
 }
 
 #nav-mobile{

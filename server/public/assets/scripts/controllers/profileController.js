@@ -1,12 +1,12 @@
 myApp.controller('profileController', ['$scope', '$http', '$window',
-  '$location', function ($scope, $http, $window, $location) {
+  '$location', 'BhhFactory', function ($scope, $http, $window, $location, BhhFactory) {
 
     $(document).ready(function(){
         $('.materialboxed').materialbox();
         console.log('materialbox');
       });
 
-      
+
 
   // This happens after view/controller loads -- not ideal
   console.log('checking user');

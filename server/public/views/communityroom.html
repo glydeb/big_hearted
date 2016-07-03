@@ -1,38 +1,45 @@
-<div class="container row">
-  <h3>{{userName}}'s posts!</h3>
+<div class="container">
+  <section class="row">
+  <h3>Welcome to the Community Room!</h3>
   <div id="community-posts">
       <h5>Make a post!</h5>
-      <form ng-submit="sendPost()">
+      <form ng-submit="sendPost(post)">
         <textarea class="validate materialize-textarea" id="textarea1" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
 
-          <div class="btn file-field">
+          <div id="button" class="btn file-field">
             <span>Upload a picture!</span>
             <input type="file" />
           </div>
-          <div class="file-path-wrapper">
-            <input class="file-path validate" type="text" />
-          </div>
           <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
-          <label for="test6">Is this a Do Good Dozen accomplishment?</label>
+          <label for="test6" id="checkboxlabel">Is this a Do Good Dozen accomplishment?</label>
 
           <div>
             <p>Post this anonymously?</p>
             <div class="switch">
-              <label>
+              <label class="switchlabel">
               Off
               <input type="checkbox" ng-model="post.anonymous">
-              <span class="lever"></span>
+              <span id="button" class="lever"></span>
               On
             </label>
           </div>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Post
+        <button id="button" class="btn waves-effect waves-light" type="submit" name="action">Post
         <i class="material-icons right">send</i>
         </button>
       </form>
     </div>
-  </div>
+  </section>
 
-  <div class="row">
-
-  </div>
+  <section class="displayallposts">
+    <div ng-repeat="post in communityPosts track by $index">
+      <div class="individualposts">
+        <img class="profilepicture" src="{{post.image}}" />
+        <span class="postsusername">{{post.username}}</span>
+        <p>{{post.description}}</p>
+        <p>likes: {{post.likes}}</p>
+        <button id="button" class="waves-effect waves-light btn" ng-click="likePost(post)">Like</button>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,4 +1,4 @@
-myApp.controller('badgesController', ['$scope', '$http', '$window', '$location', function($scope, $http, $window, $location) {
+myApp.controller('badgesController', ['$scope', '$http', '$window', '$location', 'BhhFactory', function($scope, $http, $window, $location, BhhFactory) {
   // This happens after view/controller loads -- not ideal
   console.log('checking user');
   $http.get('/user').then(function(response) {

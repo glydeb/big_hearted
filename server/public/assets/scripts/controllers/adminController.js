@@ -1,5 +1,5 @@
-myApp.controller('adminController', ['$scope', '$http', '$window', '$location',
-  function ($scope, $http, $window, $location) {
+myApp.controller('adminController', ['$scope', '$http', '$window', '$location', 'BhhFactory',
+  function ($scope, $http, $window, $location, BhhFactory) {
   $scope.verification = '';
 
   // This happens after view/controller loads -- not ideal
