@@ -1,29 +1,51 @@
-myApp.controller('adminController', ['$scope', '$http', '$window', '$location',
-  function ($scope, $http, $window, $location) {
+myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
+  '$window', '$location', function (doGoodFactory, $scope, $http, $window,
+  $location) {
+
   $scope.verification = '';
 
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.modal-trigger').leanModal();
   });
 
-  // This happens after view/controller loads -- not ideal
   console.log('checking user');
 
-  $http.get('/user').then(function (response) {
-    if (response.data.username) {
-      $scope.userName = response.data.username;
-      console.log('User Data: ', $scope.userName);
-    } else {
+  // go to factory to verify user
+  if (doGoodFactory.factoryGetUserData() === undefined) {
+    doGoodFactory.factoryRefreshUserData().then(function () {
+      $scope.userName = doGoodFactory.factoryGetUserData().username;
+
+      // if it's still undefined after refresh, send them to login page
+      if ($scope.userName === undefined || $scope.userName === '') {
+        $location.path('/home');
+      } else if (!(checkAdmin())) {
+        $location.path('/landingpage');
+      }
+    });
+  } else {
+    $scope.userName = doGoodFactory.factoryGetUserData().username;
+    if ($scope.userName === undefined || $scope.userName === '') {
       $location.path('/home');
+    } else if (!(checkAdmin())) {
+      $location.path('/landingpage');
     }
+
+  }
+
+  // Load flagged content
+  $http.get('/post/flagged').then(function (response) {
+    $scope.flaggedPosts = response.data;
+  }, function (err) {
+    console.log('Error loading flagged content:', err);
   });
 
-  $scope.logout = function () {
-    $http.get('/user/logout').then(function (response) {
-      console.log('logged out');
-      $location.path('/home');
-    });
-  };
+  function checkAdmin() {
+    if (doGoodFactory.factoryGetUserData().is_admin) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   $scope.generateCode = function () {
     $http.get('/verification').then(function (response) {

@@ -11,10 +11,15 @@ var UserSchema = new Schema({
   textnotifications: { type: Boolean, required: true },
   is_admin: { type: Boolean, required: true },
   email: { type: String, required: true },
+  dgdnumber: { type: Number, required: true },
+  timesflagged: { type: Number, required: true },
   firstname: String,
   lastname: String,
   phone: String,
-  timezone: String
+  timezone: String,
+  family_members: String,
+  about_us: String,
+  our_projects: String
 });
 
 // Called before adding a new user to the DB. Encrypts password.

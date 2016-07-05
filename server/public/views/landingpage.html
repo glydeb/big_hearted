@@ -1,36 +1,35 @@
-<div id="landingPage"class="container">
-    <h1 id="welcome" class="lead">Welcome, {{userName}}!</h1>
+<div id="landingPage" class="container">
+  <h1 id="welcome" class="lead">Welcome, {{userName}}!</h1>
 
-    <!-- <div class="row" ng-repeat="organization in organizationsArray">
-      <section class="col s4">
-        <h5>{{organization.description}}</h5>
-      </section>
-    </div> -->
-
-
-    <div class="row" ng-repeat="download in downloadsArray">
-      <section class="col s4">
-        <h5>{{download.description}}</h5>
-        <p>{{download.image}}</p>
-        <a href="{{download.link}}" download>Download here</a>
-        <button>edit</button>
-      </section>
-    </div>
+  <!-- <div class="row" ng-repeat="organization in organizationsArray">
+    <section class="col s4">
+      <h5>{{organization.description}}</h5>
+    </section>
+  </div> -->
 
 
-    <div class="row">
-      <section class="col s4">
-        <h5>Download content</h5>
-        <button>edit</button>
-      </section>
-      <section class="col s4">
-        <h5>Download content</h5>
-        <button>edit</button>
-      </section>
-      <section class="col s4">
-        <h5>Download content</h5>
-        <button>edit</button>
-      </section>
-    </div>
-    <button class="btn btn-default" ng-click="logout()">Log Out</button>
+  <div class="row" ng-repeat="download in downloadsArray">
+    <section class="col s4">
+      <h5>{{download.description}}</h5>
+      <p>{{download.image}}</p>
+      <a href="{{download.link}}" download>Download here</a>
+      <button>edit</button>
+    </section>
+  </div>
+
+
+  <div class="row">
+    <section class="col s4">
+      <h5>Download content</h5>
+      <button>edit</button>
+    </section>
+    <section class="col s4">
+      <h5>Download content</h5>
+      <button>edit</button>
+    </section>
+    <section class="col s4">
+      <h5>Download content</h5>
+      <button>edit</button>
+    </section>
+  </div>
 </div>

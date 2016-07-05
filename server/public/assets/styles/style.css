@@ -13,6 +13,7 @@ main {
     flex: 1 0 auto;
 }
 #community-posts {
+<<<<<<< HEAD
     resize: none;
     /*display: block;
   margin: auto auto;*/
@@ -58,6 +59,19 @@ main {
 }
 #DGD {
     text-align: center;
+=======
+  resize: none;
+  border: 2px solid #197FD2;
+  border-radius: 10px;
+  padding: 15px 15px;
+  overflow: auto;
+  background-color: #73bf43;
+  color: white;
+}
+
+#community-posts button, #our-posts button {
+  float: right;
+>>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
 }
 .lever {
     display: inline-block;
@@ -106,6 +120,7 @@ main {
 
 }
 
+<<<<<<< HEAD
 #badge1New{
   background-image: url("/assets/images/FKAbadge1.png");
   background-repeat: no-repeat;
@@ -122,6 +137,18 @@ main {
   -webkit-animation-duration: 4s;
 
   transition: opacity 7s 0s ease;
+=======
+#textarea1 {
+  color: white;
+}
+
+#textarea1::-webkit-input-placeholder {
+  color: white;
+}
+
+.social-icons > img {
+  width: 35px;
+>>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
 }
 
 #badge1New:hover{
@@ -164,6 +191,7 @@ main {
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
+<<<<<<< HEAD
 #badge3:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
@@ -187,9 +215,60 @@ main {
 #badge4:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
+=======
+.profile-picture {
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12)
+}
+
+.upload-button {
+  font-size: 12px;
+}
+
+.profilepicture {
+  height: 128px;
+  width: 128px;
+  border: 3px solid #f25826;
+  display: inline;
+}
+
+.postsusername {
+  padding-left: 10px;
+  vertical-align: middle;
+}
+
+.displayallposts {
+  background-color: #0ca3dc;
+  border: 5px solid #0ca3dc;
+  border-radius: 15px;
+  padding: 20px 20px;
+}
+
+.individualposts {
+  background-color: #8752a2;
+  border: 5px solid #8752a2;
+  border-radius: 15px;
+  padding: 15px 15px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+#button {
+  background-color: #f25826;
+}
+
+#checkboxlabel {
+  color: white;
+}
+
+ #badgesPic{
+   background-image: url("/assets/images/badgesBackground.jpg")
+
+ }
+>>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
 
 }
 
+<<<<<<< HEAD
 #badge5 {
     background-image: url("/assets/images/FKAbadge5.png");
     background-repeat: no-repeat;
@@ -202,6 +281,25 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+=======
+.switchlabel {
+  color: white;
+}
+
+#nav-mobile {
+position: sticky;
+}
+
+
+#badgesPic {
+>>>>>>> fe8bc8b0b0de7e5ab3cdb7c7d02c52c391d29e98
+background-image: url("/assets/images/badgesBackground.jpg");
+display: inherit !important;
+width: 1800px;
+height:901px;
+background-repeat: no-repeat;
+opacity: .7;
+>>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
 }
 
 #badge5:hover{
@@ -424,12 +522,18 @@ main {
 
 .claim1, .claim2, .claim3, .claim4, .claim5, .claim6, .claim7, .claim8, .claim9, .claim10, .claim11, .claim12{
   text-align: center;
+<<<<<<< HEAD
 }
 #modalButton1, #modalButton2, #modalButton3, #modalButton5, #modalButton6, #modalButton7, #modalButton8, #modalButton9, #modalButton10, #modalButton11, #modalButton12{
  background-color:#eedb58;
  border: none;
  border-radius: 15px;
  box-shadow: 0 9px #999;
+=======
+  border: 1px solid #197FD2;
+  padding: 20px;
+  border-radius: 2px;
+>>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
 }
 
 #modalButton1:active{
@@ -546,3 +650,40 @@ box-shadow: 0 9px #999;
 #badgePage{
   color: white;
 }
+<<<<<<< HEAD
+=======
+
+.file-path {
+  color: black
+}
+
+.family-info {
+  margin-top: 75px;
+  border: 2px solid #197FD2;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.family-info-buttons {
+  margin-top: 20px;
+}
+
+#our-posts {
+  resize: none;
+  border: 2px solid #197FD2;
+  border-radius: 10px;
+  padding: 15px 15px;
+  overflow: auto;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.individual_profile_posts {
+  resize: none;
+  border: 2px solid #197FD2;
+  border-radius: 10px;
+  padding: 15px 15px;
+  overflow: auto;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  margin-top: 30px;
+}
+>>>>>>> 389036604a29959d4e7399a8575ac272e7057fce

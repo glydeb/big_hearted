@@ -1,9 +1,12 @@
-myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', function ($scope, $http, $window, $location) {
+myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
+  '$window', '$location', function (doGoodFactory, $scope, $http, $window,
+  $location) {
   $scope.user = {
     username: '',
     password: '',
     is_admin: false,
-    textnotifications: false
+    textnotifications: false,
+    dgdnumber: 0
   };
   $scope.message = '';
   $scope.mismatch = false;
@@ -21,6 +24,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
       $http.post('/', $scope.user).then(function (response) {
         if (response.data.username) {
           console.log('success: ', response.data);
+          doGoodFactory.factorySaveUser(response.data);
 
           // location works with SPA (ng-route)
           $location.path('/landingpage');
@@ -57,6 +61,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
             $location.path('/login');
           },
 
+          // error handling for registration
           function (response) {
             console.log('Registration error', response);
             $scope.message = 'Registration failed - please try again';
@@ -68,6 +73,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
 
       },
 
+      // error handling for verification code check
       function (response) {
         console.log('code verification error', response);
         $scope.message = 'Code verification failed - please check your code';
@@ -76,6 +82,7 @@ myApp.controller('LoginController', ['$scope', '$http', '$window', '$location', 
     }
   };
 
+// jQuery for select element
 $(".dropdown-button").dropdown();
 
   $scope.comparePassword = function () {
