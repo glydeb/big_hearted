@@ -10,8 +10,22 @@ router.get('/', function (req, res, next) {
   res.sendFile(path.resolve(__dirname, '../public/views/register.html'));
 });
 
+// updates from our profile
 router.put('/', function (req, res, next) {
   Users.update(req.body, function (err, user) {
+    if (err) {
+      console.log(req.body);
+      res.sendStatus(500);
+      return;
+    }
+
+    res.status(204).send(user);
+  });
+});
+
+// Updates user data from community room actions
+router.put('/:verCode', function (req, res) {
+  Users.findOneAndUpdate({ verification: req.params.verCode }, req.body, function (err, user) {
     if (err) {
       console.log(req.body);
       res.sendStatus(500);
@@ -20,6 +34,8 @@ router.put('/', function (req, res, next) {
     res.status(204).send(user);
   });
 });
+
+
 
 // Handles POST request with new user data
 router.post('/', function (req, res, next) {
@@ -44,6 +60,19 @@ router.post('/', function (req, res, next) {
         }
       });
     }
+  });
+});
+
+//gets all users and updates if they have been flagged
+router.get('/:id', function (req, res) {
+  console.log(req.params.id);
+  Users.find({ verification : req.params.id }, function (err, user) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+    console.log(user);
+    res.send(user);
   });
 });
 

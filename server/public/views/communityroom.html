@@ -34,13 +34,15 @@
   <section class="displayallposts">
     <div ng-repeat="post in communityPosts track by $index">
       <div class="individualposts">
-        <img class="profilepicture" src="{{post.image}}" />
+        <img class="profilepicture" ng-src="{{post.image}}" />
         <span class="postsusername">{{post.username}}</span>
         <p>{{post.description}}</p>
         <p>likes: {{post.likes}}</p>
         <p>flagged {{post.flagged}}</p>
         <button id="button" class="waves-effect waves-light btn" ng-click="likePost(post)">Like</button>
-        <button id="button" class="waves-effect waves-light btn" ng-click="flagPost(post)">Flag</button>
+        <button class="waves-effect waves-orange btn notflagged" ng-click="flagPost(post)">
+          <i class="material-icons center">error_outline</i>
+        </button>
       </div>
     </div>
   </section>

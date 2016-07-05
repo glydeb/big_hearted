@@ -6,7 +6,8 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
     password: '',
     is_admin: false,
     textnotifications: false,
-    dgdnumber: 0
+    dgdnumber: 0,
+    timesflagged: 0
   };
   $scope.message = '';
   $scope.mismatch = false;

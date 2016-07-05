@@ -22,13 +22,6 @@ myApp.controller('trackerController', ['doGoodFactory', '$scope', '$http',
 
   }
 
-
-  http.get(post/:id) {
-
-
-  }
-
-
   $scope.image1 = false;
   $scope.image2 = false;
   $scope.image3 = false;
