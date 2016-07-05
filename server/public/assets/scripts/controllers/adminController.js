@@ -1,10 +1,10 @@
-myApp.controller('adminController', ['doGoodFactory','$scope', '$http',
+myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {
 
   $scope.verification = '';
 
-  $(document).ready(function(){
+  $(document).ready(function () {
     $('.modal-trigger').leanModal();
   });
 
@@ -31,6 +31,13 @@ myApp.controller('adminController', ['doGoodFactory','$scope', '$http',
     }
 
   }
+
+  // Load flagged content
+  $http.get('/post/flagged').then(function (response) {
+    $scope.flaggedPosts = response.data;
+  }, function (err) {
+    console.log('Error loading flagged content:', err);
+  });
 
   function checkAdmin() {
     if (doGoodFactory.factoryGetUserData().is_admin) {
