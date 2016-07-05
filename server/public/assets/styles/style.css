@@ -16,6 +16,14 @@ body {
     flex: 1 0 auto;
   }
 
+  .valign-wrapper {
+    background-color: snow;
+  }
+
+  #our-posts, .family-info, .individual_profile_posts {
+    background-color: white;
+  }
+
 #community-posts {
   resize: none;
   border: 2px solid #197FD2;
@@ -71,16 +79,21 @@ body {
 }
 
 .our-profile {
-  margin-left: 0px;
+  margin-left: 15px;
   margin-right: 0px;
+  width: 93%;
 }
 
 .profile-picture {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12)
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin-top: 10px;
+  padding: 0px !important;
+  border-radius: 2px;
+  margin-bottom: 15px;
 }
 
 .upload-button {
-  font-size: 12px;
+
 }
 
 .profilepicture {
@@ -171,19 +184,20 @@ box-shadow: 0px 8px 5px gray,
 }
 
 .family-info {
-  margin-top: 75px;
+  margin-top: 25px;
   border-radius: 2px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .family-info-buttons {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #our-posts {
   resize: none;
   border-radius: 2px;
-  padding: 15px 15px;
+  padding: 30px;
   overflow: auto;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
@@ -195,4 +209,19 @@ box-shadow: 0px 8px 5px gray,
   overflow: auto;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 30px;
+}
+
+.small_badges {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 40px;
+  margin-left: 20px;
+}
+
+.label{
+  display: block;
+  margin-top: 5px;
+}
+
+.switch, .checkbox {
+  margin-top: 15px;
 }
