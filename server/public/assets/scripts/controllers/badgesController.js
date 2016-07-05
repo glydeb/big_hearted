@@ -23,10 +23,12 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
   }
 
   $(document).ready(function () {
+    $('.modal-trigger').leanModal();
     $('.parallax').parallax();
   });
 
-$scope.changeBadge = function(){
-  document.getElementById("badge1").id = "badge1New"
-}
+  $scope.changeBadge = function () {
+    document.getElementById('badge1').id = 'badge1New';
+  };
+
 }]);

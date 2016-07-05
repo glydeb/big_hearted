@@ -33,11 +33,28 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
   }
 
   // Load flagged content
-  $http.get('/post/flagged').then(function (response) {
-    $scope.flaggedPosts = response.data;
-  }, function (err) {
-    console.log('Error loading flagged content:', err);
-  });
+  getFlagged();
+
+  function getFlagged() {
+    $http.get('/post/flagged').then(function (response) {
+      $scope.flaggedPosts = response.data;
+      console.log($scope.flaggedPosts);
+    }, function (err) {
+      console.log('Error loading flagged content:', err);
+    });
+  }
+
+  function getSelected() {
+    var selected = [];
+    $scope.flaggedPosts.forEach(function (post, i) {
+      console.log(post.selected);
+      if (post.selected === true) {
+        console.log(post._id);
+        selected.push(post._id);
+      }
+    });
+    return selected;
+  }
 
   function checkAdmin() {
     if (doGoodFactory.factoryGetUserData().is_admin) {
@@ -52,6 +69,26 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
       console.log('generateCode response', response);
       $scope.verification = response.data.verification;
     });
+  };
+
+  $scope.clearFlags = function () {
+    // iterate through flaggedPosts and add post ids to array
+    var selectedArray = getSelected();
+    console.log(selectedArray);
+    var update = { _id: { $in: selectedArray } };
+    $http.put('/post/clear', update).then(function (response) {
+      console.log('clearFlags response:', response);
+      getFlagged();
+    });
+  };
+
+  $scope.deleteSelected = function () {
+    var selectedArray = getSelected();
+    var hitlist = { _id: { $in: selectedArray } };
+    $http.delete('/post', hitlist).then(function (response) {
+      console.log('deleteSelected response:', response);
+    });
+    getFlagged();
   };
 
 }]);

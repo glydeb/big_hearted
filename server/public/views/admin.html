@@ -11,15 +11,25 @@
     </br>
     <div class="flagged-content">
         <h4>Flagged Content</h4>
-        <section class="noposts" ng-if="!flaggedPosts">
+        <section class="noposts" ng-show="flaggedPosts.length === 0">
           <p>No content has been flagged!</p>
         </section>
-        <section class="displayallposts" ng-if="flaggedPosts">
+        <section class="displayallposts" ng-show="flaggedPosts.length > 0">
           <div ng-repeat="post in flaggedPosts track by $index">
             <div class="individualposts">
-              <img class="profilepicture" ng-src="{{post.image}}" />
-              <span class="postsusername">{{post.username}}</span>
-              <p>{{post.description}}</p>
+              <div class="row">
+                <div class="col s2">
+                  <form>
+                    <input type="checkbox" class="filled-in" id="selected" ng-model="post.selected"/>
+                    <label for="selected">Select</label>
+                  </form>
+                </div>
+                <div class="col s9">
+                  <img class="profilepicture" ng-src="{{post.image}}" />
+                  <span class="postsusername">{{post.username}}</span>
+                  <p>{{post.description}}</p>
+                </div>
+              </div>
             </div>
           </div>
         </section>

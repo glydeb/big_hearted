@@ -43,14 +43,26 @@ router.post('/', function (req, res) {
   });
 });
 
-router.delete('/:id', function (req, res) {
-  Post.findByIdAndRemove(req.params.id, function (err) {
+router.delete('/', function (req, res) {
+  Post.remove(req.body, function (err) {
     if (err) {
       res.sendStatus(500);
       return;
     }
 
     res.sendStatus(204);
+  });
+});
+
+router.put('/clear', function (req, res) {
+  Post.update(req.body, { flagged: false }, { multi: true }, function (err, post) {
+    if (err) {
+      console.log(req.body);
+      res.sendStatus(500);
+      return;
+    }
+
+    res.status(204).send(post);
   });
 });
 
@@ -62,8 +74,7 @@ router.put('/:id', function (req, res) {
       return;
     }
     res.status(204).send(post);
-  })
+  });
 });
-
 
 module.exports = router;
