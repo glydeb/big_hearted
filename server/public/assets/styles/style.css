@@ -172,9 +172,8 @@ box-shadow: 0px 8px 5px gray,
 
 .family-info {
   margin-top: 75px;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 2px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .family-info-buttons {
@@ -183,19 +182,17 @@ box-shadow: 0px 8px 5px gray,
 
 #our-posts {
   resize: none;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
+  border-radius: 2px;
   padding: 15px 15px;
   overflow: auto;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .individual_profile_posts {
   resize: none;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
+  border-radius: 2px;
   padding: 15px 15px;
   overflow: auto;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 30px;
 }
