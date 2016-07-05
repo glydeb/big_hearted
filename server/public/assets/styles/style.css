@@ -1,22 +1,75 @@
 .icon-block {
-  padding: 0 15px;
+    padding: 0 15px;
 }
-
 .icon-block .material-icons {
-	font-size: inherit;
+    font-size: inherit;
 }
-
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
 }
-
-  main {
+main {
     flex: 1 0 auto;
+
+  }
+
+.valign-wrapper {
+    background-color: snow;
+  }
+
+#our-posts, .family-info, .individual_profile_posts {
+    background-color: white;
   }
 
 #community-posts {
+    resize: none;
+    /*display: block;
+    margin: auto auto;*/
+    border: 5px solid #73bf43;
+    border-radius: 15px;
+    padding: 10px 10px;
+    overflow: auto;
+}
+
+#community-posts button {
+    float: right;
+}
+
+#logo-container> img {
+    width: 55px;
+    margin-top: 6px;
+    margin-left: 75px;
+}
+.social-icons> img {
+    width: 35px;
+}
+.footer-city, .footer-projects, .footer-contact {
+    margin-left: 2em;
+}
+.footer-blog, .footer-city, .footer-contact {
+    text-align: center;
+}
+.timezone {
+    width: 100%;
+    outline: none;
+    height: 3rem;
+    font-size: 1rem;
+    margin: 0 0 15px 0;
+    padding: 0;
+    box-shadow: none;
+    box-sizing: content-box;
+    transition: all 0.3s;
+}
+.our-profile {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.upload-button {
+    font-size: 12px;
+}
+#DGD {
+  text-align: center;
   resize: none;
   border: 2px solid #197FD2;
   border-radius: 10px;
@@ -28,13 +81,71 @@ body {
 
 #community-posts button, #our-posts button {
   float: right;
+
+}
+.lever {
+    display: inline-block;
+}
+#badgesPic {
+    background-image: url("/assets/images/badgesBackground.jpg");
+    width: 1800px;
+    height: 901px;
+    background-repeat: no-repeat;
+
+}
+#landingPage {
+    background-image: url("/assets/images/landingPage.jpg");
+    background-repeat: repeat-x;
+    width: 1600px;
+    height: 1200px;
+    box-shadow: 0px 8px 5px gray, -10px 8px 10px gray, 10px 8px 10px gray;
+}
+.generate-code, .flagged-content, .inactive-users {
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+    text-align: center;
+    border: 1px solid #039f92;
+    padding: 20px;
+    border-radius: 2px;
+}
+.bold {
+    font-weight: bold;
+}
+#badge1 {
+    background-image: url("/assets/images/FKAbadge1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
 
-#logo-container > img {
-  width: 55px;
-  margin-top: 6px;
-  margin-left: 75px;
+#badge1:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
 
+#badge1New{
+  background-image: url("/assets/images/FKAbadge1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 130px;
+  width: 130px;
+  border-radius: 300px 300px 300px 300px;
+  background-color: transparent;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+  -webkit-animation-name: greenPulse;
+  -webkit-animation-duration: 4s;
+
+  transition: opacity 7s 0s ease;
 }
 
 #textarea1 {
@@ -49,38 +160,86 @@ body {
   width: 35px;
 }
 
-.footer-city, .footer-projects, .footer-contact {
-  margin-left: 2em;
+#badge1New:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
 }
 
-.footer-blog, .footer-city, .footer-contact {
-  text-align: center;
+#badge2 {
+    background-image: url("/assets/images/FKAbadge2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
-.timezone {
-  width: 100%;
-  outline: none;
-  height: 3rem;
-  font-size: 1rem;
-  margin: 0 0 15px 0;
-  padding: 0;
-  box-shadow: none;
-  box-sizing: content-box;
-  transition: all 0.3s;
+#badge2:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
 
 }
 
 .our-profile {
-  margin-left: 0px;
+  margin-left: 15px;
   margin-right: 0px;
+  width: 93%;
+}
+
+#badge3 {
+    background-image: url("/assets/images/FKAbadge13.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge3:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
+
+#badge4 {
+    background-image: url("/assets/images/FKAbadge4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+
+}
+
+#badge4:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
 }
 
 .profile-picture {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12)
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin-top: 10px;
+  padding: 0px !important;
+  border-radius: 2px;
+  margin-bottom: 15px;
 }
 
 .upload-button {
-  font-size: 12px;
+
 }
 
 .profilepicture {
@@ -121,11 +280,20 @@ body {
 
  #badgesPic{
    background-image: url("/assets/images/badgesBackground.jpg")
-
  }
 
-.lever {
-  display: inline-block;
+#badge5 {
+    background-image: url("/assets/images/FKAbadge5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 .switchlabel {
@@ -136,36 +304,364 @@ body {
 position: sticky;
 }
 
-
 #badgesPic {
->>>>>>> fe8bc8b0b0de7e5ab3cdb7c7d02c52c391d29e98
+
 background-image: url("/assets/images/badgesBackground.jpg");
 display: inherit !important;
 width: 1800px;
 height:901px;
 background-repeat: no-repeat;
 opacity: .7;
+
 }
 
-#landingPage{
-background-image: url("/assets/images/landingPage.jpg");
-background-repeat: repeat-x;
-width: 1600px;
-height:1200px;
-box-shadow: 0px 8px 5px gray,
-        -10px 8px 10px gray, 10px 8px 10px gray;
+#badge5:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+
 }
 
-.generate-code, .flagged-content, .inactive-users {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+#badge6 {
+    background-image: url("/assets/images/FKAbadge6.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge6:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+
+}
+
+#badge7 {
+    background-image: url("/assets/images/FKAbadge7.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge7:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+
+}
+
+#badge8 {
+    background-image: url("/assets/images/FKAbadge8.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge8:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+
+}
+
+#badge9 {
+    background-image: url("/assets/images/FKAbadge9.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge9:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+
+}
+
+#badge10 {
+    background-image: url("/assets/images/FKAbadge10.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge10:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+
+}
+
+#badge11 {
+    background-image: url("/assets/images/FKAbadge11.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge11:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+
+}
+
+#badge12 {
+    background-image: url("/assets/images/FKAbadge12.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge12:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+
+}
+
+#modal1{
+  height:300px;
+  width:300px;
+  background-color:  #8752a2 ;
+}
+
+#modal2{
+  height:300px;
+  width:300px;
+  background-color:  #f25826 ;
+}
+
+#modal3{
+  height:300px;
+  width:300px;
+  background-color:  #eea818  ;
+}
+
+#modal4{
+  height:300px;
+  width:300px;
+  background-color:  #eedb58 ;
+}
+
+#modal5{
+  height:300px;
+  width:300px;
+  background-color:  #00af59 ;
+}
+
+#modal6{
+  height:300px;
+  width:300px;
+  background-color:  #3366ff;
+}
+
+#modal7{
+  height:300px;
+  width:300px;
+  background-color:  #80ccff;
+}
+
+#modal8{
+  height:300px;
+  width:300px;
+  background-color:  #f25826;
+}
+
+#modal9{
+  height:300px;
+  width:300px;
+  background-color:  #eea818;
+}
+
+#modal10{
+  height:300px;
+  width:300px;
+  background-color:  #80ccff;
+}
+
+#modal11{
+  height:300px;
+  width:300px;
+  background-color:  #00af59;
+}
+
+#modal12{
+  height:300px;
+  width:300px;
+  background-color:  #73bf43;
+}
+
+.claim1, .claim2, .claim3, .claim4, .claim5, .claim6, .claim7, .claim8, .claim9, .claim10, .claim11, .claim12{
   text-align: center;
+
+}
+#modalButton1, #modalButton2, #modalButton3, #modalButton5, #modalButton6, #modalButton7, #modalButton8, #modalButton9, #modalButton10, #modalButton11, #modalButton12{
+  background-color:#eedb58;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
   border: 1px solid #197FD2;
   padding: 20px;
   border-radius: 2px;
+
 }
 
-.bold {
-  font-weight: bold;
+#modalButton1:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton2:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton3:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton4{
+background-color:#3366ff;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+}
+
+#modalButton4:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton5:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton6:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton7:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton8:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton9:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton10:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton11:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#modalButton12:active{
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+@keyframes bounce {
+	0%, 20%, 60%, 100% {
+		-webkit-transform: translateY(0);
+		transform: translateY(0);
+	}
+
+	40% {
+		-webkit-transform: translateY(-20px);
+		transform: translateY(-20px);
+	}
+
+	80% {
+		-webkit-transform: translateY(-10px);
+		transform: translateY(-10px);
+	}
+}
+
+@-webkit-keyframes greenPulse {
+  from { background-color: #f7ff00; -webkit-box-shadow: 0 0 200px #f7ff00; }
+  100% { background-color: #f7ff00; -webkit-box-shadow: 0 0 200px #f7ff00; }
+  to { background-color: #f7ff00; -webkit-box-shadow: 0 0 200px #f7ff00; }
+}
+
+.badgeHeader{
+  height:100px;
+  width:800px;
+  border-style:groove;
+  border-color: #eedb58 ;
+  background-color: #3366ff;
+  vertical-align: middle;
+
+}
+
+#badgePage{
+  color: white;
 }
 
 .file-path {
@@ -173,31 +669,44 @@ box-shadow: 0px 8px 5px gray,
 }
 
 .family-info {
-  margin-top: 75px;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  margin-top: 25px;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .family-info-buttons {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #our-posts {
   resize: none;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
-  padding: 15px 15px;
+  border-radius: 2px;
+  padding: 30px;
   overflow: auto;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .individual_profile_posts {
   resize: none;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
+  border-radius: 2px;
   padding: 15px 15px;
   overflow: auto;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 30px;
+}
+
+.small_badges {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 40px;
+  margin-left: 20px;
+}
+
+.label{
+  display: block;
+  margin-top: 5px;
+}
+
+.switch, .checkbox {
+  margin-top: 15px;
 }
