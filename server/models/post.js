@@ -10,6 +10,7 @@ var PostSchema = new Schema({
   dgdnumber: { type: Number, required: true },
   anonymous: { type: Boolean, required: true },
   likes: { type: Number, required: true },
+  flagged: { type: Boolean, required: true }, 
   postedDate: Date
   // comments: [CommentSchema]
 });

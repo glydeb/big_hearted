@@ -40,7 +40,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
             if ($scope.post.dgd === true) {
                 $scope.user.dgdnumber += 1;
-                $http.put('/post/' + $scope.user.verification, $scope.user).then(function(response) {
+                $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
                     console.log("Successfully posted");
                     refreshOurProfile();
                 });

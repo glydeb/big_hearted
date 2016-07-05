@@ -14,13 +14,23 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
   refreshCommunityRoom();
 
+  $scope.flagPost = function (post) {
+    post.flagged = true;
+    $http.put('/post/' + post._id, post).then(function(response) {
+      console.log('updated post');
+      refreshCommunityRoom();
+    })
+  }
+
   $scope.sendPost = function (post) {
     $scope.post.user_verify = $scope.user.verification;
     $scope.post.username = $scope.user.username;
 
     if ($scope.post.dgd === true) {
       $scope.user.dgdnumber += 1;
-      $http.put('/post/' + $scope.user.verification, $scope.user).then(function(response) {
+
+      //moved to register route to avoid confusion - register handles users
+      $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
         console.log("Successfully posted");
         refreshCommunityRoom();
       });
@@ -56,18 +66,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       refreshCommunityRoom();
     })
   }
-
-  // This happens after view/controller loads -- not ideal
-  console.log('checking user');
-  $http.get('/user').then(function(response) {
-      if(response.data.username) {
-          $scope.user = response.data;
-          console.log('User Data: ', $scope.user.username);
-      } else {
-          $location.path("/home");
-      }
-  });
-
 
   // go to factory to verify user
   if (doGoodFactory.factoryGetUserData() === undefined) {

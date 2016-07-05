@@ -38,7 +38,9 @@
         <span class="postsusername">{{post.username}}</span>
         <p>{{post.description}}</p>
         <p>likes: {{post.likes}}</p>
+        <p>flagged {{post.flagged}}</p>
         <button id="button" class="waves-effect waves-light btn" ng-click="likePost(post)">Like</button>
+        <button id="button" class="waves-effect waves-light btn" ng-click="flagPost(post)">Flag</button>
       </div>
     </div>
   </section>

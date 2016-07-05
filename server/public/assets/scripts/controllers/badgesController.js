@@ -1,6 +1,11 @@
+<<<<<<< HEAD
+myApp.controller('badgesController', ['$scope', '$http', '$window', '$location', function($scope, $http, $window, $location) {
+  // This happens after view/controller loads -- not ideal
+=======
 myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {
+>>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
 
   console.log('checking user');
 
@@ -22,8 +27,16 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
 
   }
 
+<<<<<<< HEAD
+  $(document).ready(function() {
+    $('.modal-trigger').leanModal();
+=======
   $(document).ready(function () {
     $('.parallax').parallax();
+>>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
   });
 
+$scope.changeBadge = function(){
+  document.getElementById("badge1").id = "badge1New"
+}
 }]);
