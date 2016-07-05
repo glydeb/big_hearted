@@ -2,11 +2,13 @@ myApp.factory('doGoodFactory', ['$http', function ($http) {
   console.log('doGood Factory online!');
 
   var user = undefined;
+  refreshUserData();
 
   function refreshUserData() {
     var promise = $http.get('/user').then(function (response) {
 
       user = response.data;
+      console.log('user data set:', user);
 
     });
 

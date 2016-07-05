@@ -34,7 +34,7 @@
   <section class="displayallposts">
     <div ng-repeat="post in communityPosts track by $index">
       <div class="individualposts">
-        <img class="profilepicture" src="{{post.image}}" />
+        <img class="profilepicture" ng-src="{{post.image}}" />
         <span class="postsusername">{{post.username}}</span>
         <p>{{post.description}}</p>
         <p>likes: {{post.likes}}</p>
