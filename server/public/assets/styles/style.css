@@ -11,33 +11,31 @@ body {
 }
 main {
     flex: 1 0 auto;
-<<<<<<< HEAD
+
   }
 
-  .valign-wrapper {
+.valign-wrapper {
     background-color: snow;
   }
 
-  #our-posts, .family-info, .individual_profile_posts {
+#our-posts, .family-info, .individual_profile_posts {
     background-color: white;
   }
 
-=======
-}
->>>>>>> bb5b03cc772e2a9fffeac5bb855c69f11fcadab9
 #community-posts {
-<<<<<<< HEAD
     resize: none;
     /*display: block;
-  margin: auto auto;*/
+    margin: auto auto;*/
     border: 5px solid #73bf43;
     border-radius: 15px;
     padding: 10px 10px;
     overflow: auto;
 }
+
 #community-posts button {
     float: right;
 }
+
 #logo-container> img {
     width: 55px;
     margin-top: 6px;
@@ -71,8 +69,7 @@ main {
     font-size: 12px;
 }
 #DGD {
-    text-align: center;
-=======
+  text-align: center;
   resize: none;
   border: 2px solid #197FD2;
   border-radius: 10px;
@@ -84,7 +81,7 @@ main {
 
 #community-posts button, #our-posts button {
   float: right;
->>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
+
 }
 .lever {
     display: inline-block;
@@ -127,13 +124,12 @@ main {
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     opacity: .3;
 }
+
 #badge1:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
-
 }
 
-<<<<<<< HEAD
 #badge1New{
   background-image: url("/assets/images/FKAbadge1.png");
   background-repeat: no-repeat;
@@ -150,7 +146,8 @@ main {
   -webkit-animation-duration: 4s;
 
   transition: opacity 7s 0s ease;
-=======
+}
+
 #textarea1 {
   color: white;
 }
@@ -161,14 +158,12 @@ main {
 
 .social-icons > img {
   width: 35px;
->>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
 }
 
 #badge1New:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
 }
-
 
 #badge2 {
     background-image: url("/assets/images/FKAbadge2.png");
@@ -190,12 +185,12 @@ main {
 
 }
 
-<<<<<<< HEAD
 .our-profile {
   margin-left: 15px;
   margin-right: 0px;
   width: 93%;
-=======
+}
+
 #badge3 {
     background-image: url("/assets/images/FKAbadge13.png");
     background-repeat: no-repeat;
@@ -210,11 +205,9 @@ main {
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
-<<<<<<< HEAD
 #badge3:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
-
 }
 
 #badge4 {
@@ -229,13 +222,14 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
->>>>>>> bb5b03cc772e2a9fffeac5bb855c69f11fcadab9
+
 }
 
 #badge4:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
-=======
+}
+
 .profile-picture {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 10px;
@@ -286,13 +280,8 @@ main {
 
  #badgesPic{
    background-image: url("/assets/images/badgesBackground.jpg")
-
  }
->>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
 
-}
-
-<<<<<<< HEAD
 #badge5 {
     background-image: url("/assets/images/FKAbadge5.png");
     background-repeat: no-repeat;
@@ -305,7 +294,8 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-=======
+}
+
 .switchlabel {
   color: white;
 }
@@ -314,16 +304,16 @@ main {
 position: sticky;
 }
 
-
 #badgesPic {
->>>>>>> fe8bc8b0b0de7e5ab3cdb7c7d02c52c391d29e98
+}
+
 background-image: url("/assets/images/badgesBackground.jpg");
 display: inherit !important;
 width: 1800px;
 height:901px;
 background-repeat: no-repeat;
 opacity: .7;
->>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
+
 }
 
 #badge5:hover{
@@ -546,18 +536,17 @@ opacity: .7;
 
 .claim1, .claim2, .claim3, .claim4, .claim5, .claim6, .claim7, .claim8, .claim9, .claim10, .claim11, .claim12{
   text-align: center;
-<<<<<<< HEAD
+
 }
 #modalButton1, #modalButton2, #modalButton3, #modalButton5, #modalButton6, #modalButton7, #modalButton8, #modalButton9, #modalButton10, #modalButton11, #modalButton12{
- background-color:#eedb58;
- border: none;
- border-radius: 15px;
- box-shadow: 0 9px #999;
-=======
+  background-color:#eedb58;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
   border: 1px solid #197FD2;
   padding: 20px;
   border-radius: 2px;
->>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
+
 }
 
 #modalButton1:active{
@@ -671,11 +660,10 @@ box-shadow: 0 9px #999;
   vertical-align: middle;
 
 }
+
 #badgePage{
   color: white;
 }
-<<<<<<< HEAD
-=======
 
 .file-path {
   color: black
@@ -708,7 +696,6 @@ box-shadow: 0 9px #999;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 30px;
 }
-<<<<<<< HEAD
 
 .small_badges {
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);
@@ -724,6 +711,3 @@ box-shadow: 0 9px #999;
 .switch, .checkbox {
   margin-top: 15px;
 }
-=======
->>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
->>>>>>> bb5b03cc772e2a9fffeac5bb855c69f11fcadab9
