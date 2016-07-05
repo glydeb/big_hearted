@@ -11,7 +11,17 @@ body {
 }
 main {
     flex: 1 0 auto;
-}
+
+  }
+
+.valign-wrapper {
+    background-color: snow;
+  }
+
+#our-posts, .family-info, .individual_profile_posts {
+    background-color: white;
+  }
+
 #community-posts {
     resize: none;
     background-color: #73bf43;
@@ -20,9 +30,11 @@ main {
     padding: 10px 10px;
     overflow: auto;
 }
+
 #community-posts button {
     float: right;
 }
+
 #logo-container> img {
     width: 55px;
     margin-top: 6px;
@@ -56,7 +68,7 @@ main {
     font-size: 12px;
 }
 #DGD {
-    text-align: center;
+  text-align: center;
   resize: none;
   border: 2px solid #197FD2;
   border-radius: 10px;
@@ -117,11 +129,12 @@ main {
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     opacity: .3;
 }
+
 #badge1:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
-
 }
+
 
 
 #badge1New {
@@ -158,7 +171,6 @@ main {
  cursor:pointer;
 }
 
-
 #badge2 {
     background-image: url("/assets/images/FKAbadge2.png");
     background-repeat: no-repeat;
@@ -179,6 +191,12 @@ main {
 
 }
 
+.our-profile {
+  margin-left: 15px;
+  margin-right: 0px;
+  width: 93%;
+}
+
 #badge3 {
     background-image: url("/assets/images/FKAbadge13.png");
     background-repeat: no-repeat;
@@ -193,11 +211,9 @@ main {
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
-<<<<<<< HEAD
 #badge3:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
-
 }
 
 #badge4 {
@@ -212,6 +228,7 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+
 }
 
 #badge4:hover{
@@ -219,12 +236,17 @@ main {
  cursor:pointer;
  }
 
+
 .profile-picture {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12)
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  margin-top: 10px;
+  padding: 0px !important;
+  border-radius: 2px;
+  margin-bottom: 15px;
 }
 
 .upload-button {
-  font-size: 12px;
+
 }
 
 .profilepicture {
@@ -265,10 +287,7 @@ main {
 
  #badgesPic{
    background-image: url("/assets/images/badgesBackground.jpg")
-
  }
-
-
 
 #badge5 {
     background-image: url("/assets/images/FKAbadge5.png");
@@ -291,7 +310,6 @@ main {
 #nav-mobile {
 position: sticky;
 }
-
 
 #badgesPic {
 background-image: url("/assets/images/badgesBackground.jpg");
@@ -523,14 +541,16 @@ opacity: .7;
 .claim1, .claim2, .claim3, .claim4, .claim5, .claim6, .claim7, .claim8, .claim9, .claim10, .claim11, .claim12{
   text-align: center;
 }
+
 #modalButton1, #modalButton2, #modalButton3, #modalButton5, #modalButton6, #modalButton7, #modalButton8, #modalButton9, #modalButton10, #modalButton11, #modalButton12{
- background-color:#eedb58;
- border: none;
- border-radius: 15px;
- box-shadow: 0 9px #999;
+  background-color:#eedb58;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
   border: 1px solid #197FD2;
   padding: 20px;
   border-radius: 2px;
+
 }
 
 #modalButton1:active{
@@ -644,41 +664,55 @@ box-shadow: 0 9px #999;
   vertical-align: middle;
 
 }
+
 #badgePage{
   color: white;
 }
-
 
 .file-path {
   color: black
 }
 
 .family-info {
-  margin-top: 75px;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  margin-top: 25px;
+  border-radius: 2px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .family-info-buttons {
   margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 #our-posts {
   resize: none;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
-  padding: 15px 15px;
+  border-radius: 2px;
+  padding: 30px;
   overflow: auto;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .individual_profile_posts {
   resize: none;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
+  border-radius: 2px;
   padding: 15px 15px;
   overflow: auto;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 30px;
+}
+
+
+.small_badges {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+  border-radius: 40px;
+  margin-left: 20px;
+}
+
+.label{
+  display: block;
+  margin-top: 5px;
+}
+
+.switch, .checkbox {
+  margin-top: 15px;
 }

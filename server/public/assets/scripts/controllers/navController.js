@@ -2,7 +2,14 @@ myApp.controller('navController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {
 
-  $scope.navUser = doGoodFactory.factoryGetUserData();
+  if (doGoodFactory.factoryGetUserData() === undefined) {
+    doGoodFactory.factoryRefreshUserData().then(function () {
+      $scope.navUser = doGoodFactory.factoryGetUserData();
+    });
+  } else {
+    $scope.navUser = doGoodFactory.factoryGetUserData();
+  }
+
   console.log('original value of navUser:', $scope.navUser);
 
   $scope.$on('$routeChangeSuccess', function () {

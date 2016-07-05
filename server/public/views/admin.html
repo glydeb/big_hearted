@@ -11,6 +11,19 @@
     </br>
     <div class="flagged-content">
         <h4>Flagged Content</h4>
+        <section class="noposts" ng-if="!flaggedPosts">
+          <p>No content has been flagged!</p>
+        </section>
+        <section class="displayallposts" ng-if="flaggedPosts">
+          <div ng-repeat="post in flaggedPosts track by $index">
+            <div class="individualposts">
+              <img class="profilepicture" ng-src="{{post.image}}" />
+              <span class="postsusername">{{post.username}}</span>
+              <p>{{post.description}}</p>
+            </div>
+          </div>
+        </section>
+
         <button class="waves-effect waves-light btn" ng-click="clearFlags()">Clear Flags<i class="material-icons right">flag</i></button>
         <button class="waves-effect waves-light btn" ng-click="deleteSelected()">Delete Selected<i class="material-icons right">clear</i></button>
         <button class="waves-effect waves-light btn modal-trigger" data-target="review-modal">Review<i class="material-icons right">sort</i></button>
