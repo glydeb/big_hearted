@@ -5,8 +5,12 @@ var Post = require('../models/post');
 var User = require ('../models/user');
 var path = require('path');
 
+var options = {
+  "limit": 3
+};
+
 router.get('/', function (req, res) {
-  Post.find({}, function (err, posts) {
+  Post.find({}).limit(25).exec(function (err, posts) {
     if (err) {
       res.sendStatus(500);
       return;
@@ -47,5 +51,17 @@ router.put('/:id', function (req, res) {
     res.status(204).send(user);
   })
 });
+
+router.put('/:id/:id', function (req, res) {
+  Post.findOneAndUpdate(req.params.id, req.body, function (err, post) {
+    if (err) {
+      console.log(req.body);
+      res.sendStatus(500);
+      return;
+    }
+    res.status(204).send(post);
+  })
+});
+
 
 module.exports = router;

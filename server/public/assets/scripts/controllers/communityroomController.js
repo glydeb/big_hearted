@@ -14,6 +14,14 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
   refreshCommunityRoom();
 
+  $scope.flagPost = function (post) {
+    post.flagged = true;
+    $http.put('/post/:id/' + post._id, post).then(function(response) {
+      console.log('updated post');
+      refreshCommunityRoom();
+    })
+  }
+
   $scope.sendPost = function (post) {
     $scope.post.user_verify = $scope.user.verification;
     $scope.post.username = $scope.user.username;

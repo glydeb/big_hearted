@@ -134,8 +134,10 @@ body {
   color: white;
 }
 
-#nav-mobile{
+#nav-mobile {
 position: sticky;
+}
+
 #badgesPic{
 background-image: url("/assets/images/badgesBackground.jpg");
 display: inherit !important;

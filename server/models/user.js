@@ -12,6 +12,7 @@ var UserSchema = new Schema({
   is_admin: { type: Boolean, required: true },
   email: { type: String, required: true },
   dgdnumber: { type: Number, required: true },
+  timesflagged: { type: Number, required: true },
   firstname: String,
   lastname: String,
   phone: String,
