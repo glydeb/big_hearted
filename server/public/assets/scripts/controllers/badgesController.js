@@ -1,5 +1,6 @@
 myApp.controller('badgesController', ['$scope', '$http', '$window', '$location', function($scope, $http, $window, $location) {
   // This happens after view/controller loads -- not ideal
+
   console.log('checking user');
   $http.get('/user').then(function(response) {
       if(response.data.username) {
@@ -16,8 +17,12 @@ myApp.controller('badgesController', ['$scope', '$http', '$window', '$location',
       $location.path("/home");
     });
   }
-  $(document).ready(function(){
-    $('.parallax').parallax();
+
+  $(document).ready(function() {
+    $('.modal-trigger').leanModal();
   });
 
+$scope.changeBadge = function(){
+  document.getElementById("badge1").id = "badge1New"
+}
 }]);
