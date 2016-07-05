@@ -1,11 +1,8 @@
-<<<<<<< HEAD
-myApp.controller('badgesController', ['$scope', '$http', '$window', '$location', function($scope, $http, $window, $location) {
-  // This happens after view/controller loads -- not ideal
-=======
+
 myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {
->>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
+
 
   console.log('checking user');
 
@@ -27,14 +24,12 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
 
   }
 
-<<<<<<< HEAD
-  $(document).ready(function() {
-    $('.modal-trigger').leanModal();
-=======
-  $(document).ready(function () {
-    $('.parallax').parallax();
->>>>>>> 389036604a29959d4e7399a8575ac272e7057fce
-  });
+
+  $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
+    });
+
 
 $scope.changeBadge = function(){
   document.getElementById("badge1").id = "badge1New"
