@@ -10,6 +10,17 @@ router.get('/', function (req, res, next) {
   res.sendFile(path.resolve(__dirname, '../public/views/register.html'));
 });
 
+router.put('/', function (req, res, next) {
+  Users.update(req.body, function (err, user) {
+    if (err) {
+      console.log(req.body);
+      res.sendStatus(500);
+      return;
+    }
+    res.status(204).send(user);
+  });
+});
+
 // Handles POST request with new user data
 router.post('/', function (req, res, next) {
   Users.create(req.body, function (err, post) {

@@ -50,7 +50,7 @@ app.use('/post', post);
 app.use('/*', index);
 
 // Mongo Connection //
-var mongoURI = 'mongodb://localhost:27017/bighearted';
+var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bighearted';
 var mongoDB = mongoose.connect(mongoURI).connection;
 
 mongoDB.on('error', function (err) {

@@ -1,45 +1,98 @@
 myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
-  '$window', '$location', function (doGoodFactory, $scope, $http, $window,
-  $location) {
+    '$window', '$location',
+    function(doGoodFactory, $scope, $http, $window,
+        $location) {
 
 
-  console.log('profileController running');
+        console.log('profileController running');
 
-    $scope.user = {};
-    $scope.user.family_members = ""
-    $scope.user.about_us = "Click edit to write a bio about your family"
-    $scope.user.our_projects = "Click edit to add projects as you complete them"
-    $scope.edit = false;
-    $scope.visible = true;
-    $scope.toggle = function() {
-      $scope.visible = !$scope.visible
-      $scope.edit = !$scope.edit
-    };
+        $scope.user = {};
+        $scope.user.family_members = "Click edit to add members to your family"
+        $scope.user.about_us = "Click edit to write a bio about your family"
+        $scope.user.our_projects = "Click edit to showcase your recent projects"
+        $scope.edit = false;
+        $scope.visible = true;
 
-  $(document).ready(function () {
-    $('.materialboxed').materialbox();
-    console.log('materialbox');
-  });
+        $scope.toggle = function() {
+            $scope.visible = !$scope.visible
+            $scope.edit = !$scope.edit
+            if ($scope.visible == true) {
+                $http.put('/register', $scope.user).then(function(response) {
+                    console.log("family info saved");
+                })
+            }
+        };
+
+        $scope.post = {
+            dgd: false,
+            dgdnumber: 0,
+            anonymous: false,
+            likes: 0
+        };
+
+        $scope.profilePosts = [];
+
+        refreshOurProfile();
+
+        $scope.sendPost = function(post) {
+            $scope.post.user_verify = $scope.user.verification;
+            $scope.post.username = $scope.user.username;
+
+            if ($scope.post.dgd === true) {
+                $scope.user.dgdnumber += 1;
+                $http.put('/post/' + $scope.user.verification, $scope.user).then(function(response) {
+                    console.log("Successfully posted");
+                    refreshOurProfile();
+                });
+            };
+            console.log($scope.post);
+            $http.post('/post', $scope.post).then(function(response) {
+                console.log("Successfully posted");
+                post.description = '';
+                post.dgd = false;
+                post.anonymous = false;
+                refreshOurProfile();
+            });
+        }
+
+        function refreshOurProfile() {
+            $http.get('/post').then(function(response) {
+                $scope.profilePosts = response.data;
+                $scope.profilePosts.forEach(function(post) {
+                    if (post.anonymous === true) {
+                        post.username = 'Anonymous';
+                        post.image = '/assets/images/mickeyanonymous.jpg';
+                    };
+                });
+            });
+        };
+
+        $(document).ready(function() {
+            $('.materialboxed').materialbox();
+            console.log('materialbox');
+        });
 
 
-  console.log('checking user');
+        console.log('checking user');
 
-  // go to factory to verify user
-  if (doGoodFactory.factoryGetUserData() === undefined) {
-    doGoodFactory.factoryRefreshUserData().then(function () {
-      $scope.userName = doGoodFactory.factoryGetUserData().username;
+        // go to factory to verify user
+        if (doGoodFactory.factoryGetUserData() === undefined) {
+            doGoodFactory.factoryRefreshUserData().then(function() {
+                $scope.userName = doGoodFactory.factoryGetUserData().username;
+                $scope.user = doGoodFactory.factoryGetUserData();
+                // if it's still undefined after refresh, send them to login page
+                if ($scope.userName === undefined || $scope.userName === '') {
+                    $location.path('/home');
+                }
+            });
+        } else {
+            $scope.userName = doGoodFactory.factoryGetUserData().username;
+            $scope.user = doGoodFactory.factoryGetUserData();
+            if ($scope.userName === undefined || $scope.userName === '') {
+                $location.path('/home');
+            }
 
-      // if it's still undefined after refresh, send them to login page
-      if ($scope.userName === undefined || $scope.userName === '') {
-        $location.path('/home');
-      }
-    });
-  } else {
-    $scope.userName = doGoodFactory.factoryGetUserData().username;
-    if ($scope.userName === undefined || $scope.userName === '') {
-      $location.path('/home');
+        }
+
     }
-
-  }
-
-}]);
+]);
