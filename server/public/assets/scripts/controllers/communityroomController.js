@@ -9,6 +9,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     anonymous: false,
     likes: 0
   };
+  $scope.updatedPost = {};
   $scope.user = {};
   $scope.communityPosts = [];
 
@@ -58,9 +59,9 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   };
 
   $scope.likePost = function (post) {
-    post.likes++;
-    console.log(post);
+    $scope.updatedPost = {};
     $scope.updatedPost = post;
+    $scope.updatedPost = $scope.updatedPost.likes++;
     $http.put('/post/' + $scope.updatedPost._id, $scope.updatedPost).then(function(response) {
       console.log('You liked this crap?');
       refreshCommunityRoom();

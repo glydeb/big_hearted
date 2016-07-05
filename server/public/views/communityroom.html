@@ -40,7 +40,7 @@
         <p>likes: {{post.likes}}</p>
         <p>flagged {{post.flagged}}</p>
         <button id="button" class="waves-effect waves-light btn" ng-click="likePost(post)">Like</button>
-        <button id="button" class="waves-effect waves-light btn" ng-click="flagPost(post)">
+        <button class="waves-effect waves-orange btn notflagged" ng-click="flagPost(post)">
           <i class="material-icons center">error_outline</i>
         </button>
       </div>

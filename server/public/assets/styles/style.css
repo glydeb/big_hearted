@@ -14,8 +14,7 @@ main {
 }
 #community-posts {
     resize: none;
-    /*display: block;
-  margin: auto auto;*/
+    background-color: #73bf43;
     border: 5px solid #73bf43;
     border-radius: 15px;
     padding: 10px 10px;
@@ -73,6 +72,13 @@ main {
 .lever {
     display: inline-block;
 }
+
+.notflagged {
+  background-color: black;
+  border-radius: 50px 50px 50px 50px;
+}
+
+
 #badgesPic {
     background-image: url("/assets/images/badgesBackground.jpg");
     width: 1800px;
