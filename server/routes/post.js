@@ -55,7 +55,7 @@ router.delete('/:id', function (req, res) {
 });
 
 router.put('/:id', function (req, res) {
-  Post.findOneAndUpdate(req.params.id, req.body, function (err, post) {
+  Post.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) {
       console.log(req.body);
       res.sendStatus(500);

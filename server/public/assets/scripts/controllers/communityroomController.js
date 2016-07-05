@@ -59,9 +59,9 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   };
 
   $scope.likePost = function (post) {
-    $scope.updatedPost = {};
+    post.likes++;
+    console.log(post);
     $scope.updatedPost = post;
-    $scope.updatedPost = $scope.updatedPost.likes++;
     $http.put('/post/' + $scope.updatedPost._id, $scope.updatedPost).then(function(response) {
       console.log('You liked this crap?');
       refreshCommunityRoom();
