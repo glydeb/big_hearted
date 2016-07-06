@@ -91,7 +91,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
         $scope.initMaterialbox = function() {
             $('.materialboxed').materialbox();
-            $('.material-placeholder').css('height', '150px');
             console.log('initMaterialbox');
         };
     }

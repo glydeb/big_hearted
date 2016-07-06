@@ -2,7 +2,7 @@
     <section class="row">
         <h3 class="center-align">Welcome to the Community Room!</h3>
         <div class="row">
-            <div class="col s10 push-s1">
+            <div class="col s10 push-s1 l10 push-l1">
                 <div id="our-posts">
                     <nav class="z-depth-0 card_header">
                         <div class="nav-wrapper">
@@ -14,13 +14,11 @@
                     <div class="container">
                         <form ng-submit="sendPost(post)">
                             <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
-                            <form>
                                 <div class="btn-floating btn-large file-field">
                                     <span class="upload-button"><i class="material-icons">portrait</i></span>
                                     <input type="file" />
                                 </div>
                                 <label class="label">Upload a picture</label>
-                            </form>
                             <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
                             <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                             <div>
@@ -41,13 +39,13 @@
                     </div>
     </section>
     <div class="row">
-        <div class="col s10 push-s1">
+        <div class="col s10 push-s1 l10 push-l1">
             <section class="displayallposts">
                 <div class="post" ng-repeat="post in communityPosts track by $index">
                     <div class="individualposts">
-                        <nav class="z-depth-0 card_header">
+                        <nav class="z-depth-0 card_header post_card_header">
                             <div class="nav-wrapper">
-                                <a class="brand-logo card_title">{{post.username}}</a>
+                                <a class="brand-logo card_title">{{user.firstname}} {{user.lastname}}</a>
                                 <form>
                                 </form>
                             </div>
@@ -56,13 +54,12 @@
                             <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" src="/assets/images/dgt_logo.jpg" />
                             </br>
                             <p class="post_description">{{post.description}}</p>
-                            <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes}}</span></a>
                             <p ng-show="post.flagged">Flagged: {{post.flagged}}</p>
                         </div>
                         <div class="row post_buttons_container">
                             <div class="section">
-                                <button id="button" class="waves-effect waves-light btn like-post" ng-click="likePost(post)"><i class="material-icons right">thumb_up</i>Like Post</button>
-                                <button id="button" class="waves-effect waves-light btn flag-post" ng-click="flagPost(post)"><i class="material-icons right">flag</i>Flag Post</button>
+                              <button class="waves-effect waves-teal btn" ng-click="likePost(post)"><i class="material-icons left">thumb_up</i><span>{{post.likes}}</span></button>
+                                <button id="button" class="waves-light btn-floating flag-post" ng-click="flagPost(post)"><i class="material-icons">flag</i></button>
                             </div>
                         </div>
                     </div>
