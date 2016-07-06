@@ -2,6 +2,11 @@ myApp.controller('navController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {
 
+$(document).ready(function(){
+  console.log("sidenav firing");
+$(".button-collapse").sideNav();
+});
+
   if (doGoodFactory.factoryGetUserData() === undefined) {
     doGoodFactory.factoryRefreshUserData().then(function () {
       $scope.navUser = doGoodFactory.factoryGetUserData();
