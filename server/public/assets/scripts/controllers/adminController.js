@@ -117,7 +117,7 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
     console.log('To be suspended:', verification);
     $http.put('/register/' + verification, { active: false }).then(function (response) {
       console.log('suspendUser response:', response);
-      getFlagged();
+      getInactive();
     });
   };
 

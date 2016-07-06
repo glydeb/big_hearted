@@ -65,7 +65,20 @@ router.post('/', function (req, res, next) {
 // find a user by verification code
 router.get('/:id', function (req, res) {
   console.log(req.params.id);
-  Users.find({ verification : req.params.id }, function (err, user) {
+  Users.find({ verification: req.params.id }, function (err, user) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+    console.log(user);
+    res.send(user);
+  });
+});
+
+// find a user by verification code
+router.delete('/:id', function (req, res) {
+  console.log(req.params.id);
+  Users.remove({ verification: req.params.id }, function (err, user) {
     if (err) {
       res.sendStatus(500);
       return;
