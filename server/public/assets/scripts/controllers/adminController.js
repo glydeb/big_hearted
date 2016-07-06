@@ -34,6 +34,7 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
 
   // Load flagged content
   getFlagged();
+  getInactive();
 
   function getFlagged() {
     $http.get('/post/flagged').then(function (response) {
@@ -53,6 +54,15 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
       });
     }, function (err) {
       console.log('Error loading flagged content:', err);
+    });
+  }
+
+  function getInactive() {
+    $http.get('/register/inactive').then(function (response) {
+      $scope.inactiveUsers = response.data;
+      console.log($scope.inactiveUsers);
+    }, function (err) {
+      console.log('Error loading inactive users:', err);
     });
   }
 
@@ -99,6 +109,14 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
     console.log('To be deleted:', idString);
     $http.delete('/post/' + idString).then(function (response) {
       console.log('deleteSelected response:', response);
+      getFlagged();
+    });
+  };
+
+  $scope.suspendUser = function (verification) {
+    console.log('To be suspended:', verification);
+    $http.put('/register/' + verification, { active: false }).then(function (response) {
+      console.log('suspendUser response:', response);
       getFlagged();
     });
   };

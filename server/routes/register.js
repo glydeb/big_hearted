@@ -62,7 +62,7 @@ router.post('/', function (req, res, next) {
   });
 });
 
-//gets all users and updates if they have been flagged
+// find a user by verification code
 router.get('/:id', function (req, res) {
   console.log(req.params.id);
   Users.find({ verification : req.params.id }, function (err, user) {
@@ -71,6 +71,19 @@ router.get('/:id', function (req, res) {
       return;
     }
     console.log(user);
+    res.send(user);
+  });
+});
+
+//gets inactive users for admin page
+router.get('/inactive', function (req, res) {
+  Users.find({ active: false }, function (err, user) {
+    if (err) {
+      res.sendStatus(500);
+      console.log(err);
+      return;
+    }
+
     res.send(user);
   });
 });

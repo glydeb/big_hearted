@@ -56,9 +56,15 @@
   </br>
   <div class="inactive-users">
     <h4>Inactive Users</h4>
-    <p>Username</p>
-    <button class="waves-effect waves-light btn" ng-click="activateUser()">Activate User<i class="material-icons right">person add</i></button>
-    <button class="waves-effect waves-light btn" ng-click="deleteUser()">Delete User<i class="material-icons right">block</i></button>
+    <div class="row">
+      <h6 class="col s4">User</h6>
+      <h6 class="col s4">Email</h6>
+    </div>
+    <div class="row" ng-repeat="user in inactiveUsers">
+      <p class="col s4">{{user.firstname}} {{user.lastname}}</p>
+      <p class="col s4">{{user.email}}</p>
+      <button class="waves-effect waves-light btn" ng-click="activateUser(user.verification)">Activate User<i class="material-icons right">person add</i></button>
+      <button class="waves-effect waves-light btn" ng-click="deleteUser(user.verification)">Delete User<i class="material-icons right">block</i></button>
+    </div>
   </div>
-
 </div>
