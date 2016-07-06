@@ -10,7 +10,6 @@ router.get('/', function (req, res, next) {
   res.sendFile(path.resolve(__dirname, '../public/views/register.html'));
 });
 
-
 // updates from our profile
 router.put('/', function (req, res, next) {
   Users.update(req.body, function (err, user) {
@@ -32,6 +31,7 @@ router.put('/:verCode', function (req, res) {
       res.sendStatus(500);
       return;
     }
+
     res.status(204).send(user);
   });
 });
@@ -47,7 +47,7 @@ router.post('/', function (req, res, next) {
       // mark verification code as used
       // create update object
       var update = { verification: req.body.verification,
-                     $set: { used: true } };
+                     $set: { used: true }};
       console.log(update);
 
       // update database
@@ -62,34 +62,9 @@ router.post('/', function (req, res, next) {
   });
 });
 
-// find a user by verification code
-router.get('/:id', function (req, res) {
-  console.log(req.params.id);
-  Users.find({ verification: req.params.id }, function (err, user) {
-    if (err) {
-      res.sendStatus(500);
-      return;
-    }
-    console.log(user);
-    res.send(user);
-  });
-});
-
-// find a user by verification code
-router.delete('/:id', function (req, res) {
-  console.log(req.params.id);
-  Users.remove({ verification: req.params.id }, function (err, user) {
-    if (err) {
-      res.sendStatus(500);
-      return;
-    }
-    console.log(user);
-    res.send(user);
-  });
-});
-
 //gets inactive users for admin page
 router.get('/inactive', function (req, res) {
+  console.log('inactive get');
   Users.find({ active: false }, function (err, user) {
     if (err) {
       res.sendStatus(500);
@@ -100,6 +75,36 @@ router.get('/inactive', function (req, res) {
     res.send(user);
   });
 });
+
+// find a user by verification code
+router.get('/:id', function (req, res) {
+  console.log(req.params.id);
+  Users.find({ verification: req.params.id }, function (err, user) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+
+    console.log(user);
+    res.send(user);
+  });
+});
+
+/* REMOVED PENDING STRETCH GOAL
+// delete a user by verification code
+router.delete('/:id', function (req, res) {
+  // Needs to remove posts and badges
+  console.log(req.params.id);
+  Users.remove({ verification: req.params.id }, function (err, user) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+    console.log(user);
+    res.send(user);
+  });
+});
+*/
 
 // retrieve flagged users
 router.get('/flagged/:ids', function (req, res) {
@@ -112,6 +117,7 @@ router.get('/flagged/:ids', function (req, res) {
       res.sendStatus(500);
       return;
     }
+
     console.log(users);
     res.send(users);
   });

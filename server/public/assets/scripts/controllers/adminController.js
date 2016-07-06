@@ -113,12 +113,23 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
     });
   };
 
-  $scope.suspendUser = function (verification) {
-    console.log('To be suspended:', verification);
-    $http.put('/register/' + verification, { active: false }).then(function (response) {
+  $scope.suspendUser = function (user) {
+    user.active = false;
+    console.log('To be suspended:', user);
+    $http.put('/register/' + user.verification, user).then(function (response) {
       console.log('suspendUser response:', response);
       getInactive();
     });
   };
+
+/* REMOVED PENDING STRETCH GOAL
+  $scope.deleteUser = function (verification) {
+    console.log('No longer in database:', verification);
+    $http.delete('/register/' + verification).then(function (response) {
+      console.log('suspendUser response:', response);
+      getInactive();
+    });
+  };
+  */
 
 }]);
