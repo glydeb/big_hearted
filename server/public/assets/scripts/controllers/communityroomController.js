@@ -9,19 +9,38 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     dgd: false,
     dgdnumber: 0,
     anonymous: false,
-    likes: 0
+    likes: 0,
+    flagged: false
   };
+  $scope.updatedPost = {};
   $scope.user = {};
   $scope.communityPosts = [];
+  $scope.flaggedUser = {};
 
   refreshCommunityRoom();
 
   $scope.flagPost = function (post) {
-    post.flagged = true;
-    $http.put('/post/' + post._id, post).then(function(response) {
-      console.log('updated post');
-      refreshCommunityRoom();
-    })
+    console.log(post);
+    if (post.flagged) {
+      prompt('This post has already been flagged, an admin will deal with it in due time.');
+      return;
+    } else {
+      post.flagged = true;
+      $http.get('/register/' + post.user_verify).then(function (response) {
+        $scope.flaggedUser = response.data[0];
+        console.log($scope.flaggedUser);
+        $scope.flaggedUser.timesflagged += 1;
+        $http.put('/register/' + $scope.flaggedUser.verification, $scope.flaggedUser).then(function(response) {
+          console.log('Posted update to the user');
+          refreshCommunityRoom();
+        })
+      })
+    }
+      $http.put('/post/' + post._id, post).then(function(response) {
+        console.log('updated post');
+        refreshCommunityRoom();
+      });
+
   }
 
   $scope.sendPost = function (post) {
@@ -72,16 +91,16 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   // go to factory to verify user
   if (doGoodFactory.factoryGetUserData() === undefined) {
     doGoodFactory.factoryRefreshUserData().then(function () {
-      $scope.userName = doGoodFactory.factoryGetUserData().username;
+      $scope.user = doGoodFactory.factoryGetUserData();
 
       // if it's still undefined after refresh, send them to login page
-      if ($scope.userName === undefined || $scope.userName === '') {
+      if ($scope.user.username === undefined || $scope.user.username === '') {
         $location.path('/home');
       }
     });
   } else {
-    $scope.userName = doGoodFactory.factoryGetUserData().username;
-    if ($scope.userName === undefined || $scope.userName === '') {
+    $scope.user = doGoodFactory.factoryGetUserData();
+    if ($scope.user.username === undefined || $scope.user.username === '') {
       $location.path('/home');
     }
 

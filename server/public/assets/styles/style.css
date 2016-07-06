@@ -1,3 +1,4 @@
+
 .icon-block {
     padding: 0 15px;
 }
@@ -24,8 +25,15 @@ main {
 
 #community-posts {
     resize: none;
+<<<<<<< HEAD
     border-radius: 2px;
     padding: 15px 15px;
+=======
+    background-color: #73bf43;
+    border: 5px solid #73bf43;
+    border-radius: 15px;
+    padding: 10px 10px;
+>>>>>>> 21c064df0b807142e0d97ec008c926bd96de1f89
     overflow: auto;
 }
 
@@ -77,10 +85,23 @@ main {
   color: white;
 }
 
+<<<<<<< HEAD
 
+=======
+#community-posts button, #our-posts button {
+  float: right;
+}
+>>>>>>> 21c064df0b807142e0d97ec008c926bd96de1f89
 .lever {
     display: inline-block;
 }
+
+.notflagged {
+  background-color: black;
+  border-radius: 50px 50px 50px 50px;
+}
+
+
 #badgesPic {
     background-image: url("/assets/images/badgesBackground.jpg");
     width: 1800px;
@@ -125,7 +146,9 @@ main {
  cursor:pointer;
 }
 
-#badge1New{
+
+
+#badge1New {
   background-image: url("/assets/images/FKAbadge1.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -139,7 +162,6 @@ main {
   -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
   -webkit-animation-name: greenPulse;
   -webkit-animation-duration: 4s;
-
   transition: opacity 7s 0s ease;
 }
 
@@ -223,7 +245,8 @@ main {
 #badge4:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
-}
+ }
+
 
 .profile-picture {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -265,14 +288,12 @@ position: sticky;
 }
 
 #badgesPic {
-
 background-image: url("/assets/images/badgesBackground.jpg");
 display: inherit !important;
 width: 1800px;
 height:901px;
 background-repeat: no-repeat;
 opacity: .7;
-
 }
 
 #badge5:hover{
@@ -495,8 +516,8 @@ opacity: .7;
 
 .claim1, .claim2, .claim3, .claim4, .claim5, .claim6, .claim7, .claim8, .claim9, .claim10, .claim11, .claim12{
   text-align: center;
-
 }
+
 #modalButton1, #modalButton2, #modalButton3, #modalButton5, #modalButton6, #modalButton7, #modalButton8, #modalButton9, #modalButton10, #modalButton11, #modalButton12{
   background-color:#eedb58;
   border: none;
@@ -657,6 +678,7 @@ box-shadow: 0 9px #999;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 30px;
 }
+
 
 .small_badges {
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);

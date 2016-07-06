@@ -23,16 +23,13 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
 
   }
 
-  $(document).ready(function() {
-    $('.modal-trigger').leanModal();
-});
+  $(document).ready(function(){
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal();
+    });
 
-  $(document).ready(function () {
-    $('.parallax').parallax();
+  $scope.changeBadge = function () {
+    document.getElementById('badge1').id = 'badge1New';
+  };
 
-  });
-
-$scope.changeBadge = function(){
-  document.getElementById("badge1").id = "badge1New"
-};
 }]);
