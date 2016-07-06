@@ -18,28 +18,25 @@ main {
     background-color: snow;
   }
 
-#our-posts, .family-info, .individual_profile_posts {
+#our-posts, .family-info, .individual_profile_posts, #community-posts, .individualposts {
     background-color: white;
   }
 
 #community-posts {
     resize: none;
-    /*display: block;
-    margin: auto auto;*/
-    border: 5px solid #73bf43;
-    border-radius: 15px;
-    padding: 10px 10px;
+    border-radius: 2px;
+    padding: 15px 15px;
     overflow: auto;
 }
 
-#community-posts button {
+#community-posts button, #our-posts button {
     float: right;
 }
 
 #logo-container> img {
     width: 55px;
     margin-top: 6px;
-    margin-left: 75px;
+    margin-left: 30px;
 }
 .social-icons> img {
     width: 35px;
@@ -66,8 +63,9 @@ main {
     margin-right: 0px;
 }
 .upload-button {
-    font-size: 12px;
+  display: block;
 }
+
 #DGD {
   text-align: center;
   resize: none;
@@ -79,10 +77,7 @@ main {
   color: white;
 }
 
-#community-posts button, #our-posts button {
-  float: right;
 
-}
 .lever {
     display: inline-block;
 }
@@ -232,50 +227,18 @@ main {
 
 .profile-picture {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin-top: 10px;
   padding: 0px !important;
   border-radius: 2px;
-  margin-bottom: 15px;
+
 }
 
 .upload-button {
 
 }
 
-.profilepicture {
-  height: 128px;
-  width: 128px;
-  border: 3px solid #f25826;
-  display: inline;
-}
-
 .postsusername {
   padding-left: 10px;
   vertical-align: middle;
-}
-
-.displayallposts {
-  background-color: #0ca3dc;
-  border: 5px solid #0ca3dc;
-  border-radius: 15px;
-  padding: 20px 20px;
-}
-
-.individualposts {
-  background-color: #8752a2;
-  border: 5px solid #8752a2;
-  border-radius: 15px;
-  padding: 15px 15px;
-  margin-bottom: 15px;
-  color: white;
-}
-
-#button {
-  background-color: #f25826;
-}
-
-#checkboxlabel {
-  color: white;
 }
 
  #badgesPic{
@@ -296,9 +259,6 @@ main {
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
-.switchlabel {
-  color: white;
-}
 
 #nav-mobile {
 position: sticky;
@@ -672,6 +632,7 @@ box-shadow: 0 9px #999;
   margin-top: 25px;
   border-radius: 2px;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 0 0 20px 0;
 }
 
 .family-info-buttons {
@@ -682,15 +643,16 @@ box-shadow: 0 9px #999;
 #our-posts {
   resize: none;
   border-radius: 2px;
-  padding: 30px;
+  padding: 0 0 30px 0;
   overflow: auto;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
 }
 
-.individual_profile_posts {
+.individual_profile_posts, .individualposts {
   resize: none;
   border-radius: 2px;
-  padding: 15px 15px;
+  padding: 0 0 20px 0;
   overflow: auto;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   margin-top: 30px;
@@ -709,4 +671,42 @@ box-shadow: 0 9px #999;
 
 .switch, .checkbox {
   margin-top: 15px;
+}
+
+.post-picture {
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 0px !important;
+  border-radius: 2px;
+}
+
+.flag-post {
+  float: right;
+}
+
+
+.card_header {
+background-color: #426da9
+}
+
+.card_title {
+  font-size: 20px !important;
+  margin-left: 40px;
+}
+
+.new_post_container {
+  width: 75%;
+}
+
+.post_container {
+  width: 90%;
+  margin-top: 20px;
+}
+
+.post_description {
+  margin: 0 0 15px 0;
+}
+
+.post_buttons_container {
+  margin-right: 20px !important;
+  margin-left: 20px !important;
 }

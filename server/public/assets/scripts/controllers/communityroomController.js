@@ -1,6 +1,8 @@
-myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
-  '$window', '$location', function (doGoodFactory, $scope, $http, $window,
-  $location) {
+myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http', '$window', '$location', function (doGoodFactory, $scope, $http, $window, $location) {
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
 
   console.log('checking user');
   $scope.post = {
@@ -84,5 +86,11 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     }
 
   }
+
+ $scope.initMaterialbox = function() {
+   $('.materialboxed').materialbox();
+   $('.material-placeholder').css('height', '150px');
+   console.log('initMaterialbox');
+ };
 
 }]);
