@@ -10,7 +10,8 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     dgdnumber: 0,
     anonymous: false,
     likes: [],
-    flagged: false
+    flagged: false,
+    date: new Date()
   };
   $scope.updatedPost = {};
   $scope.user = {};
@@ -22,9 +23,11 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   $scope.flagPost = function (post) {
     console.log(post);
     if (post.flagged) {
-      prompt('This post has already been flagged, an admin will deal with it in due time.');
+      alert('This post has already been flagged, a site admininstrator will deal with it in due time.');
       return;
     } else {
+      var response = confirm('Press Ok to flag this post for review by a site administrator, press Cancel to return to the Community Room');
+      if (response == true) {
       post.flagged = true;
       $http.get('/register/' + post.user_verify).then(function (response) {
         $scope.flaggedUser = response.data[0];
@@ -36,6 +39,10 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         })
       })
     }
+    else {
+      return;
+    }
+  }
       $http.put('/post/' + post._id, post).then(function(response) {
         console.log('updated post');
         refreshCommunityRoom();
@@ -116,7 +123,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
  $scope.initMaterialbox = function() {
    $('.materialboxed').materialbox();
-   $('.material-placeholder').css('height', '150px');
    console.log('initMaterialbox');
  };
 
