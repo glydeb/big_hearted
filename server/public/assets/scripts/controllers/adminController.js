@@ -113,11 +113,16 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
     });
   };
 
-  $scope.suspendUser = function (user) {
-    user.active = false;
-    console.log('To be suspended:', user);
+  $scope.changeStatus = function (user, action) {
+    if (action == 'suspend') {
+      user.active = false;
+    } else if (action == 'activate') {
+      user.active = true;
+    }
+
+    console.log('Status change on:', user);
     $http.put('/register/' + user.verification, user).then(function (response) {
-      console.log('suspendUser response:', response);
+      console.log('changeStatus response:', response);
       getInactive();
     });
   };
