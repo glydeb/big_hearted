@@ -13,14 +13,12 @@
                     </nav>
                     <div class="container">
                         <form ng-submit="sendPost(post)">
-                            <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
-                            <form>
-                                <div class="btn-floating btn-large file-field">
-                                    <span class="upload-button"><i class="material-icons">portrait</i></span>
-                                    <input type="file" />
-                                </div>
-                                <label class="label">Upload a picture</label>
-                            </form>
+                          <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
+                              <div class="btn-floating btn-large file-field">
+                                  <span class="upload-button"><i class="material-icons">portrait</i></span>
+                                  <input type="file" />
+                              </div>
+                              <label class="label">Upload a picture</label>
                             <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
                             <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                             <div>
@@ -56,7 +54,7 @@
                             <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" src="/assets/images/dgt_logo.jpg" />
                             </br>
                             <p class="post_description">{{post.description}}</p>
-                            <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes}}</span></a>
+                            <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>
                             <p ng-show="post.flagged">Flagged: {{post.flagged}}</p>
                         </div>
                         <div class="row post_buttons_container">

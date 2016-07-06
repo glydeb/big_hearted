@@ -9,7 +9,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     dgd: false,
     dgdnumber: 0,
     anonymous: false,
-    likes: 0,
+    likes: [],
     flagged: false
   };
   $scope.updatedPost = {};
@@ -79,11 +79,19 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   };
 
   $scope.likePost = function (post) {
-    post.likes++;
-    console.log(post);
     $scope.updatedPost = post;
+    var found = false;
+    $scope.updatedPost.likes.forEach(function (like) {
+      if (like === $scope.user.verification) {
+        found = true;
+        return;
+      }
+    });
+    if (!found) {
+      $scope.updatedPost.likes.push($scope.user.verification);
+    }
     $http.put('/post/' + $scope.updatedPost._id, $scope.updatedPost).then(function(response) {
-      console.log('You liked this crap?');
+      console.log('updated likes');
       refreshCommunityRoom();
     })
   }
