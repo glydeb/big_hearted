@@ -44,8 +44,9 @@ router.post('/', function (req, res) {
   });
 });
 
-router.delete('/', function (req, res) {
-  Post.remove(req.body, function (err) {
+router.delete('/:ids', function (req, res) {
+  var idList = { _id: { $in: req.params.ids.split(',') } };
+  Post.remove(idList, function (err) {
     if (err) {
       res.sendStatus(500);
       return;

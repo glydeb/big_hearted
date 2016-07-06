@@ -1,17 +1,25 @@
-<div class="container row our-profile">
+<div class="row our-profile">
     <div class="section col s3">
         <div class="section">
-            <img materialboxed class=" col s12 materialboxed responsive-img profile-picture" width="400" src="/assets/images/Quinn Nelson +.jpg" />
+            <img materialboxed class="materialboxed responsive-img profile-picture" width="400" src="/assets/images/Quinn Nelson +.jpg" />
         </div>
-        <form class="center-align">
+        <div class="section">
+        <form class="center-align upload-button">
             <div class="btn-floating btn-large file-field">
-                <span class="upload-button"><i class="material-icons">portrait</i></span>
+                <span><i class="material-icons">portrait</i></span>
                 <input type="file" />
             </div>
-            </br>
+          </br>
             <label>Change your picture</label>
         </form>
+        </div>
         <div class="section family-info">
+          <nav class="z-depth-0 card_header">
+          <div class="nav-wrapper">
+          <form>
+          </form>
+            </div>
+            </nav>
             <div class="container">
                 <h5 class="center-align">Our Family Members</h5>
                 <h6 class="section" ng-show="visible" ng-model="user.family_members">{{user.family_members}}</h6>
@@ -27,12 +35,12 @@
                 <div class="divider"></div>
                 <h5 class="center-align">Our Badges</h5>
                 <div class "row">
-                    <img class="center-align small_badges" src="/assets/images/small_badge2.png" />
-                    <img class="center-align small_badges" src="/assets/images/small_badge3.png" />
-                    <img class="center-align small_badges" src="/assets/images/small_badge4.png" />
-                    <img class="center-align small_badges" src="/assets/images/small_badge5.png" />
-                    <img class="center-align small_badges" src="/assets/images/small_badge6.png" />
-                    <img class="center-align small_badges" src="/assets/images/small_badge7.png" />
+                    <img class="center-align responsive-img small_badges" src="/assets/images/small_badge2.png" />
+                    <img class="center-align responsive-img small_badges"  src="/assets/images/small_badge3.png" />
+                    <img class="center-align responsive-img small_badges"  src="/assets/images/small_badge4.png" />
+                    <img class="center-align responsive-img small_badges"  src="/assets/images/small_badge5.png" />
+                    <img class="center-align responsive-img small_badges"  src="/assets/images/small_badge6.png" />
+                    <img class="center-align responsive-img small_badges"  src="/assets/images/small_badge7.png" />
                 </div>
                 <div class="family-info-buttons center-align">
                     <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="visible">Edit<i class="material-icons right">edit</i></button>
@@ -47,7 +55,14 @@
                 <h3>{{user.firstname}}'s Profile</h3>
             </div>
             <div class="col s12" id="our-posts">
-                <h5>Create New Post</h5>
+              <nav class="z-depth-0 card_header">
+              <div class="nav-wrapper">
+                <a class="brand-logo card_title">Create New Post</a>
+              <form>
+              </form>
+                </div>
+                </nav>
+                <div class="new_post_container container">
                 <form ng-submit="sendPost(post)">
                     <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
                     <form>
@@ -75,14 +90,24 @@
                     </button>
                 </form>
             </div>
+              </div>
             <div class="row">
                 <div class="col s12">
                     <section class="display_profile_posts">
                         <div ng-repeat="post in profilePosts track by $index">
                             <div class="individual_profile_posts">
-                                <img class="profile-picture" width="150" src="/assets/images/Quinn Nelson +.jpg" />
-                                <p>{{post.description}}</p>
+                              <nav class="z-depth-0 card_header">
+                              <div class="nav-wrapper">
+                              <form>
+                              </form>
+                                </div>
+                                </nav>
+                                <div class="post_container container">
+                                <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" src="/assets/images/dgt_logo.jpg" />
+                              </br>
+                                <p class="post_description">{{post.description}}</p>
                                  <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes}}</span></a>
+                                 </div>
                             </div>
                         </div>
                     </section>

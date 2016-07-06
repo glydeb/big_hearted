@@ -37,8 +37,20 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
 
   function getFlagged() {
     $http.get('/post/flagged').then(function (response) {
+      var flaggedVerifications = [];
       $scope.flaggedPosts = response.data;
       console.log($scope.flaggedPosts);
+      // create query string of verification codes
+      $scope.flaggedPosts.forEach(function (post, i) {
+        flaggedVerifications.push(post.user_verify);
+      });
+      var flaggedString = flaggedVerifications.join();
+      $http.get('/register/flagged/' + flaggedString).then(function (response) {
+        $scope.flaggedUsers = response.data;
+        console.log($scope.flaggedUsers);
+      }, function (err) {
+        console.log('Error loading flagged users:', err);
+      });
     }, function (err) {
       console.log('Error loading flagged content:', err);
     });
@@ -83,12 +95,12 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
   };
 
   $scope.deleteSelected = function () {
-    var selectedArray = getSelected();
-    var hitlist = { _id: { $in: selectedArray } };
-    $http.delete('/post', hitlist).then(function (response) {
+    var idString = getSelected().join();
+    console.log('To be deleted:', idString);
+    $http.delete('/post/' + idString).then(function (response) {
       console.log('deleteSelected response:', response);
+      getFlagged();
     });
-    getFlagged();
   };
 
 }]);

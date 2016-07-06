@@ -1,4 +1,3 @@
-
 myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {

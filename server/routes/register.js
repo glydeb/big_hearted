@@ -15,7 +15,7 @@ router.get('/', function (req, res, next) {
 router.put('/', function (req, res, next) {
   Users.update(req.body, function (err, user) {
     if (err) {
-      console.log(req.body);
+      console.log(err);
       res.sendStatus(500);
       return;
     }
@@ -75,5 +75,20 @@ router.get('/:id', function (req, res) {
   });
 });
 
+// retrieve flagged users
+router.get('/flagged/:ids', function (req, res) {
+  console.log(req.params.ids);
+
+  // re-form string of ids into an array and put in 'find' object
+  var verCodeList = { verification: { $in: req.params.ids.split(',') } };
+  Users.find(verCodeList, function (err, users) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+    console.log(users);
+    res.send(users);
+  });
+});
 
 module.exports = router;
