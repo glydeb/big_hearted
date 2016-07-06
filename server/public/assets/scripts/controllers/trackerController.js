@@ -5,6 +5,20 @@ myApp.controller('trackerController', ['doGoodFactory', '$scope', '$http',
   $scope.user={};
   console.log('checking user');
 
+  $scope.image1 = false;
+  $scope.image2 = false;
+  $scope.image3 = false;
+  $scope.image4 = false;
+  $scope.image5 = false;
+  $scope.image6 = false;
+  $scope.image7 = false;
+  $scope.image8 = false;
+  $scope.image9 = false;
+  $scope.image10 = false;
+  $scope.image11 = false;
+  $scope.image12 = false;
+  $scope.image13 = false;
+
   var trackerCount  = 0;
   // go to factory to verify user
   if (doGoodFactory.factoryGetUserData() === undefined) {
@@ -72,18 +86,5 @@ function progressCheck() {
   default: $scope.image1 = true;
   }
 }
-  $scope.image1 = false;
-  $scope.image2 = false;
-  $scope.image3 = false;
-  $scope.image4 = false;
-  $scope.image5 = false;
-  $scope.image6 = false;
-  $scope.image7 = false;
-  $scope.image8 = false;
-  $scope.image9 = false;
-  $scope.image10 = false;
-  $scope.image11 = false;
-  $scope.image12 = false;
-  $scope.image13 = false;
 
 }]);

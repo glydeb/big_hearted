@@ -1,4 +1,3 @@
-
 .icon-block {
     padding: 0 15px;
 }
@@ -12,32 +11,22 @@ body {
 }
 main {
     flex: 1 0 auto;
-
-  }
-
+}
 .valign-wrapper {
     background-color: snow;
-  }
-
+}
 #our-posts, .family-info, .individual_profile_posts, #community-posts, .individualposts {
     background-color: white;
-  }
-
+}
 #community-posts {
     resize: none;
     border-radius: 2px;
     padding: 15px 15px;
-    background-color: #73bf43;
-    border: 5px solid #73bf43;
-    border-radius: 15px;
-    padding: 10px 10px;
     overflow: auto;
 }
-
 #community-posts button, #our-posts button {
     float: right;
 }
-
 #logo-container> img {
     width: 55px;
     margin-top: 6px;
@@ -68,39 +57,33 @@ main {
     margin-right: 0px;
 }
 .upload-button {
-  display: block;
+    display: block;
 }
-
 #DGD {
-  text-align: center;
-  resize: none;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
-  padding: 15px 15px;
-  overflow: auto;
-  background-color: #73bf43;
-  color: white;
+    text-align: center;
+    resize: none;
+    border: 2px solid #197FD2;
+    border-radius: 10px;
+    padding: 15px 15px;
+    overflow: auto;
+    background-color: #73bf43;
+    color: white;
 }
-
 #community-posts button, #our-posts button {
-  float: right;
+    float: right;
 }
 .lever {
     display: inline-block;
 }
-
 .notflagged {
-  background-color: black;
-  border-radius: 50px 50px 50px 50px;
+    background-color: black;
+    border-radius: 50px 50px 50px 50px;
 }
-
-
 #badgesPic {
     background-image: url("/assets/images/badgesBackground.jpg");
     width: 1800px;
     height: 901px;
     background-repeat: no-repeat;
-
 }
 #landingPage {
     background-image: url("/assets/images/landingPage.jpg");
@@ -133,48 +116,39 @@ main {
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     opacity: .3;
 }
-
-#badge1:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
+#badge1:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
-
-
 #badge1New {
-  background-image: url("/assets/images/FKAbadge1.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 130px;
-  width: 130px;
-  border-radius: 300px 300px 300px 300px;
-  background-color: transparent;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-  -webkit-animation-name: greenPulse;
-  -webkit-animation-duration: 4s;
-  transition: opacity 7s 0s ease;
+    background-image: url("/assets/images/FKAbadge1.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
 }
-
 #textarea1 {
-  color: white;
+    color: white;
 }
-
 #textarea1::-webkit-input-placeholder {
-  color: white;
+    color: white;
 }
-
-.social-icons > img {
-  width: 35px;
+.social-icons> img {
+    width: 35px;
 }
-
-#badge1New:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
+#badge1New:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge2 {
     background-image: url("/assets/images/FKAbadge2.png");
     background-repeat: no-repeat;
@@ -188,19 +162,15 @@ main {
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge2:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge2:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 .our-profile {
-  margin-left: 15px;
-  margin-right: 0px;
-  width: 93%;
+    margin-left: 15px;
+    margin-right: 0px;
+    width: 93%;
 }
-
 #badge3 {
     background-image: url("/assets/images/FKAbadge13.png");
     background-repeat: no-repeat;
@@ -214,12 +184,10 @@ main {
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge3:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
+#badge3:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge4 {
     background-image: url("/assets/images/FKAbadge4.png");
     background-repeat: no-repeat;
@@ -232,35 +200,23 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
-
 }
-
-#badge4:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
- }
-
-
+#badge4:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
+}
 .profile-picture {
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  padding: 0px !important;
-  border-radius: 2px;
-
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 0px !important;
+    border-radius: 2px;
 }
-
-.upload-button {
-
-}
-
 .postsusername {
-  padding-left: 10px;
-  vertical-align: middle;
+    padding-left: 10px;
+    vertical-align: middle;
 }
-
- #badgesPic{
-   background-image: url("/assets/images/badgesBackground.jpg")
- }
-
+#badgesPic {
+    background-image: url("/assets/images/badgesBackground.jpg")
+}
 #badge5 {
     background-image: url("/assets/images/FKAbadge5.png");
     background-repeat: no-repeat;
@@ -274,27 +230,21 @@ main {
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-
 #nav-mobile {
-position: sticky;
+    position: sticky;
 }
-
 #badgesPic {
-background-image: url("/assets/images/badgesBackground.jpg");
-display: inherit !important;
-width: 1800px;
-height:901px;
-background-repeat: no-repeat;
-opacity: .7;
+    background-image: url("/assets/images/badgesBackground.jpg");
+    display: inherit !important;
+    width: 1800px;
+    height: 901px;
+    background-repeat: no-repeat;
+    opacity: .7;
 }
-
-#badge5:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge5:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge6 {
     background-image: url("/assets/images/FKAbadge6.png");
     background-repeat: no-repeat;
@@ -308,13 +258,10 @@ opacity: .7;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge6:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge6:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge7 {
     background-image: url("/assets/images/FKAbadge7.png");
     background-repeat: no-repeat;
@@ -328,13 +275,10 @@ opacity: .7;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge7:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge7:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge8 {
     background-image: url("/assets/images/FKAbadge8.png");
     background-repeat: no-repeat;
@@ -348,13 +292,10 @@ opacity: .7;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge8:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge8:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge9 {
     background-image: url("/assets/images/FKAbadge9.png");
     background-repeat: no-repeat;
@@ -368,13 +309,10 @@ opacity: .7;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge9:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge9:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge10 {
     background-image: url("/assets/images/FKAbadge10.png");
     background-repeat: no-repeat;
@@ -388,13 +326,10 @@ opacity: .7;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge10:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge10:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge11 {
     background-image: url("/assets/images/FKAbadge11.png");
     background-repeat: no-repeat;
@@ -408,13 +343,10 @@ opacity: .7;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge11:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge11:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
 #badge12 {
     background-image: url("/assets/images/FKAbadge12.png");
     background-repeat: no-repeat;
@@ -428,314 +360,250 @@ opacity: .7;
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
-
-#badge12:hover{
-  animation: bounce 1s infinite;
- cursor:pointer;
-
+#badge12:hover {
+    animation: bounce 1s infinite;
+    cursor: pointer;
 }
-
-#modal1{
-  height:300px;
-  width:300px;
-  background-color:  #8752a2 ;
+#modal1 {
+    height: 300px;
+    width: 300px;
+    background-color: #8752a2;
 }
-
-#modal2{
-  height:300px;
-  width:300px;
-  background-color:  #f25826 ;
+#modal2 {
+    height: 300px;
+    width: 300px;
+    background-color: #f25826;
 }
-
-#modal3{
-  height:300px;
-  width:300px;
-  background-color:  #eea818  ;
+#modal3 {
+    height: 300px;
+    width: 300px;
+    background-color: #eea818;
 }
-
-#modal4{
-  height:300px;
-  width:300px;
-  background-color:  #eedb58 ;
+#modal4 {
+    height: 300px;
+    width: 300px;
+    background-color: #eedb58;
 }
-
-#modal5{
-  height:300px;
-  width:300px;
-  background-color:  #00af59 ;
+#modal5 {
+    height: 300px;
+    width: 300px;
+    background-color: #00af59;
 }
-
-#modal6{
-  height:300px;
-  width:300px;
-  background-color:  #3366ff;
+#modal6 {
+    height: 300px;
+    width: 300px;
+    background-color: #3366ff;
 }
-
-#modal7{
-  height:300px;
-  width:300px;
-  background-color:  #80ccff;
+#modal7 {
+    height: 300px;
+    width: 300px;
+    background-color: #80ccff;
 }
-
-#modal8{
-  height:300px;
-  width:300px;
-  background-color:  #f25826;
+#modal8 {
+    height: 300px;
+    width: 300px;
+    background-color: #f25826;
 }
-
-#modal9{
-  height:300px;
-  width:300px;
-  background-color:  #eea818;
+#modal9 {
+    height: 300px;
+    width: 300px;
+    background-color: #eea818;
 }
-
-#modal10{
-  height:300px;
-  width:300px;
-  background-color:  #80ccff;
+#modal10 {
+    height: 300px;
+    width: 300px;
+    background-color: #80ccff;
 }
-
-#modal11{
-  height:300px;
-  width:300px;
-  background-color:  #00af59;
+#modal11 {
+    height: 300px;
+    width: 300px;
+    background-color: #00af59;
 }
-
-#modal12{
-  height:300px;
-  width:300px;
-  background-color:  #73bf43;
+#modal12 {
+    height: 300px;
+    width: 300px;
+    background-color: #73bf43;
 }
-
-.claim1, .claim2, .claim3, .claim4, .claim5, .claim6, .claim7, .claim8, .claim9, .claim10, .claim11, .claim12{
-  text-align: center;
+.claim1, .claim2, .claim3, .claim4, .claim5, .claim6, .claim7, .claim8, .claim9, .claim10, .claim11, .claim12 {
+    text-align: center;
 }
-
-#modalButton1, #modalButton2, #modalButton3, #modalButton5, #modalButton6, #modalButton7, #modalButton8, #modalButton9, #modalButton10, #modalButton11, #modalButton12{
-  background-color:#eedb58;
-  border: none;
-  border-radius: 15px;
-  box-shadow: 0 9px #999;
-  border: 1px solid #197FD2;
-  padding: 20px;
-  border-radius: 2px;
-
+#modalButton1, #modalButton2, #modalButton3, #modalButton5, #modalButton6, #modalButton7, #modalButton8, #modalButton9, #modalButton10, #modalButton11, #modalButton12 {
+    background-color: #eedb58;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    border: 1px solid #197FD2;
+    padding: 20px;
+    border-radius: 2px;
 }
-
-#modalButton1:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton1:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton2:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton2:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton3:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton3:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton4{
-background-color:#3366ff;
-border: none;
-border-radius: 15px;
-box-shadow: 0 9px #999;
+#modalButton4 {
+    background-color: #3366ff;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
 }
-
-#modalButton4:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton4:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton5:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton5:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton6:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton6:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton7:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton7:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton8:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton8:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton9:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton9:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton10:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton10:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton11:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton11:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
-#modalButton12:active{
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
+#modalButton12:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }
-
 @keyframes bounce {
-	0%, 20%, 60%, 100% {
-		-webkit-transform: translateY(0);
-		transform: translateY(0);
-	}
-
-	40% {
-		-webkit-transform: translateY(-20px);
-		transform: translateY(-20px);
-	}
-
-	80% {
-		-webkit-transform: translateY(-10px);
-		transform: translateY(-10px);
-	}
+    0%, 20%, 60%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    40% {
+        -webkit-transform: translateY(-20px);
+        transform: translateY(-20px);
+    }
+    80% {
+        -webkit-transform: translateY(-10px);
+        transform: translateY(-10px);
+    }
 }
-
 @-webkit-keyframes greenPulse {
-  from { background-color: #f7ff00; -webkit-box-shadow: 0 0 200px #f7ff00; }
-  100% { background-color: #f7ff00; -webkit-box-shadow: 0 0 200px #f7ff00; }
-  to { background-color: #f7ff00; -webkit-box-shadow: 0 0 200px #f7ff00; }
+    from {
+        background-color: #f7ff00;
+        -webkit-box-shadow: 0 0 200px #f7ff00;
+    }
+    100% {
+        background-color: #f7ff00;
+        -webkit-box-shadow: 0 0 200px #f7ff00;
+    }
+    to {
+        background-color: #f7ff00;
+        -webkit-box-shadow: 0 0 200px #f7ff00;
+    }
 }
-
-.badgeHeader{
-  height:100px;
-  width:800px;
-  border-style:groove;
-  border-color: #eedb58 ;
-  background-color: #3366ff;
-  vertical-align: middle;
-
+.badgeHeader {
+    height: 100px;
+    width: 800px;
+    border-style: groove;
+    border-color: #eedb58;
+    background-color: #3366ff;
+    vertical-align: middle;
 }
-
-#badgePage{
-  color: white;
+#badgePage {
+    color: white;
 }
-
-.file-path {
-  color: black
-}
-
 .family-info {
-  margin-top: 25px;
-  border-radius: 2px;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  padding: 0 0 20px 0;
+    margin-top: 25px;
+    border-radius: 2px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 0 0 20px 0;
 }
-
 .family-info-buttons {
-  margin-top: 20px;
-  margin-bottom: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
-
 #our-posts {
-  resize: none;
-  border-radius: 2px;
-  padding: 0 0 30px 0;
-  overflow: auto;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-
+    resize: none;
+    border-radius: 2px;
+    padding: 0 0 30px 0;
+    overflow: auto;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-
 .individual_profile_posts, .individualposts {
-  resize: none;
-  border-radius: 2px;
-  padding: 0 0 20px 0;
-  overflow: auto;
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  margin-top: 30px;
+    resize: none;
+    border-radius: 2px;
+    padding: 0 0 20px 0;
+    overflow: auto;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    margin-top: 30px;
 }
-
-
 .small_badges {
-  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);
-  border-radius: 40px;
-  margin-left: 20px;
+    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+    border-radius: 40px;
+    margin-left: 20px;
 }
-
-.label{
-  display: block;
-  margin-top: 5px;
+.label {
+    display: block;
+    margin-top: 5px;
 }
-
 .switch, .checkbox {
-  margin-top: 15px;
+    margin-top: 15px;
 }
-
-#DGD {
-
-  text-align: center;
-  resize: none;
-  border: 2px solid #197FD2;
-  border-radius: 10px;
-  padding: 15px 15px;
-  overflow: auto;
-  background-color: #3366ff;
-  color: white;
-  box-shadow: 0px 8px 10px gray,
-         -10px 8px 15px gray, 10px 8px 15px gray;
-
 .post-picture {
-  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  padding: 0px !important;
-  border-radius: 2px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    padding: 0px !important;
+    border-radius: 2px;
 }
-
 .flag-post {
-  float: right;
+    float: right;
 }
-
-
 .card_header {
-background-color: #426da9
+    background-color: #426da9
 }
-
 .card_title {
-  font-size: 20px !important;
-  margin-left: 40px;
+    font-size: 20px !important;
+    margin-left: 40px;
 }
-
 .new_post_container {
-  width: 75%;
+    width: 75%;
 }
-
 .post_container {
-  width: 90%;
-  margin-top: 20px;
+    width: 90%;
+    margin-top: 20px;
 }
-
 .post_description {
-  margin: 0 0 15px 0;
+    margin: 0 0 15px 0;
 }
-
 .post_buttons_container {
-  margin-right: 20px !important;
-  margin-left: 20px !important;
-
+    margin-right: 20px !important;
+    margin-left: 20px !important;
 }

@@ -18,6 +18,14 @@ myApp.controller('navController', ['doGoodFactory', '$scope', '$http',
     console.log('navUser set to:', $scope.navUser);
   });
 
+  // jQuery for select element
+  $(".dropdown-button").dropdown({
+        hover: true, // Activate on hover
+        belowOrigin: true, // Displays dropdown below the button
+        alignment: 'right' // Displays dropdown with edge aligned to the left of button
+      }
+    );
+
   $scope.logout = function () {
     $http.get('/user/logout').then(function (response) {
       console.log('logged out');
