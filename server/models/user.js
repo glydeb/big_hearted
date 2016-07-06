@@ -13,6 +13,7 @@ var UserSchema = new Schema({
   email: { type: String, required: true },
   dgdnumber: { type: Number, required: true },
   timesflagged: { type: Number, required: true },
+  active: { type: Boolean, default: true, required: true },
   firstname: String,
   lastname: String,
   phone: String,

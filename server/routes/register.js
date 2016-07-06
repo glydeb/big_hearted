@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
 router.put('/', function (req, res, next) {
   Users.update(req.body, function (err, user) {
     if (err) {
-      console.log(req.body);
+      console.log(err);
       res.sendStatus(500);
       return;
     }

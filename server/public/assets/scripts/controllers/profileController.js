@@ -1,27 +1,26 @@
 myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
-    '$window', '$location',
-    function(doGoodFactory, $scope, $http, $window,
-        $location) {
+  '$window', '$location', function (doGoodFactory, $scope, $http, $window,
+  $location) {
 
+    console.log('profileController running');
 
-        console.log('profileController running');
+    $scope.user = {};
+    $scope.user.family_members = "Click edit to add members to your family";
+    $scope.user.about_us = "Click edit to write a bio about your family";
+    $scope.user.our_projects = "Click edit to showcase your recent projects";
+    $scope.edit = false;
+    $scope.visible = true;
 
-        $scope.user = {};
-        $scope.user.family_members = "Click edit to add members to your family"
-        $scope.user.about_us = "Click edit to write a bio about your family"
-        $scope.user.our_projects = "Click edit to showcase your recent projects"
-        $scope.edit = false;
-        $scope.visible = true;
-
-        $scope.toggle = function() {
-            $scope.visible = !$scope.visible
-            $scope.edit = !$scope.edit
-            if ($scope.visible == true) {
-                $http.put('/register', $scope.user).then(function(response) {
-                    console.log("family info saved");
-                })
-            }
-        };
+    $scope.toggle = function() {
+      $scope.visible = !$scope.visible;
+      $scope.edit = !$scope.edit;
+      if ($scope.visible) {
+        $http.put('/register/' + $scope.user.verification,
+          $scope.user).then(function (response) {
+          console.log('family info saved');
+        });
+      }
+    };
 
         $scope.post = {
             dgd: false,
@@ -78,17 +77,15 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         // go to factory to verify user
         if (doGoodFactory.factoryGetUserData() === undefined) {
             doGoodFactory.factoryRefreshUserData().then(function() {
-                $scope.userName = doGoodFactory.factoryGetUserData().username;
                 $scope.user = doGoodFactory.factoryGetUserData();
                 // if it's still undefined after refresh, send them to login page
-                if ($scope.userName === undefined || $scope.userName === '') {
+                if ($scope.user.username === undefined || $scope.user.username === '') {
                     $location.path('/home');
                 }
             });
         } else {
-            $scope.userName = doGoodFactory.factoryGetUserData().username;
             $scope.user = doGoodFactory.factoryGetUserData();
-            if ($scope.userName === undefined || $scope.userName === '') {
+            if ($scope.user.username === undefined || $scope.user.username === '') {
                 $location.path('/home');
             }
 

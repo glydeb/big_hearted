@@ -83,12 +83,12 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
   };
 
   $scope.deleteSelected = function () {
-    var selectedArray = getSelected();
-    var hitlist = { _id: { $in: selectedArray } };
-    $http.delete('/post', hitlist).then(function (response) {
+    var idString = getSelected().join();
+    console.log('To be deleted:', idString);
+    $http.delete('/post/' + idString).then(function (response) {
       console.log('deleteSelected response:', response);
+      getFlagged();
     });
-    getFlagged();
   };
 
 }]);
