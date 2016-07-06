@@ -4,6 +4,7 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
   $location) {
 
 
+
   console.log('checking user');
 
   // go to factory to verify user
@@ -31,6 +32,11 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
 
   $scope.changeBadge = function () {
     document.getElementById('badge1').id = 'badge1New';
-  };
 
+  };
+function updateBadge() {
+  $http.put('/register/' + $scope.user.verification).then(function(response) {
+    console.log("Successfully posted");
+  });
+}
 }]);

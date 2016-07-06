@@ -30,6 +30,7 @@ router.get('/flagged', function (req, res) {
   });
 });
 
+
 router.post('/', function (req, res) {
   var post = new Post(req.body);
   post.save(function (err) {
@@ -76,5 +77,6 @@ router.put('/:id', function (req, res) {
     res.status(204).send(post);
   });
 });
+
 
 module.exports = router;

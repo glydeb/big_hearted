@@ -10,6 +10,7 @@ router.get('/', function (req, res, next) {
   res.sendFile(path.resolve(__dirname, '../public/views/register.html'));
 });
 
+
 // updates from our profile
 router.put('/', function (req, res, next) {
   Users.update(req.body, function (err, user) {
@@ -34,8 +35,6 @@ router.put('/:verCode', function (req, res) {
     res.status(204).send(user);
   });
 });
-
-
 
 // Handles POST request with new user data
 router.post('/', function (req, res, next) {

@@ -84,7 +84,14 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
   };
 
 // jQuery for select element
-$(".dropdown-button").dropdown();
+$(".dropdown-button").dropdown({
+      inDuration: 300,
+      outDuration: 225,
+      hover: true, // Activate on hover
+      belowOrigin: true, // Displays dropdown below the button
+      alignment: 'right' // Displays dropdown with edge aligned to the left of button
+    }
+  );
 
   $scope.comparePassword = function () {
     if ($scope.user.password !== $scope.user.password2) {

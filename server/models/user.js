@@ -19,7 +19,8 @@ var UserSchema = new Schema({
   timezone: String,
   family_members: String,
   about_us: String,
-  our_projects: String
+  our_projects: String,
+  badges: String
 });
 
 // Called before adding a new user to the DB. Encrypts password.
