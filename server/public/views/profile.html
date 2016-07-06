@@ -65,13 +65,11 @@
                 <div class="new_post_container container">
                 <form ng-submit="sendPost(post)">
                     <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
-                    <form>
-                        <div class="btn-floating btn-large file-field">
-                            <span class="upload-button"><i class="material-icons">portrait</i></span>
-                            <input type="file" />
-                        </div>
-                        <label class="label">Upload a picture</label>
-                    </form>
+                      <div class="btn-floating btn-large file-field">
+                          <span class="upload-button"><i class="material-icons">portrait</i></span>
+                          <input type="file" />
+                      </div>
+                      <label class="label">Upload a picture</label>
                     <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
                     <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                     <div>
