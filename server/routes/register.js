@@ -76,5 +76,20 @@ router.get('/:id', function (req, res) {
   });
 });
 
+// retrieve flagged users
+router.get('/flagged/:ids', function (req, res) {
+  console.log(req.params.ids);
+
+  // re-form string of ids into an array and put in 'find' object
+  var verCodeList = { verification: { $in: req.params.ids.split(',') } };
+  Users.find(verCodeList, function (err, users) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+    console.log(users);
+    res.send(users);
+  });
+});
 
 module.exports = router;
