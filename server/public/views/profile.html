@@ -1,5 +1,5 @@
 <div class="row our-profile">
-    <div class="section col s12 l3">
+    <div class="section col s12 m8 l3">
         <div class="section">
             <img materialboxed class="materialboxed responsive-img profile-picture" width="400" src="/assets/images/mickeyanonymous.jpg" />
         </div>
@@ -13,7 +13,7 @@
                 <label>Change your picture</label>
             </form>
         </div>
-        <div class="section family-info">
+        <div class="section hoverable family-info">
             <nav class="z-depth-0 card_header_family_info">
                 <div class="nav-wrapper">
                     <form>
@@ -54,6 +54,7 @@
             <div class="center-align post-input">
                 <h3>{{user.firstname}}'s Profile</h3>
             </div>
+            <div class="hoverable clearfix">
             <div class="col s12 l12" id="our-posts">
                 <nav class="z-depth-0 card_header">
                     <div class="nav-wrapper">
@@ -63,6 +64,7 @@
                     </div>
                 </nav>
                 <div class="new_post_container container">
+<<<<<<< HEAD
                     <form ng-submit="sendPost(post)">
                         <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
                             <div class="btn-floating btn-large file-field">
@@ -87,12 +89,13 @@
                         </button>
                     </form>
                 </div>
-            </div>
+                </div>
+                </div>
             <div class="row">
                 <div class="col s12 l12">
                     <section class="display_profile_posts">
                         <div ng-repeat="post in profilePosts track by $index">
-                            <div class="individual_profile_posts">
+                            <div class="hoverable individual_profile_posts">
                                 <nav class="z-depth-0 card_header our_post_card_header">
                                     <div class="nav-wrapper">
                                         <a class="brand-logo card_title">{{post.postedDate}}</a>

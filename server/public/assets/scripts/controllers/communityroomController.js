@@ -1,9 +1,5 @@
 myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http', '$window', '$location', function (doGoodFactory, $scope, $http, $window, $location) {
 
-  $(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
-
   console.log('checking user');
   $scope.post = {
     dgd: false,
@@ -120,6 +116,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     }
 
   }
+
 
  $scope.initMaterialbox = function() {
    $('.materialboxed').materialbox();

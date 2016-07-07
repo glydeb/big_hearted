@@ -4,8 +4,12 @@ myApp.controller('navController', ['doGoodFactory', '$scope', '$http',
 
 $(document).ready(function(){
   console.log("sidenav firing");
-$(".button-collapse").sideNav();
+$(".button-collapse").sideNav({
+  closeOnClick: true
 });
+});
+
+
 
   if (doGoodFactory.factoryGetUserData() === undefined) {
     doGoodFactory.factoryRefreshUserData().then(function () {
@@ -38,4 +42,11 @@ $(".button-collapse").sideNav();
       $location.path('/home');
     });
   };
+
+  // $scope.initSideNav = function() {
+  //     $(".button-collapse").sideNav();
+  //     console.log("sidenav firing");
+  //   };
+
+
 }]);
