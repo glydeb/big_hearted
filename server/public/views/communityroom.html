@@ -3,7 +3,8 @@
         <h3 class="center-align">Welcome to the Community Room!</h3>
         <div class="row">
             <div class="col s10 push-s1">
-                <div id="our-posts">
+              <div class="hoverable clearfix">
+                <div class="boxshadow" id="our-posts">
                     <nav class="z-depth-0 card_header">
                         <div class="nav-wrapper">
                             <a class="brand-logo card_title">Create New Post</a>
@@ -14,11 +15,11 @@
                     <div class="container">
                         <form ng-submit="sendPost(post)">
                             <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
-                              <div class="btn-floating btn-large file-field">
-                                  <span class="upload-button"><i class="material-icons">portrait</i></span>
-                                  <input type="file" />
-                              </div>
-                              <label class="label">Upload a picture</label>
+                            <div class="btn-floating btn-large file-field">
+                                <span class="upload-button"><i class="material-icons">portrait</i></span>
+                                <input type="file" />
+                            </div>
+                            <label class="label">Upload a picture</label>
                             <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
                             <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                             <div>
@@ -28,7 +29,6 @@
                                         <input type="checkbox">
                                         <span class="lever"></span> Yes
                                     </label>
-
                                     <label class="label">Post this anonymously?</label>
                                 </div>
                             </div>
@@ -37,12 +37,17 @@
                             </button>
                         </form>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+
     </section>
     <div class="row">
         <div class="col s10 push-s1">
             <section class="displayallposts">
                 <div class="post" ng-repeat="post in communityPosts track by $index">
-                    <div class="individualposts">
+                    <div class="hoverable individualposts">
                         <nav class="z-depth-0 card_header">
                             <div class="nav-wrapper">
                                 <a class="brand-logo card_title">{{post.username}}</a>
@@ -65,11 +70,8 @@
                         </div>
                     </div>
                 </div>
-        </div>
+              </div>
     </div>
     </section>
     </div>
     </div>
-    </div>
-</div>
-</div>

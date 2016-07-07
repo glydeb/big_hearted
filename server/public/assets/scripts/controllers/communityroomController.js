@@ -1,9 +1,5 @@
 myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http', '$window', '$location', function (doGoodFactory, $scope, $http, $window, $location) {
 
-  $(document).ready(function(){
-    $('.materialboxed').materialbox();
-  });
-
   console.log('checking user');
   $scope.post = {
     dgd: false,
@@ -120,6 +116,14 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     }
 
   }
+
+  var options = [
+    {selector: '.class', offset: 200, callback: customCallbackFunc } },
+    {selector: '.other-class', offset: 200, callback: function() {
+      customCallbackFunc();
+    } },
+  ];
+  Materialize.scrollFire(options);
 
  $scope.initMaterialbox = function() {
    $('.materialboxed').materialbox();
