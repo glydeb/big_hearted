@@ -16,7 +16,7 @@
                             <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
                               <div class="btn-floating btn-large file-field">
                                   <span class="upload-button"><i class="material-icons">portrait</i></span>
-                                  <input type="file" fileread="post.image"/>
+                                  <input type="file" name="file" file></input>
                               </div>
                               <label class="label">Upload a picture</label>
                               <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
