@@ -14,6 +14,7 @@ var UserSchema = new Schema({
   dgdnumber: { type: Number, required: true },
   timesflagged: { type: Number, required: true },
   active: { type: Boolean, default: true, required: true },
+  image: String,
   firstname: String,
   lastname: String,
   phone: String,

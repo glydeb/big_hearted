@@ -580,11 +580,18 @@ main {
 .switch, .checkbox {
     margin-top: 15px;
 }
-.post-picture {
+.post-picture  {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     padding: 0px !important;
     border-radius: 2px;
 }
+.post-profile-picture {
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  padding: 0px !important;
+  border-radius: 2px;
+  margin-left: 24%;
+}
+
 .flag-post {
     float: right;
 }
@@ -595,6 +602,15 @@ main {
     font-size: 20px !important;
     margin-left: 7%;
 }
+.card_title_date {
+    font-size: 15px !important;
+    margin-left: 7%;
+}
+.post_card_title{
+  font-size: 20px !important;
+  margin-left: 5%;
+}
+
 .new_post_container {
     width: 75%;
 }
@@ -614,9 +630,14 @@ main {
   height: 25px;
 }
 
-.our_post_card_header, .post_card_header {
+.our_post_card_header {
   line-height: 56px;
   height: 50px;
+}
+
+.post_card_header {
+  height: 100px;
+  background-color: #426da9;
 }
 
 .clearfix {
