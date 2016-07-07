@@ -4,3 +4,4 @@ node_modules
 curl.txt
 Quinn Nelson +.jpg
 keys.*
+*.env
