@@ -54,6 +54,18 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     $scope.post.user_verify = $scope.user.verification;
     $scope.post.username = $scope.user.username;
 
+
+    var getString = '?file-name=' + 'pirate2.jpg' + '&file-type=' + 'image/jpeg';
+    $http.get('/s3' + getString).then(function (response) {
+      console.log('s3 credentials get:', response);
+      var imageURL = response.data.url;
+      $http.put(response.data.signedRequest, post.image, {
+        headers: { Accept: '*/*', 'Content-Type': 'image/jpeg'
+        }}).then(function (response) {
+        post.image = imageURL;
+        console.log(response);
+      });
+    });
     if ($scope.post.dgd === true) {
       $scope.user.dgdnumber += 1;
 
@@ -64,6 +76,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       });
     };
     console.log($scope.post);
+    $scope.post.image = post.image;
     $http.post('/post', $scope.post).then(function(response) {
       console.log("Successfully posted");
       post.description = '';

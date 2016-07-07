@@ -16,9 +16,10 @@
                             <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
                               <div class="btn-floating btn-large file-field">
                                   <span class="upload-button"><i class="material-icons">portrait</i></span>
-                                  <input type="file" />
+                                  <input type="file" fileread="post.image"/>
                               </div>
                               <label class="label">Upload a picture</label>
+                              <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
                             <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
                             <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                             <div>
@@ -51,7 +52,7 @@
                             </div>
                         </nav>
                         <div class="post_container container">
-                            <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" src="/assets/images/dgt_logo.jpg" />
+                            <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
                             </br>
                             <p class="post_description">{{post.description}}</p>
                             <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>
