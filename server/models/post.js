@@ -11,7 +11,7 @@ var PostSchema = new Schema({
   anonymous: { type: Boolean, required: true },
   likes: { type: Array },
   flagged: { type: Boolean, required: true },
-  postedDate: Date
+  postedDate: { type: String, required: true }
   // comments: [CommentSchema]
 });
 

@@ -3,8 +3,9 @@
         <h3 class="center-align">Welcome to the Community Room!</h3>
         <div class="row">
             <div class="col s10 push-s1">
-                <div id="our-posts">
-                    <nav class="z-depth-0 card_header">
+              <div class="hoverable clearfix">
+                <div class="boxshadow" id="our-posts">
+                    <nav class="z-depth-0">
                         <div class="nav-wrapper">
                             <a class="brand-logo card_title">Create New Post</a>
                             <form>
@@ -29,7 +30,6 @@
                                         <input type="checkbox">
                                         <span class="lever"></span> Yes
                                     </label>
-
                                     <label class="label">Post this anonymously?</label>
                                 </div>
                             </div>
@@ -38,39 +38,48 @@
                             </button>
                         </form>
                     </div>
+                  </div>
+                </div>
+              </div>
+
+
     </section>
     <div class="row">
-        <div class="col s10 push-s1">
+        <div class="col s10 push-s1 l10 push-l1">
             <section class="displayallposts">
                 <div class="post" ng-repeat="post in communityPosts track by $index">
-                    <div class="individualposts">
-                        <nav class="z-depth-0 card_header">
-                            <div class="nav-wrapper">
-                                <a class="brand-logo card_title">{{post.username}}</a>
+                    <div class="hoverable individualposts">
+                        <nav class="z-depth-0">
+                            <div class="nav-wrapper valign-wrapper post_card_header">
+                                <div class="valign">
+                                <img width="60" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-profile-picture" src="/assets/images/Quinn Nelson +.jpg" />
+                              </div>
+                                <a class="post_card_title">{{user.firstname}} {{user.lastname}}</a>
                                 <form>
                                 </form>
                             </div>
                         </nav>
                         <div class="post_container container">
+<<<<<<< HEAD
                             <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
+=======
+                            <img width="150" materialboxed class="materialboxed responsive-img post-picture" src="/assets/images/dgt_logo.jpg" />
+>>>>>>> 80d3201cbe30af5a000f7e1d8c2349081773fbe6
                             </br>
                             <p class="post_description">{{post.description}}</p>
-                            <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>
+                            <span>{{post.postedDate | date : 'EEEE, MMMM d, y'}}</span>
                             <p ng-show="post.flagged">Flagged: {{post.flagged}}</p>
                         </div>
                         <div class="row post_buttons_container">
                             <div class="section">
-                                <button id="button" class="waves-effect waves-light btn like-post" ng-click="likePost(post)"><i class="material-icons right">thumb_up</i>Like Post</button>
-                                <button id="button" class="waves-effect waves-light btn flag-post" ng-click="flagPost(post)"><i class="material-icons right">flag</i>Flag Post</button>
+                            <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>
+                                <button id="button" class="waves-effect waves-light btn-floating flag-post" ng-click="flagPost(post)"><i class="material-icons right">flag</i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-        </div>
+              </div>
     </div>
     </section>
     </div>
     </div>
-    </div>
-</div>
-</div>

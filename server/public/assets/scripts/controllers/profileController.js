@@ -23,10 +23,12 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
             }
         };
         $scope.post = {
-            dgd: false,
-            dgdnumber: 0,
-            anonymous: false,
-            likes: 0
+          dgd: false,
+          dgdnumber: 0,
+          anonymous: false,
+          likes: [],
+          flagged: false,
+          postedDate: new Date()
         };
 
         $scope.profilePosts = [];
@@ -91,7 +93,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
         $scope.initMaterialbox = function() {
             $('.materialboxed').materialbox();
-            console.log('initMaterialbox');
         };
     }
 ]);
