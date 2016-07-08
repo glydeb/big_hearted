@@ -30,6 +30,20 @@ router.get('/flagged', function (req, res) {
   });
 });
 
+// Get posts for a single user
+router.get('/:verCode', function (req, res) {
+  var verification = req.params.verCode;
+  console.log('Verification: ', verification);
+  Post.find({user_verify: verification}).limit(initialPosts).exec(function
+    (err, posts) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+    res.send(posts);
+  });
+});
+
 
 router.post('/', function (req, res) {
   var post = new Post(req.body);
