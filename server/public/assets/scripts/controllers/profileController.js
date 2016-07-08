@@ -5,6 +5,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
         console.log('profileController running');
 
+
         $scope.user = {};
         $scope.user.family_members = "Click edit to add members to your family";
         $scope.user.about_us = "Click edit to write a bio about your family";
@@ -23,10 +24,12 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
             }
         };
         $scope.post = {
-            dgd: false,
-            dgdnumber: 0,
-            anonymous: false,
-            likes: 0
+          dgd: false,
+          dgdnumber: 0,
+          anonymous: false,
+          likes: [],
+          flagged: false,
+          postedDate: new Date()
         };
 
         $scope.profilePosts = [];
@@ -35,6 +38,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         $scope.sendPost = function(post) {
             $scope.post.user_verify = $scope.user.verification;
             $scope.post.username = $scope.user.username;
+            $scope.loading = true;
 
             if ($scope.post.dgd === true) {
                 $scope.user.dgdnumber += 1;
@@ -49,6 +53,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
                 post.description = '';
                 post.dgd = false;
                 post.anonymous = false;
+                $scope.loading = false;
                 refreshOurProfile();
             });
         }
@@ -91,8 +96,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
         $scope.initMaterialbox = function() {
             $('.materialboxed').materialbox();
-            $('.material-placeholder').css('height', '150px');
-            console.log('initMaterialbox');
         };
     }
 ]);

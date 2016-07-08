@@ -34,6 +34,7 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
 
   // Load flagged content
   getFlagged();
+  getInactive();
 
   function getFlagged() {
     $http.get('/post/flagged').then(function (response) {
@@ -53,6 +54,15 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
       });
     }, function (err) {
       console.log('Error loading flagged content:', err);
+    });
+  }
+
+  function getInactive() {
+    $http.get('/register/inactive').then(function (response) {
+      $scope.inactiveUsers = response.data;
+      console.log($scope.inactiveUsers);
+    }, function (err) {
+      console.log('Error loading inactive users:', err);
     });
   }
 
@@ -102,5 +112,29 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
       getFlagged();
     });
   };
+
+  $scope.changeStatus = function (user, action) {
+    if (action == 'suspend') {
+      user.active = false;
+    } else if (action == 'activate') {
+      user.active = true;
+    }
+
+    console.log('Status change on:', user);
+    $http.put('/register/' + user.verification, user).then(function (response) {
+      console.log('changeStatus response:', response);
+      getInactive();
+    });
+  };
+
+/* REMOVED PENDING STRETCH GOAL
+  $scope.deleteUser = function (verification) {
+    console.log('No longer in database:', verification);
+    $http.delete('/register/' + verification).then(function (response) {
+      console.log('suspendUser response:', response);
+      getInactive();
+    });
+  };
+  */
 
 }]);

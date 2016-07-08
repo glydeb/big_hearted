@@ -13,7 +13,7 @@
     "angular": "^1.5.7",
     "angular-materialize": "^0.1.9",
     "angular-route": "^1.5.7",
-    "aws-sdk": "^2.4.6",
+    "aws-sdk": "^2.4.5",
     "bcrypt": "^0.8.7",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.6",

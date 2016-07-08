@@ -7,7 +7,8 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
     is_admin: false,
     textnotifications: false,
     dgdnumber: 0,
-    timesflagged: 0
+    timesflagged: 0,
+    active: true
   };
   $scope.message = '';
   $scope.mismatch = false;
@@ -113,12 +114,15 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
 
 // jQuery for select element
 $(".dropdown-button").dropdown({
-
       hover: true, // Activate on hover
       belowOrigin: true, // Displays dropdown below the button
       alignment: 'right' // Displays dropdown with edge aligned to the left of button
     }
   );
+
+  $(document).ready(function(){
+  $('.tooltipped').tooltip({delay: 100});
+});
 
   $scope.comparePassword = function () {
     if ($scope.user.password !== $scope.user.password2) {

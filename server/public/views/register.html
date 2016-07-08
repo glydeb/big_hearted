@@ -2,8 +2,8 @@
     <h3 class="lead">Register New User</h3>
     <form ng-submit="registerUser()">
         <div class="row input-field">
-            <div class="col s5">
-                <input type="text" placeholder="Verification Code (from your email)" ng-model="user.verification" required />
+            <div class="col l6 m6 s12">
+                <input type="text" placeholder="Verification Code" ng-model="user.verification" class="tooltipped" data-position="bottom" data-delay="100" data-tooltip="You can find this code in your email" required />
                 </br>
                 <input type="text" placeholder="First Name" ng-model="user.firstname" required />
                 </br>
@@ -11,7 +11,8 @@
                 </br>
                 <input type="email" placeholder="Email" ng-model="user.email" required class="validate" />
                 </br>
-                <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" required />
+                <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" class="tooltipped" data-position="bottom" data-delay="100" data-tooltip="Your username will be visible to others" required />
+
                 </br>
                 <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" required />
                 </br>
@@ -27,7 +28,7 @@
                 <label for="textnotifications">Would you like to receive occasional
                     <br/> text messages from Big-Hearted Families?</label>
                 <br/>
-                <div class="col s5">
+                <div class="col l6 m6 s12">
                     <input ng-show="user.textnotifications" type="tel" placeholder="Phone Number" ng-model="user.phonenumber" />
 
                     <div ng-show="user.textnotifications" class="input-field">
@@ -47,9 +48,9 @@
     </div>
     <div class="row">
         <h5 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h5>
-        <button class="col s2 waves-effect waves-light btn" type="submit" name="submit" value="Register" ng-click="registerUser()" ng-disabled="mismatch">Submit<i class="material-icons right">send</i>
+        <button class="col l2 waves-effect waves-light btn" type="submit" name="submit" value="Register" ng-click="registerUser()" ng-disabled="mismatch">Submit<i class="material-icons right">send</i>
         </button>
-        <div class="col s1 push-s2">
+        <div class="col l1 push-l3 m1 push-m3 s2 push-s5">
             <a href="#login">Cancel</a>
         </div>
     </div>

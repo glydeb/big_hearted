@@ -48,7 +48,7 @@
           <p class="col s4">{{user.firstname}} {{user.lastname}}</p>
           <p class="col s4">{{user.email}}</p>
           <p class="col s2">{{user.timesflagged}}</p>
-          <button class="waves-effect waves-light btn col s2" ng-click="suspendUser(user.verification)">Suspend User</button>
+          <button class="waves-effect waves-light btn col s2" ng-click="changeStatus(user, 'suspend')">Suspend User</button>
         </div>
       </div>
     </div>
@@ -56,9 +56,15 @@
   </br>
   <div class="inactive-users">
     <h4>Inactive Users</h4>
-    <p>Username</p>
-    <button class="waves-effect waves-light btn" ng-click="activateUser()">Activate User<i class="material-icons right">person add</i></button>
-    <button class="waves-effect waves-light btn" ng-click="deleteUser()">Delete User<i class="material-icons right">block</i></button>
+    <div class="row">
+      <h6 class="col s4">User</h6>
+      <h6 class="col s4">Email</h6>
+    </div>
+    <div class="row" ng-repeat="user in inactiveUsers">
+      <p class="col s4">{{user.firstname}} {{user.lastname}}</p>
+      <p class="col s4">{{user.email}}</p>
+      <button class="waves-effect waves-light btn" ng-click="changeStatus(user, 'activate')">Reactivate</button>
+      <!-- removed pending stretch goal work <button class="waves-effect waves-light btn" ng-click="deleteUser(user.verification)">Delete</button> -->
+    </div>
   </div>
-
 </div>

@@ -16,6 +16,8 @@ var verification = require('./routes/verification');
 var post = require('./routes/post');
 var sms = require('./routes/sms');
 var badges = require('./routes/badges');
+var aws = require('./routes/s3');
+
 
 
 // Body parser middleware
@@ -42,6 +44,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Routes
+app.use('/s3', aws);
 app.use('/sms', sms);
 app.use('/verification', verification);
 app.use('/register', register);

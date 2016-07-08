@@ -9,9 +9,9 @@ var PostSchema = new Schema({
   dgd: { type: Boolean, required: true },
   dgdnumber: { type: Number, required: true },
   anonymous: { type: Boolean, required: true },
-  likes: { type: Number, required: true },
-  flagged: { type: Boolean, required: true }, 
-  postedDate: Date
+  likes: { type: Array },
+  flagged: { type: Boolean, required: true },
+  postedDate: { type: String, required: true }
   // comments: [CommentSchema]
 });
 
