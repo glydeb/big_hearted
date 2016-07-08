@@ -15,7 +15,7 @@ main {
 .valign-wrapper {
     background-color: snow;
 }
-#our-posts, .family-info, .individual_profile_posts, #community-posts, .individualposts, .inactive-users, .flagged-content, .generate-code {
+#our-posts, .family-info, .individual_profile_posts, #community-posts, .individualposts, .inactive-users, .flagged-content, .generate-code, .dgd_complete {
     background-color: white;
 }
 #community-posts {
@@ -89,7 +89,7 @@ main {
     height: 1200px;
     box-shadow: 0px 8px 5px gray, -10px 8px 10px gray, 10px 8px 10px gray;
 }
-.generate-code, .flagged-content, .inactive-users {
+.generate-code, .flagged-content, .inactive-users, .dgd_complete {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
     padding: 0px;
     border-radius: 2px;
@@ -100,11 +100,21 @@ main {
 .code {
     display: inline-block;
 }
-.create_code_button{
+.create_code_button {
   margin-bottom: 20px;
 }
-.individualposts {
-  width: 80%;
+.flagged_content_post {
+  width: 85%;
+}
+.flagged_content_position {
+  padding-top: 25px;
+  padding-left: 25px;
+}
+.review-modal{
+  padding: 0px !important;
+}
+.reactivate_button{
+  float: right;
 }
 #badge1 {
     background-image: url("/assets/images/FKAbadge1.png");
@@ -1012,7 +1022,6 @@ box-shadow: 0 9px #999;
     resize: none;
     border-radius: 2px;
     padding: 0 0 20px 0;
-    overflow: auto;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     margin-top: 30px;
 }

@@ -35,6 +35,7 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
   // Load flagged content
   getFlagged();
   getInactive();
+  getDGDReward();
 
   function getFlagged() {
     $http.get('/post/flagged').then(function (response) {
@@ -65,6 +66,23 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
       console.log('Error loading inactive users:', err);
     });
   }
+
+  function getDGDReward() {
+    $http.get('/register/dgdreward').then(function (response) {
+      $scope.rewardUsers = response.data;
+      console.log(response.data);
+    }, function (err) {
+      console.log('Error loading all users:', err);
+    });
+  }
+
+  $scope.clearRewardUsers = function (user) {
+    var update = { verification: user.verification };
+    $http.put('/register/reward', update).then(function (response) {
+      console.log('clear reward users response:', response);
+      getDGDReward();
+    });
+  };
 
   function getSelected() {
     var selected = [];

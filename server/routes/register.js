@@ -23,6 +23,18 @@ router.put('/', function (req, res, next) {
   });
 });
 
+router.put('/reward', function (req, res) {
+  Users.update(req.body, { rewarded: true }, function (err, post) {
+    if (err) {
+      console.log(req.body);
+      res.sendStatus(500);
+      return;
+    }
+
+    res.status(204).send(post);
+  });
+});
+
 // Updates user data from community room actions
 router.put('/:verCode', function (req, res) {
   Users.findOneAndUpdate({ verification: req.params.verCode }, req.body, function (err, user) {
@@ -72,6 +84,19 @@ router.get('/inactive', function (req, res) {
       return;
     }
 
+    res.send(user);
+  });
+});
+
+//gets all users and data
+router.get('/dgdreward', function (req, res) {
+  console.log('dgdreward get');
+  Users.find({dgdnumber: 12, rewarded: false}, function (err, user) {
+    if (err) {
+      res.sendStatus(500);
+      console.log(err);
+      return;
+    }
     res.send(user);
   });
 });

@@ -22,6 +22,7 @@ var UserSchema = new Schema({
   family_members: String,
   about_us: String,
   our_projects: String,
+  rewarded: {type: Boolean, default: false}
 });
 
 // Called before adding a new user to the DB. Encrypts password.
