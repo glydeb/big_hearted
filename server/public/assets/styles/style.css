@@ -15,7 +15,7 @@ main {
 .valign-wrapper {
     background-color: snow;
 }
-#our-posts, .family-info, .individual_profile_posts, #community-posts, .individualposts {
+#our-posts, .family-info, .individual_profile_posts, #community-posts, .individualposts, .inactive-users, .flagged-content, .generate-code {
     background-color: white;
 }
 #community-posts {
@@ -95,13 +95,20 @@ main {
 }
 .generate-code, .flagged-content, .inactive-users {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
-    text-align: center;
-    border: 1px solid #039f92;
-    padding: 20px;
+    padding: 0px;
     border-radius: 2px;
 }
 .bold {
     font-weight: bold;
+}
+.code {
+    display: inline-block;
+}
+.create_code_button{
+  margin-bottom: 20px;
+}
+.individualposts {
+  width: 80%;
 }
 #badge1 {
     background-image: url("/assets/images/FKAbadge1.png");
@@ -646,4 +653,8 @@ main {
 }
 .post_button {
   margin-top: 7%;
+}
+
+label {
+  color: #5E5E5E;
 }
