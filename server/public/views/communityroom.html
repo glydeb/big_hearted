@@ -37,7 +37,7 @@
                                 </div>
                                 <div class="col l6 pull-l7 s6 pull-s6 center-align">
                                     <div class="section">
-                                        <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="responsive-img hoverable post-picture" ng-src="/assets/images/Quinn Nelson +.jpg" />
+                                        <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="responsive-img hoverable post-picture" ng-src="{{file.name}}" />
                                     </div>
                                     <div class="btn-floating btn-large file-field">
                                         <span class="upload-button"><i class="material-icons">portrait</i></span>
@@ -59,7 +59,7 @@
                         <nav class="z-depth-0">
                             <div class="nav-wrapper valign-wrapper post_card_header">
                                 <div class="valign">
-                                    <img width="60" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-profile-picture" src="/assets/images/Quinn Nelson +.jpg" />
+                                    <img width="60" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-profile-picture" src="/assets/images/pirate_me_sm.jpg" />
                                 </div>
                                 <a class="post_card_title">{{user.username}}</a>
                                 <form>
@@ -71,7 +71,7 @@
                             </br>
                             <p class="post_description">{{post.description}}</p>
                             <span>{{post.postedDate | date : 'EEEE, MMMM d, y'}}</span>
-                            <p ng-show="post.flagged">Post flagged for reviewal</p>
+                            <p ng-show="post.flagged">Post flagged for review</p>
                         </div>
                         <div class="row post_buttons_container">
                             <div class="section">
