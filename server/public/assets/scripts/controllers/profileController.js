@@ -33,7 +33,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         };
 
         $scope.profilePosts = [];
-        refreshOurProfile();
 
         $scope.sendPost = function(post) {
             $scope.post.user_verify = $scope.user.verification;
@@ -46,7 +45,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
                     console.log("Successfully posted");
                     refreshOurProfile();
                 });
-            };
+            }
             console.log($scope.post);
             $http.post('/post', $scope.post).then(function(response) {
                 console.log("Successfully posted");
@@ -56,19 +55,20 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
                 $scope.loading = false;
                 refreshOurProfile();
             });
-        }
+        };
 
         function refreshOurProfile() {
-            $http.get('/post').then(function(response) {
+            $http.get('/post/' +
+              $scope.user.verification).then(function(response) {
                 $scope.profilePosts = response.data;
                 $scope.profilePosts.forEach(function(post) {
                     if (post.anonymous === true) {
                         post.username = 'Anonymous';
                         post.image = '/assets/images/mickeyanonymous.jpg';
-                    };
+                    }
                 });
             });
-        };
+        }
 
         $(document).ready(function() {
             $('.materialboxed').materialbox();
@@ -85,12 +85,14 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
                 if ($scope.user.username === undefined || $scope.user.username === '') {
                     $location.path('/home');
                 }
+                refreshOurProfile();
             });
         } else {
             $scope.user = doGoodFactory.factoryGetUserData();
             if ($scope.user.username === undefined || $scope.user.username === '') {
                 $location.path('/home');
             }
+            refreshOurProfile();
 
         }
 
