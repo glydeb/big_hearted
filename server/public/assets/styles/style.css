@@ -86,13 +86,7 @@ main {
     height: 901px;
     background-repeat: no-repeat;
 }
-#landingPage {
-    background-image: url("/assets/images/landingPage.jpg");
-    background-repeat: repeat-x;
-    width: 1600px;
-    height: 1200px;
-    box-shadow: 0px 8px 5px gray, -10px 8px 10px gray, 10px 8px 10px gray;
-}
+
 .generate-code, .flagged-content, .inactive-users {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.12);
     text-align: center;
@@ -640,8 +634,30 @@ main {
   background-color: #426da9;
 }
 
+.individualdownload {
+  margin-top: 30px;
+  border-right: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+.individualorganizations {
+  padding-left: 25px;
+  border-left: 1px solid rgba(0, 0, 0, 0.12);
+}
+
+#editbutton {
+  background-color: #8752a2;
+}
+
 .clearfix {
     overflow: auto;
     zoom: 1;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+a {
+  color: #73bf43
+}
+
+a:hover {
+  color: #00af59;
 }

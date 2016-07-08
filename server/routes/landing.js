@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var bodyParser = require('body-parser');
 var Download = require('../models/downloads');
+var Organization = require('../models/organizations')
 var path = require('path');
 
 router.get('/', function (req, res) {
@@ -12,6 +13,27 @@ router.get('/', function (req, res) {
     }
 res.send(downloads);
 });
+});
+
+router.get('/organization', function (req, res) {
+  Organization.find({}, function (err, organization) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+res.send(organization);
+});
+});
+
+router.put('/organization/:id', function (req, res) {
+  Organization.findByIdAndUpdate(req.params.id, req.body, function (err, organization) {
+    if (err) {
+      console.log(req.body);
+      res.sendStatus(500);
+      return;
+    }
+    res.status(204).send(organization);
+  });
 });
 // router.post('/', function (req, res) {
 //   var ingredient = new Ingredient(req.body);
