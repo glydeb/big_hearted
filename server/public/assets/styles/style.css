@@ -78,7 +78,7 @@ main {
   border-radius: 10px;
   padding: 15px 15px;
   overflow: auto;
-  background-color: #73bf43;
+  background-color: #426da9;
   color: white;
 }
 
@@ -257,9 +257,6 @@ main {
   vertical-align: middle;
 }
 
- #badgesPic{
-   background-image: url("/assets/images/badgesBackground.jpg")
- }
 
 #badge5 {
     background-image: url("/assets/images/FKAbadge5.png");
@@ -280,19 +277,9 @@ main {
 position: sticky;
 }
 
-#badgesPic {
-background-image: url("/assets/images/badgesBackground.jpg");
-display: inherit !important;
-width: 1800px;
-height:901px;
-background-repeat: no-repeat;
-opacity: .7;
-}
-
 #badge5:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
-
 }
 
 #badge6 {
@@ -429,6 +416,140 @@ opacity: .7;
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
+#badge13 {
+    background-image: url("/assets/images/badgeone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge13:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
+
+#badge14 {
+    background-image: url("/assets/images/badge2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge14:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
+
+#badge15 {
+    background-image: url("/assets/images/badge3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge15:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
+
+#badge16 {
+    background-image: url("/assets/images/badge4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge16:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
+
+#badge17 {
+    background-image: url("/assets/images/badge5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge17:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
+
+#badge18 {
+    background-image: url("/assets/images/badges6.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge18:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
+
+#badge19 {
+    background-image: url("/assets/images/badge7.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+}
+
+#badge19:hover{
+  animation: bounce 1s infinite;
+ cursor:pointer;
+}
+
+
 #badge12:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
@@ -438,31 +559,31 @@ opacity: .7;
 #modal1{
   height:300px;
   width:300px;
-  background-color:  #8752a2 ;
+  background-color:  #8752a2;
 }
 
 #modal2{
   height:300px;
   width:300px;
-  background-color:  #f25826 ;
+  background-color:  #f25826;
 }
 
 #modal3{
   height:300px;
   width:300px;
-  background-color:  #eea818  ;
+  background-color:  #426da9;
 }
 
 #modal4{
   height:300px;
   width:300px;
-  background-color:  #eedb58 ;
+  background-color: #eedb58;
 }
 
 #modal5{
   height:300px;
   width:300px;
-  background-color:  #00af59 ;
+  background-color: #00af59;
 }
 
 #modal6{
@@ -507,20 +628,202 @@ opacity: .7;
   background-color:  #73bf43;
 }
 
-.claim1, .claim2, .claim3, .claim4, .claim5, .claim6, .claim7, .claim8, .claim9, .claim10, .claim11, .claim12{
+#modal13{
+  height:300px;
+  width:300px;
+  background-color:  #f25826;
+}
+
+#modal14{
+  height:300px;
+  width:300px;
+  background-color:  #eea818;
+}
+
+#modal15{
+  height:300px;
+  width:300px;
+  background-color:  #eedb58;
+}
+
+#modal16{
+  height:300px;
+  width:300px;
+  background-color:  #00af59;
+}
+
+#modal17{
+  height:300px;
+  width:300px;
+  background-color:  #73bf43;
+}
+
+#modal18{
+  height:300px;
+  width:300px;
+  background-color:  #426da9;
+}
+
+#modal19{
+  height:300px;
+  width:300px;
+  background-color:  #8752a2;
+}
+
+
+.claim{
   text-align: center;
 }
 
-#modalButton1, #modalButton2, #modalButton3, #modalButton5, #modalButton6, #modalButton7, #modalButton8, #modalButton9, #modalButton10, #modalButton11, #modalButton12{
+/*//effects badges 1 2 3 5 6 8 11 12//*/
+.modal-links{
+  color:#eedb58;
+  text-decoration: underline;
+  text-shadow:.5px .5px black;
+}
+
+.modal-links:hover{
+  font-style: italic;
+  color:white;
+}
+
+.modal-links3{
+  text-decoration: underline;
+  color:blue;
+}
+
+.modal-links3:hover{
+  color:white;
+  font-style: italic;
+
+}
+
+.modal-action{
   background-color:#eedb58;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
-  border: 1px solid #197FD2;
-  padding: 20px;
-  border-radius: 2px;
+  box-shadow: 0 4px #999;
 
 }
+
+#exitmodal{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal2{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal3{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal4{
+position: fixed;
+top:10px;
+right:15px;
+background-color:#3366ff;
+}
+
+#exitmodal5{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal6{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal7{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal8{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal9{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal10{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal11{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal12{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal13{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal14{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal15{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal16{
+position: fixed;
+top:10px;
+right:15px;
+background-color:#3366ff;
+}
+
+#exitmodal17{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal18{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+#exitmodal19{
+position: fixed;
+top:10px;
+right:15px;
+}
+
+
+
 
 #modalButton1:active{
   background-color: #3e8e41;
@@ -625,13 +928,17 @@ box-shadow: 0 9px #999;
 }
 
 .badgeHeader{
-  height:100px;
-  width:800px;
   border-style:groove;
   border-color: #eedb58 ;
-  background-color: #3366ff;
+  background-color: #426da9;
   vertical-align: middle;
-
+  color:white;
+  font-size: 20px;
+  padding:3px,3px,6px,3px;
+  box-shadow:10px 10px 5px #888888;
+  margin-left: 20px;
+  margin-bottom: -10px;
+  text-align: center;
 }
 
 #badgePage{
@@ -696,10 +1003,11 @@ box-shadow: 0 9px #999;
   border-radius: 10px;
   padding: 15px 15px;
   overflow: auto;
-  background-color: #3366ff;
+  background-color: #426da9;
   color: white;
   box-shadow: 0px 8px 10px gray,
          -10px 8px 15px gray, 10px 8px 15px gray;
+  font-size;
 
 .post-picture {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);

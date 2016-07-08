@@ -15,6 +15,7 @@ var download = require('./routes/download');
 var verification = require('./routes/verification');
 var post = require('./routes/post');
 var sms = require('./routes/sms');
+var badges = require('./routes/badges');
 
 
 // Body parser middleware
@@ -47,7 +48,9 @@ app.use('/register', register);
 app.use('/user', user);
 app.use('/download', download);
 app.use('/post', post);
+app.use('/badges', badges);
 app.use('/*', index);
+
 
 // Mongo Connection //
 var mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/bighearted';
