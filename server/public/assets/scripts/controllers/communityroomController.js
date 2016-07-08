@@ -111,6 +111,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   $scope.sendPost = function (post) {
     $scope.post.user_verify = $scope.user.verification;
     $scope.post.username = $scope.user.username;
+    $scope.post.postedDate = new Date();
 
     // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
     AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
@@ -127,11 +128,15 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         return false;
       }
 
-      var newName = $scope.user.verification +
+      // create new image name - 6-character verification code plus
+      // post timestamp plus existing file extension.
+      var newName = $scope.user.verification + '_' +
+        $scope.post.postedDate.toISOString().replace(/[\W_]/g,'') +
         $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
+      $scope.file.name = newName;
 
       var params = { Key:  'images/' + newName, ContentType: $scope.file.type, Body: $scope.file, ServerSideEncryption: 'AES256' };
-      $scope.post.image = $scope.prefix + $scope.file.name;
+      $scope.post.image = $scope.prefix + newName;
 
       bucket.putObject(params, function(err, data) {
         if(err) {
