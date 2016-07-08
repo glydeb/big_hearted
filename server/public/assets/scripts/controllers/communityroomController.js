@@ -59,36 +59,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
   };
 
-  $scope.sendPost = function (post) {
-    $scope.post.user_verify = $scope.user.verification;
-    $scope.post.username = $scope.user.username;
-    $scope.loading = true;
-
-
-//    if ($scope.file !== undefined) { uploadImage(); }
-
-    uploadImage();
-    if ($scope.post.dgd === true) {
-      $scope.user.dgdnumber += 1;
-
-      //moved to register route to avoid confusion - register handles users
-      $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
-        console.log("Successfully posted");
-        refreshCommunityRoom();
-      });
-    }
-
-    console.log($scope.post);
-    $http.post('/post', $scope.post).then(function(response) {
-      console.log("Successfully posted");
-      post.description = '';
-      post.dgd = false;
-      post.anonymous = false;
-      $scope.loading = false;
-      refreshCommunityRoom();
-    });
-  };
-
   function refreshCommunityRoom () {
     $http.get('/post').then(function(response) {
       $scope.communityPosts = response.data;
@@ -137,7 +107,12 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
   }
 
-  function uploadImage() {
+  // create a post
+  $scope.sendPost = function (post) {
+    $scope.post.user_verify = $scope.user.verification;
+    $scope.post.username = $scope.user.username;
+    $scope.post.postedDate = new Date();
+
     // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
     AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
     AWS.config.region = 'us-east-1';
@@ -145,44 +120,68 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     console.log($scope.file);
 
     if ($scope.file) {
-        // Perform File Size Check First
-        var fileSize = Math.round(parseInt($scope.file.size));
-        if (fileSize > $scope.sizeLimit) {
-          toastr.error('Sorry, your attachment is too big. <br/> Maximum '  + $scope.fileSizeLabel() + ' file attachment allowed','File Too Large');
+      // Perform File Size Check First
+      var fileSize = Math.round(parseInt($scope.file.size));
+      if (fileSize > $scope.sizeLimit) {
+        console.log('size limit exceeded');
+        toastr.error('Sorry, your attachment is too big. <br/> Maximum '  + $scope.fileSizeLabel() + ' file attachment allowed','File Too Large');
+        return false;
+      }
+
+      // create new image name - 6-character verification code plus
+      // post timestamp plus existing file extension.
+      var newName = $scope.user.verification + '_' +
+        $scope.post.postedDate.toISOString().replace(/[\W_]/g,'') +
+        $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
+      $scope.file.name = newName;
+
+      var params = { Key:  'images/' + newName, ContentType: $scope.file.type, Body: $scope.file, ServerSideEncryption: 'AES256' };
+      $scope.post.image = $scope.prefix + newName;
+
+      bucket.putObject(params, function(err, data) {
+        if(err) {
+          toastr.error(err.message,err.code);
           return false;
         }
+        else {
+          // Upload Successfully Finished
+          console.log('file upload finished');
+          // toastr.success('File Uploaded Successfully', 'Done');
 
-        var params = { Key:  'images/' + $scope.file.name, ContentType: $scope.file.type, Body: $scope.file, ServerSideEncryption: 'AES256' };
-        $scope.post.image = $scope.prefix + $scope.file.name;
-
-        bucket.putObject(params, function(err, data) {
-          if(err) {
-            toastr.error(err.message,err.code);
-            return false;
-          }
-          else {
-            // Upload Successfully Finished
-            toastr.success('File Uploaded Successfully', 'Done');
-
-            // Reset The Progress Bar
-            setTimeout(function() {
-              $scope.uploadProgress = 0;
-              $scope.$digest();
-            }, 4000);
-          }
-        })
+          $http.post('/post', $scope.post).then(function(response) {
+            console.log("Successfully posted");
+            post.description = '';
+            post.dgd = false;
+            post.anonymous = false;
+            refreshCommunityRoom();
+          });
+          /* disable progress bar
+          // Reset The Progress Bar
+          setTimeout(function() {
+            $scope.uploadProgress = 0;
+            $scope.$digest();
+          }, 4000); */
+        }
+      });
+        /* disable progress Bar
         .on('httpUploadProgress',function(progress) {
-          $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
-          $scope.$digest();
-        });
-        console.log(test);
+        $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
+        $scope.$digest();
+      }); */
       }
       else {
+        $http.post('/post', $scope.post).then(function(response) {
+          console.log("Successfully posted");
+          post.description = '';
+          post.dgd = false;
+          post.anonymous = false;
+          refreshCommunityRoom();
+        });
         // No File Selected
         console.log('No file submitted');
         //toastr.error('Please select a file to upload');
       }
-  }
+  };
 
 
   $scope.fileSizeLabel = function() {
