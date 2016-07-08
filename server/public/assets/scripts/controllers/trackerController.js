@@ -2,7 +2,9 @@ myApp.controller('trackerController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {
 
+
   $scope.user = {};
+
   $scope.image1 = false;
   $scope.image2 = false;
   $scope.image3 = false;
@@ -88,5 +90,8 @@ myApp.controller('trackerController', ['doGoodFactory', '$scope', '$http',
     default: $scope.image1 = true;
     }
   }
+
+
+
 
 }]);

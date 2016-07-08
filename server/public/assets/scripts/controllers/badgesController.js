@@ -2,23 +2,25 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
   '$window', '$location', function (doGoodFactory, $scope, $http, $window,
   $location) {
 
-
+$scope.badges = {};
+$scope.user = {};
+getBadges();
 
   console.log('checking user');
 
   // go to factory to verify user
   if (doGoodFactory.factoryGetUserData() === undefined) {
     doGoodFactory.factoryRefreshUserData().then(function () {
-      $scope.userName = doGoodFactory.factoryGetUserData().username;
+      $scope.user = doGoodFactory.factoryGetUserData();
 
       // if it's still undefined after refresh, send them to login page
-      if ($scope.userName === undefined || $scope.userName === '') {
+      if ($scope.user.username === undefined || $scope.user.username === '') {
         $location.path('/home');
       }
     });
   } else {
-    $scope.userName = doGoodFactory.factoryGetUserData().username;
-    if ($scope.userName === undefined || $scope.userName === '') {
+    $scope.user = doGoodFactory.factoryGetUserData();
+    if ($scope.user.username === undefined || $scope.user.username === '') {
       $location.path('/home');
     }
 
@@ -33,9 +35,10 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
     document.getElementById('badge1').id = 'badge1New';
 
   };
-function updateBadge() {
-  $http.put('/register/' + $scope.user.verification).then(function(response) {
-    console.log("Successfully posted");
+function getBadges() {
+  $http.get('/badges/' + $scope.user.verification).then(function(response) {
+    $scope.badges = response.data[0];
+    console.log($scope.badges);
   });
 }
 }]);

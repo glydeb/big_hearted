@@ -1,26 +1,27 @@
+<div class="container">
+    <div class="row">
 
-<div id="badgesic" class="container">
-  <div class="row">
-    <div class="badgeHeader" class="col s6">
-    <p>
-      Empathy Achievement Badges are self-awarded. Don’t worry, we trust you! When you reach these key milestones in your kindness practice, check the box to receive a badge on your [what is the personal page going to be called?]. Can your family collect them all?
-    </p>
+        <div class="col s12 m8 l8 push-l1">
+            <p class="badgeHeader">
+                Empathy Achievement Badges are self-awarded. Don’t worry, we trust you! To find out how to reach these key milestones in your kindness practice, click on the badges. Can your family collect them all?
+            </p>
+
+        </div>
     </div>
-  </div>
     <div class="row">
         <div class="section">
             <div class="col s6 m4 l3">
-                <div  id="badge1" data-target="modal1" class="modal-trigger"></div>
+                <div id="badge1" data-target="modal1" class="modal-trigger"></div>
                 <!-- Modal Structure -->
                 <div id="modal1" class="modal">
                     <div class="modal-content">
                         <p class="bold">Generosity Badge
-                        </p> Awarded for making a donation to a cause you love. Visit our <a href="http://www.doinggoodtogether.org/donate-charitable-giving-fun-fundraisers">Donate: Charitable Giving & Fun Fundraisers</a> collection for creative ideas
-                        to make generosity memorable.
+                        </p> Awarded for making a donation to a cause you love. Visit our <a class="modal-links" href="http://www.doinggoodtogether.org/donate-charitable-giving-fun-fundraisers">Donate: Charitable Giving & Fun Fundraisers</a> collection
+                        for creative ideas to make generosity memorable.
                     </div>
-                    <div class="claim1">
+                    <div class="claim">
+                        <button id="exitmodal" class="modal-action modal-close">X</button>
                         <button id="modalButton1" class="modal-action modal-close" ng-click="changeBadge()">Claim Badge</button>
-                        <button id="modalclose1" class="modal-action modal-close">Exit</button>
                     </div>
                 </div>
             </div>
@@ -31,9 +32,10 @@
                     <div class="modal-content">
                         <p class="bold">Bibliophile Badge
                         </p>
-                        Awarded for reading a kindness-themed book and discussing it. Visit our <a href="http://www.doinggoodtogether.org/bhf/read-together/">Read Together</a> collection for book ideas and discussion questions.
+                        Awarded for reading a kindness-themed book and discussing it. Visit our <a class="modal-links" href="http://www.doinggoodtogether.org/bhf/read-together/">Read Together</a> collection for book ideas and discussion questions.
                     </div>
-                    <div class="claim2">
+                    <div class="claim">
+                        <button id="exitmodal2" class="modal-action modal-close">X</button>
                         <button id="modalButton2" class="modal-action modal-close">Claim Badge</button>
                     </div>
                 </div>
@@ -44,11 +46,13 @@
                 <div id="modal3" class="modal">
                     <div class="modal-content">
                         <p class="bold">
-                            Smile Sharing Badge 
-                        </p> Awarded for reaching out to others who may feel lonely and isolated. Visit our <a href="http://www.doinggoodtogether.org/bhf/provide-comfort/">Provide Comfort</a> collection for ideas.
+                            Smile Sharing Badge
+
+                        </p> Awarded for reaching out to others who may feel lonely and isolated. Visit our <a class="modal-links" href="http://www.doinggoodtogether.org/bhf/provide-comfort/">Provide Comfort</a> collection for ideas.
 
                     </div>
-                    <div class="claim3">
+                    <div class="claim">
+                        <button id="exitmodal3" class="modal-action modal-close">X</button>
                         <button id="modalButton3" class="modal-action modal-close">Claim Badge</button>
                     </div>
                 </div>
@@ -60,11 +64,13 @@
                     <div class="modal-content">
                         <p class="bold">
                             Big-Hearted Royalty Badge
-                        </p>Awarded for making a donation to Doing Good Together™ to help new families around the country start a habit of giving. Visit our <a href="http://www.doinggoodtogether.org/donate/Give">Give</a> section to make your contribution.
+                        </p>Awarded for making a donation to Doing Good Together™ to help new families around the country start a habit of giving. Visit our <a class="modal-links3" href="http://www.doinggoodtogether.org/donate/Give">Give</a> section to
+                        make your contribution.
 
                     </div>
-                    <div class="claim4">
-                        <button  id="modalButton4" class="modal-action modal-close">Claim Badge</button>
+                    <div class="claim">
+                        <button id="exitmodal4" class="modal-action modal-close">X</button>
+                        <button id="modalButton4" class="modal-action modal-close">Claim Badge</button>
                     </div>
                 </div>
             </div>
@@ -79,10 +85,11 @@
                             <p class="bold">
                                 Creature Care Badge
                             </p>
-                            Awarded for completing an act of kindness for the animal kingdom. Visit our <a href="http://www.doinggoodtogether.org/bhf/care-for-animals">Care for Animals</a> collection for ideas.
+                            Awarded for completing an act of kindness for the animal kingdom. Visit our <a class="modal-links" href="http://www.doinggoodtogether.org/bhf/care-for-animals">Care for Animals</a> collection for ideas.
 
                         </div>
-                        <div class="claim5">
+                        <div class="claim">
+                            <button id="exitmodal5" class="modal-action modal-close">X</button>
                             <button id="modalButton5" class="modal-action modal-close">Claim Badge</button>
                         </div>
                     </div>
@@ -97,11 +104,11 @@
                             Citizenship Badge
                         </p>
 
-                        Awarded for engaging in a social justice issue your family cares about. Visit our <a href="http://www.doinggoodtogether.org/bhf/advocate-peace-justice-social-action">Advocacy: Peace, Justice, and Social Action</a> collection for
-                        ideas.
+                        Awarded for engaging in a social justice issue your family cares about. Visit our <a class="modal-links" href="http://www.doinggoodtogether.org/bhf/advocate-peace-justice-social-action">Advocacy: Peace, Justice, and Social Action</a>                        collection for ideas.
 
                     </div>
-                    <div class="claim6">
+                    <div class="claim">
+                        <button id="exitmodal6" class="modal-action modal-close">X</button>
                         <button id="modalButton6" class="modal-action modal-close">Claim Badge</button>
                     </div>
                 </div>
@@ -114,10 +121,12 @@
                         <p class="bold">
                             DGT™ Super Fan Badge
                         </p>
-                        Awarded for <a href="https://visitor.r20.constantcontact.com/manage/optin?v=001g3fnoyTOrpjVtWcMz6PYAYlAEZncWc_kCMMgQewSIi6aLq31Jr1Rfw2tlFpzfWv1Gc2yDK9ijGmENDXArUcGhExalToSkqZeN_8CEVu9tso8uG20yVobzJvdCdu_7JJgvj1p7PWe502FZqJ6v3PwyK7nSSKJsnlNFXMRxzeMe0CpNLyqOU4F4tF92B4_yw4N">signing up</a>                        for any of our free subscription services. Check out our monthly <a href="http://www.doinggoodtogether.org/dgt-newsletters/">newsletter</a>, weekly <a href="http://www.doinggoodtogether.org/bhf/ourblog/">blog</a>, and monthly local
-                        <a href="http://www.doinggoodtogether.org/family-volunteering-local/">volunteer listings</a>.
+                        Awarded for <a class="modal-links3" href="https://visitor.r20.constantcontact.com/manage/optin?v=001g3fnoyTOrpjVtWcMz6PYAYlAEZncWc_kCMMgQewSIi6aLq31Jr1Rfw2tlFpzfWv1Gc2yDK9ijGmENDXArUcGhExalToSkqZeN_8CEVu9tso8uG20yVobzJvdCdu_7JJgvj1p7PWe502FZqJ6v3PwyK7nSSKJsnlNFXMRxzeMe0CpNLyqOU4F4tF92B4_yw4N">signing up</a>                        for any of our free subscription services. Check out our monthly <a class="modal-links3" href="http://www.doinggoodtogether.org/dgt-newsletters/">newsletter</a>, weekly <a class="modal-links3" href="http://www.doinggoodtogether.org/bhf/ourblog/">blog</a>,
+                        and monthly local
+                        <a class="modal-links3" href="http://www.doinggoodtogether.org/family-volunteering-local/">volunteer listings</a>.
                     </div>
-                    <div class="claim7">
+                    <div class="claim">
+                        <button id="exitmodal7" class="modal-action modal-close">X</button>
                         <button id="modalButton7" class="modal-action modal-close">Claim Badge</button>
                     </div>
                 </div>
@@ -131,10 +140,11 @@
                             Happy Habits Badge
                         </p>
 
-                        Awarded for fitting a bite-sized, regular act of kindness into your family’s weekly routine. Visit our <a href="http://www.doinggoodtogether.org/bhf/practice-kindness">Practice Kindness</a> collection for ideas!
+                        Awarded for fitting a bite-sized, regular act of kindness into your family’s weekly routine. Visit our <a class="modal-links" href="http://www.doinggoodtogether.org/bhf/practice-kindness">Practice Kindness</a> collection for ideas!
                     </div>
-                    <div class="claim8">
-                        <button id="modalButton8"class="modal-action modal-close">Claim Badge</button>
+                    <div class="claim">
+                        <button id="exitmodal8" class="modal-action modal-close">X</button>
+                        <button id="modalButton8" class="modal-action modal-close">Claim Badge</button>
                     </div>
                 </div>
             </div>
@@ -148,9 +158,11 @@
                                 <p class="bold">
                                     Helpful Holiday Badge
                                 </p>
-                                Awarded for adding intentional kindness to your family holiday traditions. Visit our <a href="http://www.doinggoodtogether.org/bhf/adopt-holiday-traditions/">Adopt Holiday Traditions </a> collection for ideas.
+                                Awarded for adding intentional kindness to your family holiday traditions. Visit our <a class="modal-links3" href="http://www.doinggoodtogether.org/bhf/adopt-holiday-traditions/">Adopt Holiday Traditions </a> collection
+                                for ideas.
                             </div>
-                            <div class="claim9">
+                            <div class="claim">
+                                <button id="exitmodal9" class="modal-action modal-close">X</button>
                                 <button id="modalButton9" class=" modal-action modal-close">Claim Badge</button>
                             </div>
                         </div>
@@ -165,9 +177,10 @@
                                 Flash Kindness Badge
                             </p>
 
-                            Awarded for completing a quick, possibly random, act of kindness. Visit our <a href="http://www.doinggoodtogether.org/bhf/sharequickactsofkindness">Share Quick Acts of Kindness</a> collection for ideas.
+                            Awarded for completing a quick, possibly random, act of kindness. Visit our <a class="modal-links3" href="http://www.doinggoodtogether.org/bhf/sharequickactsofkindness">Share Quick Acts of Kindness</a> collection for ideas.
                         </div>
-                        <div class="claim10">
+                        <div class="claim">
+                            <button id="exitmodal10" class="modal-action modal-close">X</button>
                             <button id="modalButton10" class="modal-action modal-close">Claim Badge</button>
                         </div>
                     </div>
@@ -178,12 +191,13 @@
                     <div id="modal11" class="modal">
                         <div class="modal-content">
                             <p class="bold">
-                                  Wilderness Hero Badge
+                                Wilderness Hero Badge
                             </p>
-                           Awarded for protecting the environment. Visit our <a href="http://www.doinggoodtogether.org/bhf/heal-the-earth/">Heal the Earth</a> collection for ideas!
+
+                            Awarded for protecting the environment. Visit our <a class="modal-links" href="http://www.doinggoodtogether.org/bhf/heal-the-earth/">Heal the Earth</a> collection for ideas!
                         </div>
-                        <div class="claim11">
-                            <button id="modalButton11" class="modal-action modal-close">Claim Badge</button>
+                        <div class="claim">
+                            <button id="exitmodal11" class="modal-action modal-close">X</button>
                         </div>
                     </div>
                 </div>
@@ -196,14 +210,146 @@
                                 Urgent Needs Badge
                             </p>
 
-                            Awarded for completing a project that helps those who struggle to earn enough money for basic needs, like housing, food, and electricity. Visit our Fight <a href="http://www.doinggoodtogether.org/bhf/fight-poverty/">Poverty</a> collection for ideas.
-                          </div>
-                        <div class="claim12">
-                            <button id="modalButton12" class=" modal-action modal-close">Claim Badge</button>
+                            Awarded for completing a project that helps those who struggle to earn enough money for basic needs, like housing, food, and electricity. Visit our Fight <a class="modal-links" href="http://www.doinggoodtogether.org/bhf/fight-poverty/">Poverty</a>                            collection for ideas.
+                        </div>
+                        <div class="claim">
+                            <button id="exitmodal12" class="modal-action modal-close">X</button>
+
                         </div>
                     </div>
                 </div>
-              </div>
+                <div class="row">
+
+                    <div class="col s12 m8 l8 push-l1">
+                        <p class="badgeHeader">
+
+                          Big-Hearted Badges are automatically awarded when you hit important milestones in your kindness practice. Do your best to collect them all!
+
+                        </p>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="section">
+                        <div class="col s6 m4 l3 push-l1">
+                            <div id="badge13" data-target="modal13" class="modal-trigger"></div>
+                            <!-- Modal Structure -->
+                            <div id="modal13" class="modal">
+                                <div class="modal-content">
+                                  <p class="bold">
+                                      On Your Way Badge
+                                  </p>
+                                  Awarded for completing and recording your first project! Keep going, and watch your progress on the Do Good Dozen Challenge board.
+                                </div>
+                                <div class="claim">
+                                    <button id="exitmodal13" class="modal-action modal-close">X</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m4 l3 push-l1">
+                        <div id="badge14" data-target="modal14" class="modal-trigger"></div>
+                        <!-- Modal Structure -->
+                        <div id="modal14" class="modal">
+                            <div class="modal-content">
+                                <p class="bold">
+                                  Halfway Badge
+                                </p>
+                                Awarded for reaching the halfway mark in your Do Good Dozen Challenge. Way to go! Complete six more projects to reach your goal.
+                            </div>
+                            <div class="claim">
+                                <button id="exitmodal14" class="modal-action modal-close">X</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m4 l3 push-l1">
+                        <div id="badge15" data-target="modal15" class="modal-trigger"></div>
+                        <!-- Modal Structure -->
+                        <div id="modal15" class="modal">
+                            <div class="modal-content">
+                              <p class ="bold">
+                                Champion Badge
+                              </p>
+                              Awarded for completing and recording 12 projects in less than 12 months. You’ve made a difference, made memories, and started a new habit of kindness. We’ll contact you about your prize shortly!
+                            </div>
+                            <div class="claim">
+                                <button id="exitmodal15" class="modal-action modal-close">X</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s6 m4 l3 push-l1">
+                        <div id="badge16" data-target="modal16" class="modal-trigger"></div>
+                        <!-- Modal Structure -->
+                        <div id="modal16" class="modal">
+                            <div class="modal-content">
+                              <p class="bold">
+                                Do Good Downloads Badge
+                              </p>
+
+                            </div>
+                            <div class="claim">
+                                <button id="exitmodal16" class="modal-action modal-close">X</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class "section">
+                            <div class="col s6 m4 l3">
+                                <div id="badge17" data-target="modal17" class="modal-trigger"></div>
+                                <!-- Modal Structure -->
+                                <div id="modal17" class="modal">
+                                    <div class="modal-content">
+                                      <p class="bold">
+                                        Kindness Ambassador Badge
+                                      </p>
+                                      Awarded for sharing one of your kindness projects on social media or at <a href="http://www.doinggoodtogether.org/good-stories/">Doing Good Together</a>. Your stories of kindness will inspire new families to get involved.
+
+
+                                    </div>
+                                    <div class="claim">
+                                        <button id="exitmodal17" class="modal-action modal-close">X</button>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s6 m4 l3">
+                            <div id="badge18" data-target="modal18" class="modal-trigger"></div>
+                            <!-- Modal Structure -->
+                            <div id="modal18" class="modal">
+                                <div class="modal-content">
+                                  <p>
+                                    Kindness Coach Badge
+                                  </p>
+                                  Awarded for encouraging another big-hearted family by liking a project they’ve shared. Your support keeps others motivated.
+                                </div>
+                                <div class="claim">
+                                    <button id="exitmodal18" class="modal-action modal-close">X</button>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col s6 m4 l3">
+                            <div id="badge19" data-target="modal19" class="modal-trigger"></div>
+                            <!-- Modal Structure -->
+                            <div id="modal19" class="modal">
+                                <div class="modal-content">
+                                  <p class="bold">
+                                    Bright Smiles Badge
+                                  </p>
+                                  Awarded for sharing a photo of your family’s kindness in action.
+                                </div>
+                                <div class="claim">
+                                    <button id="exitmodal19" class="modal-action modal-close">X</button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
