@@ -90,7 +90,7 @@ myApp.controller('trackerController', ['doGoodFactory', '$scope', '$http',
     default: $scope.image1 = true;
     }
   }
-}
+
 
 
 
