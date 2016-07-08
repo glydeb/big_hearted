@@ -27,13 +27,6 @@ $(".button-collapse").sideNav({
     console.log('navUser set to:', $scope.navUser);
   });
 
-  // jQuery for select element
-  $(".dropdown-button").dropdown({
-        hover: true, // Activate on hover
-        belowOrigin: true, // Displays dropdown below the button
-        alignment: 'right' // Displays dropdown with edge aligned to the left of button
-      }
-    );
 
   $scope.logout = function () {
     $http.get('/user/logout').then(function (response) {
@@ -43,10 +36,18 @@ $(".button-collapse").sideNav({
     });
   };
 
+  $(".dropdown-button").dropdown({
+        hover: true, // Activate on hover
+        belowOrigin: true, // Displays dropdown below the button
+        alignment: 'right' // Displays dropdown with edge aligned to the left of button
+      }
+    );
+
   // $scope.initSideNav = function() {
   //     $(".button-collapse").sideNav();
   //     console.log("sidenav firing");
   //   };
+
 
 
 }]);

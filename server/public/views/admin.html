@@ -1,21 +1,40 @@
 <div class="row">
   <h3 class="center-align">Administrative Functions</h3>
-  <div class="generate-code">
-      <h4>Generate verification codes</h4>
-      <button class="waves-effect waves-light btn" ng-click="generateCode()">Create code<i class="material-icons right">vpn_key</i>
+  <div class="col s6 push-s3">
+  <div class="generate-code hoverable">
+    <nav class="z-depth-0">
+        <div class="nav-wrapper">
+            <a class="brand-logo card_title">Generate verification codes</a>
+            <form>
+            </form>
+        </div>
+    </nav>
+    <div class="row">
+    <div class="section container">
+      <div class="col s6">
+      <button class="waves-effect waves-light btn create_code_button" ng-click="generateCode()">Create code<i class="material-icons right">vpn_key</i>
       </button>
-      </br>
-      </br>
-      <h5 class="bold">Code: {{verification}}</h5>
+      </div>
+      <div class="col s1 push s6">
+      <h5 class="code bold">{{verification}}</h5>
+      </div>
+      </div>
+    </div>
   </div>
   </br>
-  <div class="flagged-content">
-    <h4>Flagged Content</h4>
+  <div class="flagged-content hoverable">
+    <nav class="z-depth-0">
+        <div class="nav-wrapper">
+            <a class="brand-logo card_title">Flagged Content</a>
+            <form>
+            </form>
+        </div>
+    </nav>
     <section class="noposts" ng-show="flaggedPosts.length === 0">
       <p>No content has been flagged!</p>
     </section>
     <section class="displayallposts" ng-show="flaggedPosts.length > 0">
-      <div ng-repeat="post in flaggedPosts track by $index">
+      <div ng-repeat="post in flaggedPosts track by $index" class="container">
         <div class="individualposts">
           <div class="row">
             <div class="col s2">
@@ -23,7 +42,7 @@
                 <input type="checkbox" class="filled-in" id="{{post._id}}" ng-model="post.selected"/><label for="{{post._id}}">Select</label>
               </form>
             </div>
-            <div class="col s9">
+            <div class="col s9 left-align">
               <img class="profilepicture" ng-src="{{post.image}}" />
               <span class="postsusername">{{post.username}}</span>
               <p>{{post.description}}</p>
@@ -32,13 +51,12 @@
         </div>
       </div>
     </section>
-
     <button class="waves-effect waves-light btn" ng-click="clearFlags()">Clear Flags<i class="material-icons right">flag</i></button>
     <button class="waves-effect waves-light btn" ng-click="deleteSelected()">Delete Selected<i class="material-icons right">clear</i></button>
     <button class="waves-effect waves-light btn modal-trigger" data-target="review-modal">Review<i class="material-icons right">sort</i></button>
     <div id="review-modal" class="modal">
       <div class="modal-content">
-        <h4>Review/Suspend Users</h4>
+        <h5>Review/Suspend Users</h5>
         <div class="row">
           <h6 class="col s4">User</h6>
           <h6 class="col s4">Email</h6>
@@ -54,11 +72,12 @@
     </div>
   </div>
   </br>
-  <div class="inactive-users">
-    <h4>Inactive Users</h4>
+  <div class="inactive-users hoverable">
+    <h5>Inactive Users</h5>
+    <div class="divider"></div>
     <div class="row">
-      <h6 class="col s4">User</h6>
-      <h6 class="col s4">Email</h6>
+      <h6 class="col s4 push-s2">User</h6>
+      <h6 class="col s4 push-s2">Email</h6>
     </div>
     <div class="row" ng-repeat="user in inactiveUsers">
       <p class="col s4">{{user.firstname}} {{user.lastname}}</p>
@@ -67,4 +86,5 @@
       <!-- removed pending stretch goal work <button class="waves-effect waves-light btn" ng-click="deleteUser(user.verification)">Delete</button> -->
     </div>
   </div>
+</div>
 </div>

@@ -2,59 +2,66 @@
     <section class="row">
         <h3 class="center-align">Welcome to the Community Room!</h3>
         <div class="row">
-            <div class="col s10 push-s1">
-              <div class="hoverable clearfix">
-                <div class="boxshadow" id="our-posts">
-                    <nav class="z-depth-0">
-                        <div class="nav-wrapper">
-                            <a class="brand-logo card_title">Create New Post</a>
-                            <form>
+            <div class="col l10 push-l1 s12">
+                <div class="hoverable clearfix">
+                    <div class="boxshadow" id="our-posts">
+                        <nav class="z-depth-0">
+                            <div class="nav-wrapper">
+                                <a class="brand-logo card_title">Create New Post</a>
+                                <form>
+                                </form>
+                            </div>
+                        </nav>
+                        <div class="container">
+                            <form ng-submit="sendPost(post)">
+                                <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
+                                <div class="col l6 push-l7 s6 push-s6 center-align">
+                                    <div class="section">
+                                      <label class="label">Post this anonymously?</label>
+                                        <div class="switch">
+                                            <label>
+                                                No
+                                                <input type="checkbox">
+                                                <span class="lever"></span> Yes
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
+                                    <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
+                                    <button class="btn waves-effect waves-light post_button" type="submit" name="action">Post
+                                        <i class="material-icons right">send</i>
+                                    </button>
+                                    <div ng-show="loading" class="progress">
+                                        <div ng-show="loading" class="indeterminate"></div>
+                                    </div>
+                                </div>
+                                <div class="col l6 pull-l7 s6 pull-s6 center-align">
+                                    <div class="section">
+                                        <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="responsive-img hoverable post-picture" ng-src="/assets/images/Quinn Nelson +.jpg" />
+                                    </div>
+                                    <div class="btn-floating btn-large file-field">
+                                        <span class="upload-button"><i class="material-icons">portrait</i></span>
+                                        <input type="file" name="file" file></input>
+                                    </div>
+                                    <label class="label">Upload a picture</label>
+                                </div>
                             </form>
                         </div>
-                    </nav>
-                    <div class="container">
-                        <form ng-submit="sendPost(post)">
-                            <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
-                              <div class="btn-floating btn-large file-field">
-                                  <span class="upload-button"><i class="material-icons">portrait</i></span>
-                                  <input type="file" name="file" file></input>
-                              </div>
-                              <label class="label">Upload a picture</label>
-                              <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
-                            <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
-                            <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
-                            <div>
-                                <div class="switch">
-                                    <label>
-                                        No
-                                        <input type="checkbox">
-                                        <span class="lever"></span> Yes
-                                    </label>
-                                    <label class="label">Post this anonymously?</label>
-                                </div>
-                            </div>
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Post
-                                <i class="material-icons right">send</i>
-                            </button>
-                        </form>
                     </div>
-                  </div>
                 </div>
-              </div>
-
-
+            </div>
     </section>
     <div class="row">
-        <div class="col s10 push-s1 l10 push-l1">
+        <div class="col s12 l10 push-l2">
             <section class="displayallposts">
-                <div class="post" ng-repeat="post in communityPosts track by $index">
+                <div class="post" ng-repeat="post in communityPosts | orderBy: '-postedDate'">
                     <div class="hoverable individualposts">
                         <nav class="z-depth-0">
                             <div class="nav-wrapper valign-wrapper post_card_header">
                                 <div class="valign">
-                                <img width="60" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-profile-picture" src="/assets/images/Quinn Nelson +.jpg" />
-                              </div>
-                                <a class="post_card_title">{{user.firstname}} {{user.lastname}}</a>
+                                    <img width="60" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-profile-picture" src="/assets/images/Quinn Nelson +.jpg" />
+                                </div>
+                                <a class="post_card_title">{{user.username}}</a>
                                 <form>
                                 </form>
                             </div>
@@ -64,18 +71,19 @@
                             </br>
                             <p class="post_description">{{post.description}}</p>
                             <span>{{post.postedDate | date : 'EEEE, MMMM d, y'}}</span>
-                            <p ng-show="post.flagged">Flagged: {{post.flagged}}</p>
+                            <p ng-show="post.flagged">Post flagged for reviewal</p>
                         </div>
                         <div class="row post_buttons_container">
                             <div class="section">
-                            <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>
-                                <button id="button" class="waves-effect waves-light btn-floating flag-post" ng-click="flagPost(post)"><i class="material-icons right">flag</i></button>
+                                <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>
+                                <button ng-hide="post.flagged" id="button" class="waves-effect waves-light btn-floating flag-post" ng-click="flagPost(post)"><i class="material-icons right">flag</i></button>
+                                <button ng-if="post.flagged" id="button" class="waves-effect waves-light btn-floating red flag-post" ng-click="flagPost(post)"><i class="material-icons right">flag</i></button>
                             </div>
                         </div>
                     </div>
                 </div>
-              </div>
+        </div>
     </div>
     </section>
     </div>
-    </div>
+</div>
