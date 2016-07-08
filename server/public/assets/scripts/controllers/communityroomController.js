@@ -62,6 +62,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   $scope.sendPost = function (post) {
     $scope.post.user_verify = $scope.user.verification;
     $scope.post.username = $scope.user.username;
+    $scope.loading = true;
 
 
 //    if ($scope.file !== undefined) { uploadImage(); }
@@ -83,6 +84,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       post.description = '';
       post.dgd = false;
       post.anonymous = false;
+      $scope.loading = false;
       refreshCommunityRoom();
     });
   };

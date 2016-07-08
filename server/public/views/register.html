@@ -3,7 +3,7 @@
     <form ng-submit="registerUser()">
         <div class="row input-field">
             <div class="col l6 m6 s12">
-                <input type="text" placeholder="Verification Code (from your email)" ng-model="user.verification" required />
+                <input type="text" placeholder="Verification Code" ng-model="user.verification" class="tooltipped" data-position="bottom" data-delay="100" data-tooltip="You can find this code in your email" required />
                 </br>
                 <input type="text" placeholder="First Name" ng-model="user.firstname" required />
                 </br>
@@ -11,7 +11,8 @@
                 </br>
                 <input type="email" placeholder="Email" ng-model="user.email" required class="validate" />
                 </br>
-                <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" required />
+                <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" class="tooltipped" data-position="bottom" data-delay="100" data-tooltip="Your username will be visible to others" required />
+
                 </br>
                 <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" required />
                 </br>

@@ -92,6 +92,10 @@ $(".dropdown-button").dropdown({
     }
   );
 
+  $(document).ready(function(){
+  $('.tooltipped').tooltip({delay: 100});
+});
+
   $scope.comparePassword = function () {
     if ($scope.user.password !== $scope.user.password2) {
       $scope.mismatch = true;

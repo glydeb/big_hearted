@@ -24,7 +24,7 @@ main {
     padding: 15px 15px;
     overflow: auto;
 }
-#community-posts button, #our-posts button {
+#community-posts button {
     float: right;
 }
 #logo-container> img {
@@ -70,7 +70,7 @@ main {
     background-color: #73bf43;
     color: white;
 }
-#community-posts button, #our-posts button {
+#community-posts button {
     float: right;
 }
 .lever {
@@ -569,7 +569,7 @@ main {
     margin-top: 30px;
 }
 .small_badges {
-    box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     border-radius: 40px;
     margin-left: 20px;
 }
@@ -584,6 +584,7 @@ main {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
     padding: 0px !important;
     border-radius: 2px;
+
 }
 .post-profile-picture {
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -644,4 +645,8 @@ main {
     overflow: auto;
     zoom: 1;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.post_button {
+  margin-top: 7%;
 }
