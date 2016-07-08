@@ -14,7 +14,8 @@ var UserSchema = new Schema({
   dgdnumber: { type: Number, required: true },
   timesflagged: { type: Number, required: true },
   active: { type: Boolean, default: true, required: true },
-  image: String,
+  image: {type: String, default:
+    'https://s3.amazonaws.com/bighearted/images/blue-twirl-art.jpg'},
   firstname: String,
   lastname: String,
   phone: String,
