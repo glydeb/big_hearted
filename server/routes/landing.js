@@ -35,6 +35,17 @@ router.put('/organization/:id', function (req, res) {
     res.status(204).send(organization);
   });
 });
+
+router.put('/download/:id', function (req, res) {
+  Download.findByIdAndUpdate(req.params.id, req.body, function (err, download) {
+    if (err) {
+      console.log(req.body);
+      res.sendStatus(500);
+      return;
+    }
+    res.status(204).send(download);
+  });
+});
 // router.post('/', function (req, res) {
 //   var ingredient = new Ingredient(req.body);
 //   ingredient.save(function (err) {

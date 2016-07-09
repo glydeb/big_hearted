@@ -2,8 +2,9 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var DownloadSchema = new Schema({
+  title: { type: String, required: true },
   description: { type: String, required: true },
-  image: { type: String, required: true },
+  filepath: { type: String, required: true },
   link: {type: String, required: true}
 });
 
