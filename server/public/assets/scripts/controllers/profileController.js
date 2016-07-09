@@ -12,11 +12,11 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         $scope.user.our_projects = "Click edit to showcase your recent projects";
         $scope.edit = false;
         $scope.visible = true;
-        $scope.sizeLimit      = 2117152; // 2MB in Bytes
+        $scope.sizeLimit = 2117152; // 2MB in Bytes
         $scope.uploadProgress = 0;
-        $scope.creds          = {};
+        $scope.creds = {};
         $scope.prefix = 'https://s3.amazonaws.com/bighearted/images/';
-//THIS IS THE CODE FOR UPLOADING IMAGES AND GETTING OUR AWS CREDENTIALS
+        //THIS IS THE CODE FOR UPLOADING IMAGES AND GETTING OUR AWS CREDENTIALS
         // getAWSCredentials();
         //
         // $scope.uploadImage = function () {
@@ -69,10 +69,10 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         // }
 
         function getAWSCredentials() {
-          $http.get('/s3').then(function (response) {
-            $scope.creds = response.data;
+            $http.get('/s3').then(function(response) {
+                $scope.creds = response.data;
 
-          });
+            });
         }
 
         $scope.toggle = function() {
@@ -86,12 +86,12 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
             }
         };
         $scope.post = {
-          dgd: false,
-          dgdnumber: 0,
-          anonymous: false,
-          likes: [],
-          flagged: false,
-          postedDate: new Date()
+            dgd: false,
+            dgdnumber: 0,
+            anonymous: false,
+            likes: [],
+            flagged: false,
+            postedDate: new Date()
         };
 
         $scope.profilePosts = [];
@@ -121,7 +121,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
         function refreshOurProfile() {
             $http.get('/post/' +
-              $scope.user.verification).then(function(response) {
+                $scope.user.verification).then(function(response) {
                 $scope.profilePosts = response.data;
                 $scope.profilePosts.forEach(function(post) {
                     if (post.anonymous === true) {
@@ -158,8 +158,10 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
         }
 
-        $scope.initMaterialbox = function() {
-            $('.materialboxed').materialbox();
-        };
+        $(document).ready(function() {
+            $('.modal-trigger').leanModal();
+            console.log("picture modal");
+        });
+
     }
 ]);
