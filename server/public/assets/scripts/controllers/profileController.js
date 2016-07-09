@@ -1,6 +1,5 @@
 myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
-  '$window', '$location', function(doGoodFactory, $scope, $http, $window,
-  $location) {
+  '$window', '$location', function(doGoodFactory, $scope, $http, $window, $location) {
 
   console.log('profileController running');
 
@@ -20,21 +19,77 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
     doGoodFactory.refreshSettings().then(function () {
       $scope.creds = doGoodFactory.getSettings();
       console.log('refreshed creds: ', $scope.creds);
+
+      // aws settings
+      AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
+      AWS.config.region = 'us-east-1';
+
     });
   } else {
     $scope.creds = doGoodFactory.getSettings();
-    console.log('direct creds: ', $scope.creds);
+
+    // aws settings
+    AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
+    AWS.config.region = 'us-east-1';
   }
 
   $scope.toggle = function() {
-      $scope.visible = !$scope.visible;
-      $scope.edit = !$scope.edit;
-      if ($scope.visible) {
-          $http.put('/register/' + $scope.user.verification,
-              $scope.user).then(function(response) {
-              console.log('family info saved');
+    $scope.visible = !$scope.visible;
+    $scope.edit = !$scope.edit;
+    if ($scope.visible) {
+
+      if ($scope.file) {
+        // Perform File Size Check First
+        var fileSize = Math.round(parseInt($scope.file.size));
+        if (fileSize > $scope.sizeLimit) {
+          console.log('size limit exceeded');
+          alert('Sorry, your attachment is too big. <br/> Maximum '  + $scope.fileSizeLabel() + ' file attachment allowed','File Too Large');
+        } else {
+
+          var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
+          // create new image name - 6-character verification code plus
+          // existing file extension.
+          var newName = $scope.user.verification +
+            $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
+          $scope.file.name = newName;
+
+          var params = {
+            Key:  'images/' + newName,
+            ContentType: $scope.file.type,
+            Body: $scope.file,
+            ServerSideEncryption: 'AES256'
+          };
+          $scope.user.image = $scope.prefix + newName;
+
+          bucket.putObject(params, function(err, data) {
+            if(err) {
+              console.log(err);
+              // toastr.error(err.message,err.code);
+              return false;
+            } else {
+              // Upload Successfully Finished
+              console.log('file upload finished');
+              // toastr.success('File Uploaded Successfully', 'Done');
+              $http.put('/register/' + $scope.user.verification,
+                $scope.user).then(function(response) {
+                console.log('family info saved');
+                refreshOurProfile();
+              });
+            }
           });
+        }
+      } else {
+        // No File Selected
+        console.log('No file submitted');
+        //toastr.error('Please select a file to upload');
+        $http.put('/register/' + $scope.user.verification,
+          $scope.user).then(function(response) {
+          console.log('family info saved');
+          refreshOurProfile();
+        });
       }
+
+    }
   };
 
   $scope.post = {
@@ -48,28 +103,30 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
   $scope.profilePosts = [];
 
+  $scope.getFile = function () {
+    doGoodFactory.readAsDataUrl($scope.file, $scope)
+      .then(function(result) {
+          $scope.imageSrc = result;
+      });
+  };
+
+
   // create a post
   $scope.sendPost = function (post) {
     $scope.post.user_verify = $scope.user.verification;
     $scope.post.username = $scope.user.username;
     $scope.post.postedDate = new Date();
-    console.log($scope.creds);
-
-    // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
-    AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
-    AWS.config.region = 'us-east-1';
-    var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
-    console.log($scope.file);
 
     if ($scope.file) {
       // Perform File Size Check First
       var fileSize = Math.round(parseInt($scope.file.size));
       if (fileSize > $scope.sizeLimit) {
         console.log('size limit exceeded');
-        toastr.error('Sorry, your attachment is too big. <br/> Maximum '  + $scope.fileSizeLabel() + ' file attachment allowed','File Too Large');
+        alert('Sorry, your attachment is too big. <br/> Maximum '  + $scope.fileSizeLabel() + ' file attachment allowed','File Too Large');
         return false;
       }
 
+      var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
       // create new image name - 6-character verification code plus
       // post timestamp plus existing file extension.
       var newName = $scope.user.verification + '_' +
@@ -111,19 +168,18 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
         $scope.$digest();
       }); */
-      }
-      else {
-        $http.post('/post', $scope.post).then(function(response) {
-          console.log("Successfully posted");
-          post.description = '';
-          post.dgd = false;
-          post.anonymous = false;
-          refreshOurProfile();
-        });
-        // No File Selected
-        console.log('No file submitted');
-        //toastr.error('Please select a file to upload');
-      }
+    } else {
+      $http.post('/post', $scope.post).then(function(response) {
+        console.log("Successfully posted");
+        post.description = '';
+        post.dgd = false;
+        post.anonymous = false;
+        refreshOurProfile();
+      });
+      // No File Selected
+      console.log('No file submitted');
+      //toastr.error('Please select a file to upload');
+    }
   };
 
 
@@ -140,36 +196,30 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
       });
   }
 
-        $(document).ready(function() {
-            $('.materialboxed').materialbox();
-            console.log('materialbox');
-        });
+  console.log('checking user');
 
-        console.log('checking user');
+  // go to factory to verify user
+  if (doGoodFactory.factoryGetUserData() === undefined) {
+      doGoodFactory.factoryRefreshUserData().then(function() {
+          $scope.user = doGoodFactory.factoryGetUserData();
+          // if it's still undefined after refresh, send them to login page
+          if ($scope.user.username === undefined || $scope.user.username === '') {
+              $location.path('/home');
+          }
+          refreshOurProfile();
+      });
+  } else {
+      $scope.user = doGoodFactory.factoryGetUserData();
+      if ($scope.user.username === undefined || $scope.user.username === '') {
+          $location.path('/home');
+      }
+      refreshOurProfile();
 
-        // go to factory to verify user
-        if (doGoodFactory.factoryGetUserData() === undefined) {
-            doGoodFactory.factoryRefreshUserData().then(function() {
-                $scope.user = doGoodFactory.factoryGetUserData();
-                // if it's still undefined after refresh, send them to login page
-                if ($scope.user.username === undefined || $scope.user.username === '') {
-                    $location.path('/home');
-                }
-                refreshOurProfile();
-            });
-        } else {
-            $scope.user = doGoodFactory.factoryGetUserData();
-            if ($scope.user.username === undefined || $scope.user.username === '') {
-                $location.path('/home');
-            }
-            refreshOurProfile();
+  }
 
-        }
+  $(document).ready(function() {
+      $('.modal-trigger').leanModal();
+      console.log("picture modal");
+  });
 
-        $(document).ready(function() {
-            $('.modal-trigger').leanModal();
-            console.log("picture modal");
-        });
-
-    }
-]);
+}]);
