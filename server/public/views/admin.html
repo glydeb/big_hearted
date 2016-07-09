@@ -1,7 +1,7 @@
 <div class="row">
     <h3 class="center-align">Administrative Functions</h3>
     <div class="row">
-        <div class="col s6 push-s3 ">
+        <div class="col s12">
             <div class=" dgd_complete hoverable">
                 <nav class="z-depth-0">
                     <div class="nav-wrapper teal">
@@ -12,24 +12,24 @@
                 </nav>
                 <div class="container">
                     <div class="row">
-                        <h6 ng-if="rewardUsers.length > 0" class="col s3 center-align">User</h6>
-                        <h6 ng-if="rewardUsers.length > 0" class="col s3 center-align">Email</h6>
+                        <h6 ng-if="rewardUsers.length > 0" class="col l3 pull-l2 s3 center-align">User</h6>
+                        <h6 ng-if="rewardUsers.length > 0" class="col l3 pull-l1 s3 center-align">Email</h6>
                     </div>
                     <div ng-if="rewardUsers.length > 0" ng-repeat="user in rewardUsers" class="row">
-                        <p class="col s3 center-align">{{user.firstname}} {{user.lastname}}</p>
-                        <p class="col s3 center-align">{{user.email}}</p>
+                        <p class="col l4 pull-l2 center-align">{{user.firstname}} {{user.lastname}}</p>
+                        <p class="col l3 pull-l2 center-align">{{user.email}}</p>
                         <button class="waves-effect waves-light btn reward_sent_button" ng-click="clearRewardUsers(user)">Reward Sent<i class="material-icons right"></i>
                             <!-- removed pending stretch goal work <button class="waves-effect waves-light btn" ng-click="deleteUser(user.verification)">Delete</button> -->
                     </div>
                     <div ng-if="rewardUsers.length === 0" class="row">
-                        <p class="col s12 pull-s1">No unsent Do Good Dozen rewards</p>
+                        <p class="col s12 push-s1 l12 pull-l1">No unsent Do Good Dozen rewards</p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="col s6 push-s3">
+    <div class="col s12">
         <div class="generate-code hoverable">
             <nav class="z-depth-0">
                 <div class="nav-wrapper">
@@ -40,11 +40,11 @@
             </nav>
             <div class="row">
                 <div class="section container">
-                    <div class="col s6 pull-s1">
+                    <div class="col s3 push-s1 l6 pull-l1">
                         <button class="waves-effect waves-light btn create_code_button" ng-click="generateCode()">Create code<i class="material-icons right">vpn_key</i>
                         </button>
                     </div>
-                    <div class="col s1 push s6">
+                    <div class="col l1 push l6 s1 push-s5">
                         <h5 class="code bold">{{verification}}</h5>
                     </div>
                 </div>
@@ -66,7 +66,7 @@
                 <div ng-repeat="post in flaggedPosts track by $index" class="flagged_content_post hoverable container">
                     <div class="individualposts">
                         <div class="row flagged_content_position">
-                            <div class="col s2">
+                            <div class="col l2">
                                 <form>
                                     <input type="checkbox" class="filled-in" id="{{post._id}}" ng-model="post.selected" />
                                     <label for="{{post._id}}">Select</label>
@@ -81,30 +81,33 @@
                     </div>
                 </div>
             </section>
+            <div class="row">
+
             <div class="flagged_content_buttons center-align section">
                 <button class="waves-effect waves-light btn" ng-click="clearFlags()">Clear Flags<i class="material-icons right">flag</i></button>
                 <button class="waves-effect waves-light btn" ng-click="deleteSelected()">Delete Selected<i class="material-icons right">clear</i></button>
                 <button class="waves-effect waves-light btn modal-trigger" data-target="review-modal">Review<i class="material-icons right">sort</i></button>
             </div>
+              </div>
             <div id="review-modal" class="modal">
-                <div class="modal-content review-modal">
+                <div class="col s12 modal-content review-modal">
                     <nav class="z-depth-0">
                         <div class="nav-wrapper">
-                            <a class="brand-logo card_title">Review/Suspend Users</a>
+                            <a class="brand-logo.left card_title">Review/Suspend Users</a>
                             <form>
                             </form>
                         </div>
                     </nav>
                     <div class="row container center-align">
-                        <h6 class="col s3 pull-s2">User</h6>
-                        <h6 class="col s3 pull-s2">Email</h6>
-                        <h6 class="col s3 pull-s1">Flagged Posts</h6>
+                        <h6 class="col s1 pull-s1 m3 l3 pull-l2">User</h6>
+                        <h6 class="col s1 push-s1 m3 l3 pull-l2">Email</h6>
+                        <h6 class="col s1 push-s5 m3 l3">Flagged Posts</h6>
                     </div>
                     <div class="row container center-align" ng-repeat="user in flaggedUsers">
-                        <p class="col s3 pull-s2">{{user.firstname}} {{user.lastname}}</p>
-                        <p class="col s3 pull-s2">{{user.email}}</p>
-                        <p class="col s3 pull-s1">{{user.timesflagged}}</p>
-                        <button class="waves-effect waves-light btn" ng-click="changeStatus(user, 'suspend')">Suspend</button>
+                        <p class="col s1 pull-s1 m3 l3 pull-l2">{{user.firstname}} {{user.lastname}}</p>
+                        <p class="col s1 push-s1 m3 l3 pull-l2">{{user.email}}</p>
+                        <p class="col s1 push-s5 m3 l3">{{user.timesflagged}}</p>
+                        <button class="waves-effect waves-light btn suspend_button" ng-click="changeStatus(user, 'suspend')">Suspend</button>
                     </div>
                 </div>
             </div>
@@ -120,17 +123,17 @@
             </nav>
             <div class="container">
                 <div ng-show="inactiveUsers.length > 0" class="row">
-                    <h6 class="col s3 center-align">User</h6>
-                    <h6 class="col s3 center-align">Email</h6>
+                    <h6 class="col l3 pull-l1 m3 s2 center-align">User</h6>
+                    <h6 class="col l3 pull-l1 m3 push-m1 s2 center-align">Email</h6>
                 </div>
                 <div ng-show="inactiveUsers.length > 0" class="row" ng-repeat="user in inactiveUsers">
-                    <p class="col s3 center-align">{{user.firstname}} {{user.lastname}}</p>
-                    <p class="col s3 center-align">{{user.email}}</p>
+                    <p class="col l3 pull-l1 m3 s2 center-align">{{user.firstname}} {{user.lastname}}</p>
+                    <p class="col l3 pull-l1 m3 s2 center-align">{{user.email}}</p>
                     <button class="waves-effect waves-light btn reactivate_button" ng-click="changeStatus(user, 'activate')">Reactivate</button>
                     <!-- removed pending stretch goal work <button class="waves-effect waves-light btn" ng-click="deleteUser(user.verification)">Delete</button> -->
                 </div>
                 <div ng-show="inactiveUsers.length === 0" class="row">
-                    <p class="col s4 pull-s1">No Suspended Users</p>
+                    <p class="col s5 pull-s1">No Suspended Users</p>
                 </div>
             </div>
         </div>
