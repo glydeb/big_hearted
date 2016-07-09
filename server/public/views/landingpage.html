@@ -1,6 +1,5 @@
 <div id="landingPage" class="container">
-  <h3 id="welcome" class="lead">Welcome, {{userName}}!</h3>
-
+  <h3 id="welcome" class="lead center">Welcome, {{user.username}}!</h3>
   <!-- <div class="row" ng-repeat="organization in organizationsArray">
     <section class="col s4">
       <h5>{{organization.description}}</h5>
@@ -8,28 +7,61 @@
   </div> -->
 
 
-  <div class="row" ng-repeat="download in downloadsArray">
-    <section class="col s4">
+  <div class="row individualposts" ng-repeat="download in downloadsArray">
+    <section class="col s4 individualdownload">
       <h5>{{download.description}}</h5>
       <p>{{download.image}}</p>
       <a href="{{download.link}}" download>Download here</a>
-      <button>edit</button>
+
     </section>
   </div>
 
-
-  <div class="row">
-    <section class="col s4">
-      <h5>Download content</h5>
-      <button>edit</button>
-    </section>
-    <section class="col s4">
-      <h5>Download content</h5>
-      <button>edit</button>
-    </section>
-    <section class="col s4">
-      <h5>Download content</h5>
-      <button>edit</button>
-    </section>
+  <div class="row individualposts hoverable">
+    <div class="col s4">
+      <div>
+        <h5>{{organization1.name}}</h5>
+        <img class="imagesize" src="{{organization1.image}}" />
+        <input ng-show="visible" type="file" name="file" file></input>
+        <label ng-show="visible" for="organization link">Link to their page:</label>
+        </br><a ng-hide="visible" target="_blank" href="{{organization1.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
+        <label ng-show="visible" for="organization name">Organization Name:</label>
+        <input type="text" ng-model="organization1.name" ng-show="visible1" placeholder="Organization name" />
+          <p ng-hide="visible">{{organization1.description}}</p>
+          <label ng-show="visible" for="organization description">Brief description:</label>
+          <textarea class="materialize-textarea" ng-show="visible" ng-model="organization1.description" placeholder="Type a brief description of the organization" maxlength="2500"></textarea>
+          <button ng-show="visible" ng-click="saveOrgInfo(organization1)">save</button>
+      </div>
+    </div>
+    <div class=" col s4">
+      <div class="individualorganizations">
+        <h5>{{organization2.name}}</h5>
+        <img class="imagesize" src="{{organization2.image}}" />
+        <input ng-show="visible" type="file" name="file" file></input>
+        <label ng-show="visible" for="organization link">Link to their page:</label>
+        </br><a ng-hide="visible" target="_blank" href="{{organization2.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
+        <label ng-show="visible" for="organization name">Organization Name:</label>
+        <input type="text" ng-model="organization2.name" ng-show="visible" placeholder="Organization name" />
+          <p ng-hide="visible">{{organization2.description}}</p>
+          <label ng-show="visible" for="organization description">Brief description:</label>
+          <textarea class="materialize-textarea" ng-show="visible" ng-model="organization2.description" placeholder="Type a brief description of the organization" maxlength="2500"></textarea>
+          <button ng-show="visible" ng-click="saveOrgInfo(organization2)">save</button>
+      </div>
+    </div>
+    <div class="col s4">
+      <div class="individualorganizations">
+        <h5>{{organization3.name}}</h5>
+        <img class="imagesize" src="{{organization3.image}}" />
+        <input ng-show="visible" type="file" name="file" file></input>
+        <label ng-show="visible" for="organization link">Link to their page:</label>
+      </br><a ng-hide="visible" target="_blank" href="{{organization3.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
+        <label ng-show="visible" for="organization name">Organization Name:</label>
+        <input type="text" ng-model="organization3.name" ng-show="visible3" placeholder="Organization name" />
+          <p ng-hide="visible">{{organization3.description}}</p>
+          <label ng-show="visible" for="organization description">Brief description:</label>
+          <textarea class="materialize-textarea" ng-show="visible" ng-model="organization3.description" placeholder="Type a brief description of the organization" maxlength="2500"></textarea>
+          <button ng-show="visible" ng-click="saveOrgInfo(organization3)">save</button>
+      </div>
+    </div>
   </div>
+  <button id="editbutton" class="btn waves-effect waves-light center" ng-show="user.is_admin" ng-click="visibility(visible3)">edit organizations</button>
 </div>
