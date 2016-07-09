@@ -107,6 +107,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
   }
 
+
   // create a post
   $scope.sendPost = function (post) {
     $scope.post.user_verify = $scope.user.verification;
@@ -173,7 +174,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         $http.post('/post', $scope.post).then(function(response) {
           console.log("Successfully posted");
           post.description = '';
-          post.dgd = false;
           post.anonymous = false;
           refreshCommunityRoom();
         });
