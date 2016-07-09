@@ -1148,3 +1148,8 @@ a:hover {
 label {
   color: #5E5E5E;
 }
+
+.imagesize {
+  width: 50%;
+  height: auto;
+}

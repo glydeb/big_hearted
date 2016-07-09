@@ -20,8 +20,10 @@
     <div class="col s4">
       <div>
         <h5>{{organization1.name}}</h5>
+        <img class="imagesize" src="{{organization1.image}}" />
+        <input ng-show="visible" type="file" name="file" file></input>
         <label ng-show="visible" for="organization link">Link to their page:</label>
-        <a ng-hide="visible" target="_blank" href="{{organization1.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
+        </br><a ng-hide="visible" target="_blank" href="{{organization1.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
         <label ng-show="visible" for="organization name">Organization Name:</label>
         <input type="text" ng-model="organization1.name" ng-show="visible1" placeholder="Organization name" />
           <p ng-hide="visible">{{organization1.description}}</p>
@@ -33,8 +35,10 @@
     <div class=" col s4">
       <div class="individualorganizations">
         <h5>{{organization2.name}}</h5>
+        <img class="imagesize" src="{{organization2.image}}" />
+        <input ng-show="visible" type="file" name="file" file></input>
         <label ng-show="visible" for="organization link">Link to their page:</label>
-        <a ng-hide="visible" target="_blank" href="{{organization2.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
+        </br><a ng-hide="visible" target="_blank" href="{{organization2.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
         <label ng-show="visible" for="organization name">Organization Name:</label>
         <input type="text" ng-model="organization2.name" ng-show="visible" placeholder="Organization name" />
           <p ng-hide="visible">{{organization2.description}}</p>
@@ -46,8 +50,10 @@
     <div class="col s4">
       <div class="individualorganizations">
         <h5>{{organization3.name}}</h5>
+        <img class="imagesize" src="{{organization3.image}}" />
+        <input ng-show="visible" type="file" name="file" file></input>
         <label ng-show="visible" for="organization link">Link to their page:</label>
-        <a ng-hide="visible" target="_blank" href="{{organization3.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
+      </br><a ng-hide="visible" target="_blank" href="{{organization3.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
         <label ng-show="visible" for="organization name">Organization Name:</label>
         <input type="text" ng-model="organization3.name" ng-show="visible3" placeholder="Organization name" />
           <p ng-hide="visible">{{organization3.description}}</p>
