@@ -1,7 +1,12 @@
 <div class="row our-profile">
     <div class="section col s12 m8 push-m2 l3">
         <div class="section">
-            <img materialboxed class="materialboxed responsive-img profile-picture" width="400" ng-src="{{user.image}}" />
+            <img class="responsive-img hoverable profile-picture modal-trigger" href="#picture_modal" width="400" ng-src="{{user.image}}" />
+            <div id="picture_modal" class="modal">
+                <div class="col s12 modal-content picture_modal valign-wrapper">
+                    <img class="responsive-img zoom_picture valign" href="#picture-modal" ng-src="{{user.image}}" />
+                </div>
+            </div>
         </div>
         <div class="section">
             <form class="center-align upload-button">
@@ -50,12 +55,12 @@
         </div>
     </div>
     <div class="row">
-        <div class="col s12 m10 push-m1 l7 push-l1">
+        <div class="col s12 m12 l9">
             <div class="center-align post-input">
                 <h3>{{user.firstname}}'s Profile</h3>
             </div>
-                <div class="new_post_container container">
-                <div class="col s12 l12" id="our-posts">
+            <div class="new_post_container container">
+                <div id="our-posts">
                     <nav class="z-depth-0 card_header">
                         <div class="nav-wrapper">
                             <a class="brand-logo card_title">Create New Post</a>
@@ -66,7 +71,7 @@
                     <div class="container new_post_container">
                         <form ng-submit="sendPost(post)">
                             <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
-                            <div class="col l6 push-l6 s6 push-s5 center-align">
+                            <div class="col l7 push-l6 m7 push-m5 s6 push-s5 center-align">
                                 <div class="section">
                                     <label class="label">Post this anonymously?</label>
                                     <div class="switch">
@@ -101,7 +106,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 l10 push-l1">
+                <div class="col s12 m10 push-m1 l8 push-l2">
                     <section class="display_profile_posts">
                         <div ng-repeat="post in profilePosts | orderBy: '-postedDate'">
                             <div class="hoverable individual_profile_posts">
