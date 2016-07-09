@@ -3,6 +3,7 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
   $location) {
 
   $scope.user = {};
+  $scope.file = {};
   $scope.organizationsArray = [];
   $scope.organization1 = {};
   $scope.organization2 = {};
@@ -14,7 +15,7 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
   $scope.sizeLimit      = 2117152; // 2MB in Bytes
   $scope.uploadProgress = 0;
   $scope.creds          = {};
-  $scope.prefix = 'https://s3.amazonaws.com/bighearted/images/';
+  $scope.prefix = 'https://s3.amazonaws.com/bighearted/featuredOrganizations/';
   getDownloads();
   getAWSCredentials();
   getOrganizations();
@@ -28,6 +29,7 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
 }
 
   $scope.saveOrgInfo = function (organization) {
+    uploadImage(organization);
     $http.put('/landing/organization/' + organization._id, organization).then(function(response) {
         console.log('organization info saved');
         if ($scope.visible) {
@@ -35,6 +37,7 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
         } else {
           $scope.visible = true;
         }
+
     });
 
   }
@@ -51,7 +54,7 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
   function getAWSCredentials() {
     $http.get('/s3').then(function (response) {
       $scope.creds = response.data;
-
+      console.log($scope.creds);
     });
   }
 
@@ -80,6 +83,63 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
     }
 
   }
+
+
+  //THIS IS THE CODE FOR UPLOADING IMAGES AND GETTING OUR AWS CREDENTIALS
+          // getAWSCredentials();
+          //
+          function uploadImage (organization) {
+            // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
+            AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
+            AWS.config.region = 'us-east-1';
+            var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
+            console.log($scope.file);
+
+            if ($scope.file) {
+                // Perform File Size Check First
+                var fileSize = Math.round(parseInt($scope.file.size));
+                if (fileSize > $scope.sizeLimit) {
+                  // toastr.error('Sorry, your attachment is too big. <br/> Maximum '  + $scope.fileSizeLabel() + ' file attachment allowed','File Too Large');
+                  return false;
+                }
+                // var newName = $scope.user.verification + '_' +
+                // $scope.file.name
+
+          //  SCOPE.FILE.TYPE IS NOT THE .JPG I THINK IT IS, PULL EVERYTHING AFTER THE DOT OFF THE FILE STRING
+                var filepath = organization.filepath + $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
+                var params = { Key:  'featuredOrganizations/' + filepath, ContentType: $scope.file.type, Body: $scope.file, ServerSideEncryption: 'AES256' };
+                organization.image = $scope.prefix + organization.filepath + $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
+
+                console.log(params);
+                bucket.putObject(params, function(err, data) {
+                  if(err) {
+                    // toastr.error(err.message,err.code);
+                    console.log(err);
+                    return false;
+                  }
+                  else {
+                    // Upload Successfully Finished
+                    // toastr.success('File Uploaded Successfully', 'Done');
+
+                    // Reset The Progress Bar
+                    setTimeout(function() {
+                      $scope.uploadProgress = 0;
+                      $scope.$digest();
+                    }, 4000);
+                  }
+                })
+                .on('httpUploadProgress',function(progress) {
+                  $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
+                  $scope.$digest();
+                });
+
+              }
+              else {
+                // No File Selected
+                console.log('No file submitted');
+                //toastr.error('Please select a file to upload');
+              }
+          }
 
 
 }]);
