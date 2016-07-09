@@ -132,11 +132,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
             });
         }
 
-        $(document).ready(function() {
-            $('.materialboxed').materialbox();
-            console.log('materialbox');
-        });
-
         console.log('checking user');
 
         // go to factory to verify user
@@ -159,7 +154,10 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         }
 
         $(document).ready(function() {
-            $('.modal-trigger').leanModal();
+            $('.modal-trigger').leanModal({
+              dismissible: true,
+              opacity: .95 
+            });
             console.log("picture modal");
         });
 

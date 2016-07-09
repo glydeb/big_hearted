@@ -37,7 +37,12 @@
                                 </div>
                                 <div class="col l6 pull-l7 s6 pull-s6 center-align">
                                     <div class="section">
-                                        <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="responsive-img hoverable post-picture" ng-src="{{file.name}}" />
+                                      <img class="responsive-img hoverable post_preview_modal modal-trigger" href="#post_preview_modal" width="100" ng-src="{{file}}" />
+                                      <div id="post_preview_modal" class="modal">
+                                          <div class="col s12 modal-content picture_modal valign-wrapper">
+                                              <img class="responsive-img zoom_picture valign" ng-src="{{file}}" />
+                                          </div>
+                                      </div>
                                     </div>
                                     <div class="btn-floating btn-large file-field">
                                         <span class="upload-button"><i class="material-icons">portrait</i></span>
@@ -58,9 +63,7 @@
                     <div class="hoverable individualposts">
                         <nav class="z-depth-0">
                             <div class="nav-wrapper valign-wrapper post_card_header">
-                                <div class="valign">
-                                    <img width="50" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-profile-picture" src="/assets/images/pirate_me_sm.jpg" />
-                                </div>
+                              <img class="responsive-img hoverable post-profile-picture valign" width="50" ng-src="/assets/images/pirate_me_sm.jpg" />
                                 <a class="post_card_title">{{post.username}}</a>
                                 <form>
                                 </form>

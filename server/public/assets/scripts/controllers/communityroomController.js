@@ -189,8 +189,12 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     return Math.round($scope.sizeLimit / 1024 / 1024) + 'MB';
   };
 
-  $scope.initMaterialbox = function() {
-    $('.materialboxed').materialbox();
-  };
+  $(document).ready(function() {
+      $('.modal-trigger').leanModal({
+        dismissible: true,
+        opacity: .95
+      });
+      console.log("picture modal");
+  });
 
 }]);
