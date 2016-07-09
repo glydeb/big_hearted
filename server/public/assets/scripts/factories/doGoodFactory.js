@@ -2,7 +2,14 @@ myApp.factory('doGoodFactory', ['$http', function ($http) {
   console.log('doGood Factory online!');
 
   var user = undefined;
-  refreshUserData();
+  var creds = undefined;
+
+  function getAWSCredentials() {
+    return $http.get('/s3').then(function (response) {
+      creds = response.data;
+
+    });
+  }
 
   function refreshUserData() {
     var promise = $http.get('/user').then(function (response) {
@@ -31,6 +38,14 @@ myApp.factory('doGoodFactory', ['$http', function ($http) {
 
     factorySaveUser: function (newUser) {
       user = newUser;
+    },
+
+    refreshSettings: function () {
+      return getAWSCredentials();
+    },
+
+    getSettings: function () {
+      return creds;
     }
 
   };

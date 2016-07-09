@@ -12,7 +12,7 @@
             <form class="center-align upload-button">
                 <div class="btn-floating btn-large file-field">
                     <span><i class="material-icons">portrait</i></span>
-                    <input type="file" />
+                    <input type="file" name="file" file/>
                 </div>
                 </br>
                 <label>Change your picture</label>
@@ -118,7 +118,7 @@
                                     </div>
                                 </nav>
                                 <div class="post_container container">
-                                    <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
+                                    <img width="150" class="responsive-img post-picture" ng-src="{{post.image}}" />
                                     </br>
                                     <p class="post_description">{{post.description}}</p>
                                     <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>

@@ -140,7 +140,8 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
       bucket.putObject(params, function(err, data) {
         if(err) {
-          toastr.error(err.message,err.code);
+          console.log(err);
+          // toastr.error(err.message,err.code);
           return false;
         }
         else {
