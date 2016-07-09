@@ -153,6 +153,7 @@ main {
     -webkit-animation-name: greenPulse;
     -webkit-animation-duration: 4s;
     transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
 }
 #textarea1 {
     color: white;
@@ -179,7 +180,29 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
+#badge2New {
+    background-image: url("/assets/images/FKAbadge2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge2New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge2:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
@@ -201,7 +224,30 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
+
 }
+#badge3New {
+    background-image: url("/assets/images/FKAbadge13.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge3New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge3:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
@@ -218,7 +264,29 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
+#badge4New {
+    background-image: url("/assets/images/FKAbadge4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+      animation-fill-mode: forwards;
+  }
+#badge4New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge4:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
@@ -245,15 +313,35 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
+}
+#badge5New {
+    background-image: url("/assets/images/FKAbadge5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+      animation-fill-mode: forwards;
+  }
+#badge5New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
 }
 #nav-mobile {
     position: sticky;
 }
-
 #badge5:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
-
 }
 #badge6 {
     background-image: url("/assets/images/FKAbadge6.png");
@@ -267,11 +355,33 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
 #badge6:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
 }
+#badge6New {
+    background-image: url("/assets/images/FKAbadge6.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge6New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge7 {
     background-image: url("/assets/images/FKAbadge7.png");
     background-repeat: no-repeat;
@@ -284,10 +394,32 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
 #badge7:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
+}
+#badge7New {
+    background-image: url("/assets/images/FKAbadge7.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+}
+#badge7New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
 }
 #badge8 {
     background-image: url("/assets/images/FKAbadge8.png");
@@ -301,11 +433,33 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
 #badge8:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
 }
+#badge8New {
+    background-image: url("/assets/images/FKAbadge8.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+      animation-fill-mode: forwards;
+  }
+#badge8New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge9 {
     background-image: url("/assets/images/FKAbadge9.png");
     background-repeat: no-repeat;
@@ -318,11 +472,33 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
 #badge9:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
 }
+#badge9New {
+    background-image: url("/assets/images/FKAbadge9.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge9New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge10 {
     background-image: url("/assets/images/FKAbadge10.png");
     background-repeat: no-repeat;
@@ -335,11 +511,33 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
 #badge10:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
 }
+#badge10New {
+    background-image: url("/assets/images/FKAbadge10.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge10New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge11 {
     background-image: url("/assets/images/FKAbadge11.png");
     background-repeat: no-repeat;
@@ -352,11 +550,33 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
 #badge11:hover {
     animation: bounce 1s infinite;
     cursor: pointer;
 }
+#badge11New {
+    background-image: url("/assets/images/FKAbadge11.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge11New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge12 {
     background-image: url("/assets/images/FKAbadge12.png");
     background-repeat: no-repeat;
@@ -369,7 +589,29 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
+#badge12New {
+    background-image: url("/assets/images/FKAbadge12.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge11New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge13 {
     background-image: url("/assets/images/badgeone.png");
     background-repeat: no-repeat;
@@ -382,7 +624,29 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
+#badge13New {
+    background-image: url("/assets/images/badgeone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge13New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge13:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
@@ -399,7 +663,29 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
+#badge14New {
+    background-image: url("/assets/images/badge2.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge11New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge14:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
@@ -416,11 +702,33 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
 #badge15:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
 }
+#badge15New {
+    background-image: url("/assets/images/badge3.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge15New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge16 {
     background-image: url("/assets/images/badge4.png");
     background-repeat: no-repeat;
@@ -433,13 +741,34 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
-
+#badge16New {
+    background-image: url("/assets/images/badge4.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge16New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge16:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
-}
 
+}
 #badge17 {
     background-image: url("/assets/images/badge5.png");
     background-repeat: no-repeat;
@@ -452,13 +781,33 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
-
+#badge17New {
+    background-image: url("/assets/images/badge5.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge17New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge17:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
 }
-
 #badge18 {
     background-image: url("/assets/images/badges6.png");
     background-repeat: no-repeat;
@@ -471,13 +820,33 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
-
+#badge18New {
+    background-image: url("/assets/images/FKAbadge6.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge18New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge18:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
 }
-
 #badge19 {
     background-image: url("/assets/images/badge7.png");
     background-repeat: no-repeat;
@@ -490,8 +859,29 @@ main {
     -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
     -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    opacity: .3;
 }
-
+#badge19New {
+    background-image: url("/assets/images/FKAbadge19.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 130px;
+    width: 130px;
+    border-radius: 300px 300px 300px 300px;
+    background-color: transparent;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+    -webkit-animation-name: greenPulse;
+    -webkit-animation-duration: 4s;
+    transition: opacity 7s 0s ease;
+    animation-fill-mode: forwards;
+  }
+#badge19New:hover {
+      animation: bounce 1s infinite;
+      cursor: pointer;
+    }
 #badge19:hover{
   animation: bounce 1s infinite;
  cursor:pointer;
@@ -968,15 +1358,15 @@ box-shadow: 0 9px #999;
 @-webkit-keyframes greenPulse {
     from {
         background-color: #f7ff00;
-        -webkit-box-shadow: 0 0 200px #f7ff00;
+        -webkit-box-shadow: 0 0 30px #f7ff00;
     }
     100% {
         background-color: #f7ff00;
-        -webkit-box-shadow: 0 0 200px #f7ff00;
+        -webkit-box-shadow: 0 0 30px #f7ff00;
     }
     to {
         background-color: #f7ff00;
-        -webkit-box-shadow: 0 0 200px #f7ff00;
+        -webkit-box-shadow: 0 0 30px #f7ff00;
     }
 }
 .badgeHeader {
