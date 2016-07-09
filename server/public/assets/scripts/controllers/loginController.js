@@ -8,12 +8,33 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
     textnotifications: false,
     dgdnumber: 0,
     timesflagged: 0,
-    active: true
+    active: true,
+    badges: {
+      bibliophile: false,
+      kindness_ambassador: false,
+      royalty: false,
+      creature_care: false,
+      citizenship: false,
+      super_fan: false,
+      generosity: false,
+      happy_habits: false,
+      helpful_holiday: false,
+      flash_kindness: false,
+      wilderness_hero: false,
+      urgent_needs: false,
+      smile_sharing: false,
+      on_your_way: false,
+      halfway: false,
+      champion: false,
+      downloads: false,
+      kindness_coach: false,
+      bright_smiles: false
+    }
   };
   $scope.message = '';
   $scope.mismatch = false;
 
-  $scope.badges = {
+  /*$scope.badges = {
     user_verify: '',
     bibliophile: false,
     kindness_ambassador: false,
@@ -34,8 +55,7 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
     downloads: false,
     kindness_coach: false,
     bright_smiles: false,
-
-  }
+  }*/
 
   // select elements need jQuery to work properly
   $(document).ready(function () {
@@ -82,13 +102,11 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
         if (response.data.result) {
 
           // all checks passed - create user
-          $scope.badges.user_verify = candidate;
+          //$scope.badges.user_verify = candidate;
           $http.post('/register', $scope.user).then(function (response) {
             console.log('success');
-            $http.post('/badges/' + candidate, $scope.badges).then(function (response) {
-              console.log('Successfully added the badges for this user');
               $location.path('/login');
-            });
+
           },
 
           // error handling for registration

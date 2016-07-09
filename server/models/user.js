@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var bcrypt = require('bcrypt');
 var SALT_WORK_FACTOR = 10;
+var BadgesSchema = require('./badges').schema;
 
 // Mongoose Schema
 var UserSchema = new Schema({
@@ -22,6 +23,7 @@ var UserSchema = new Schema({
   family_members: String,
   about_us: String,
   our_projects: String,
+  badges: BadgesSchema
 });
 
 // Called before adding a new user to the DB. Encrypts password.
