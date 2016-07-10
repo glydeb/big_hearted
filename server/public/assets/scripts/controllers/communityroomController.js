@@ -63,8 +63,10 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   function refreshCommunityRoom () {
     $http.get('/post').then(function(response) {
       $scope.communityPosts = response.data;
+      console.log('Loaded community posts:', $scope.communityPosts);
       var postUsers = [];
       $scope.communityPosts.forEach(function (post) {
+        console.log('post to be processed', post);
         if (post.anonymous === true) {
           post.username = 'Anonymous';
           post.image = '';
@@ -129,6 +131,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     $scope.post.username = $scope.user.username;
     $scope.post.postedDate = new Date();
 
+<<<<<<< ca81822f156e1ecb79dd330e7ffbc6bf80d60675
     if ($scope.post.dgd === true) {
         $scope.user.dgdnumber += 1;
         $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
@@ -137,6 +140,8 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         });
     }
 
+=======
+>>>>>>> add dgd to posting on community room
     // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
     AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
     AWS.config.region = 'us-east-1';
@@ -175,10 +180,18 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
           $http.post('/post', $scope.post).then(function(response) {
             console.log("Successfully posted");
+
+            if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+                $scope.user.dgdnumber += 1;
+                $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                    console.log("Successfully posted");
+                    refreshCommunityRoom();
+                });
+            }
+
             post.description = '';
             post.dgd = false;
             post.anonymous = false;
-            refreshCommunityRoom();
           });
           /* disable progress bar
           // Reset The Progress Bar
@@ -196,11 +209,19 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       }
       else {
         $http.post('/post', $scope.post).then(function(response) {
+
+          if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+              $scope.user.dgdnumber += 1;
+              $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                  console.log("Successfully posted");
+                  refreshCommunityRoom();
+              });
+          }
+
           console.log("Successfully posted");
           post.description = '';
           post.dgd = false;
           post.anonymous = false;
-          refreshCommunityRoom();
         });
         // No File Selected
         console.log('No file submitted');
