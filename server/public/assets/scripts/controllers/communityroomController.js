@@ -129,6 +129,14 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     $scope.post.username = $scope.user.username;
     $scope.post.postedDate = new Date();
 
+    if ($scope.post.dgd === true) {
+        $scope.user.dgdnumber += 1;
+        $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+            console.log("Successfully posted");
+            refreshOurProfile();
+        });
+    }
+
     // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
     AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
     AWS.config.region = 'us-east-1';
@@ -213,5 +221,16 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       });
       console.log("picture modal");
   });
+
+  //pagination functionality (taken from stackoverflow)??
+    $scope.currentPage = 0;
+    $scope.pageSize = 5;
+    // $scope.data = [];
+    $scope.numberOfPages=function(){
+        return Math.ceil($scope.communityPosts.length/$scope.pageSize);
+    }
+    // for (var i=0; i<45; i++) {
+    //     $scope.data.push("Item "+i);
+    // }
 
 }]);
