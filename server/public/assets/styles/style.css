@@ -1555,3 +1555,7 @@ label, placeholder {
   padding: 0px !important;
   border-radius: 2px;
 }
+
+.pagination {
+  margin-top: 15px;
+}

@@ -202,4 +202,15 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     $('.materialboxed').materialbox();
   };
 
+  //pagination functionality (taken from stackoverflow)??
+    $scope.currentPage = 0;
+    $scope.pageSize = 5;
+    // $scope.data = [];
+    $scope.numberOfPages=function(){
+        return Math.ceil($scope.communityPosts.length/$scope.pageSize);
+    }
+    // for (var i=0; i<45; i++) {
+    //     $scope.data.push("Item "+i);
+    // }
+
 }]);
