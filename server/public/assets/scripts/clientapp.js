@@ -1,4 +1,5 @@
 var myApp = angular.module('myApp', ['ngRoute', 'directives']);
+
 /// Routes ///
 
 myApp.config(['$routeProvider', function ($routeProvider) {
@@ -38,6 +39,6 @@ myApp.config(['$routeProvider', function ($routeProvider) {
     })
     .otherwise({
       redirectTo: 'login'
-    })
+    });
 
 }]);
