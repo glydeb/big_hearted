@@ -133,7 +133,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         $scope.user.dgdnumber += 1;
         $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
             console.log("Successfully posted");
-            refreshOurProfile();
+            refreshCommunityRoom();
         });
     }
 
