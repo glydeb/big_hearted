@@ -116,6 +116,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
     $scope.post.username = $scope.user.username;
     $scope.post.postedDate = new Date();
 
+
     if ($scope.file) {
       // Perform File Size Check First
       var fileSize = Math.round(parseInt($scope.file.size));
@@ -156,10 +157,18 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
               });
             }
             console.log("Successfully posted");
-            post.description = '';
-            post.dgd = false;
-            post.anonymous = false;
-            refreshOurProfile();
+
+            if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+                $scope.user.dgdnumber += 1;
+                $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                    console.log("Successfully posted");
+
+                    refreshOurProfile();
+                });
+            }
+            $scope.post.description = '';
+            $scope.post.dgd = false;
+            $scope.post.anonymous = false;
           });
           /* disable progress bar
           // Reset The Progress Bar
@@ -185,10 +194,16 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
           });
         }
         console.log("Successfully posted");
-        post.description = '';
-        post.dgd = false;
-        post.anonymous = false;
-        refreshOurProfile();
+        if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+            $scope.user.dgdnumber += 1;
+            $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                console.log("Successfully posted");
+                refreshOurProfile();
+            });
+        }
+        $scope.post.description = '';
+        $scope.post.dgd = false;
+        $scope.post.anonymous = false;
       });
       // No File Selected
       console.log('No file submitted');
