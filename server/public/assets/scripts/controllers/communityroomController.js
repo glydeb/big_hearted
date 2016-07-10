@@ -131,17 +131,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     $scope.post.username = $scope.user.username;
     $scope.post.postedDate = new Date();
 
-<<<<<<< ca81822f156e1ecb79dd330e7ffbc6bf80d60675
-    if ($scope.post.dgd === true) {
-        $scope.user.dgdnumber += 1;
-        $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
-            console.log("Successfully posted");
-            refreshCommunityRoom();
-        });
-    }
-
-=======
->>>>>>> add dgd to posting on community room
     // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
     AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
     AWS.config.region = 'us-east-1';
