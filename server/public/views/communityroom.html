@@ -37,7 +37,12 @@
                                 </div>
                                 <div class="col l6 pull-l7 s6 pull-s6 center-align">
                                     <div class="section">
-                                        <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="responsive-img hoverable post-picture" ng-src="{{file.name}}" />
+                                      <img class="responsive-img hoverable post_preview_modal modal-trigger" href="#post_preview_modal" width="100" ng-src="{{file}}" />
+                                      <div id="post_preview_modal" class="modal">
+                                          <div class="col s12 modal-content picture_modal valign-wrapper">
+                                              <img class="responsive-img zoom_picture valign" ng-src="{{file}}" />
+                                          </div>
+                                      </div>
                                     </div>
                                     <div class="btn-floating btn-large file-field">
                                         <span class="upload-button"><i class="material-icons">portrait</i></span>
@@ -54,13 +59,13 @@
     <div class="row">
         <div class="col s12 l10 push-l1">
             <section class="displayallposts">
-                <div class="post" ng-repeat="post in communityPosts | orderBy: '-postedDate'">
+                <div class="post" ng-repeat="post in communityPosts | startFrom:currentPage*pageSize | limitTo:pageSize | orderBy: '-postedDate'">
                     <div class="hoverable individualposts">
                         <nav class="z-depth-0">
-                            <div class="nav-wrapper valign-wrapper post_card_header">
-                                <div class="valign">
-                                    <img width="50" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-profile-picture" src="/assets/images/pirate_me_sm.jpg" />
-                                </div>
+                          <div class="nav-wrapper valign-wrapper post_card_header">
+                            <div class="valign">
+                              <img width="50" class="responsive-img post-profile-picture" ng-src="{{userImages[post.user_verify]}}" />
+                            </div>
                                 <a class="post_card_title">{{post.username}}</a>
                                 <form>
                                 </form>
@@ -82,8 +87,11 @@
                         </div>
                     </div>
                 </div>
+                <button class="waves-effect waves-teal btn pagination" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
+                <span class="pagination">{{currentPage+1}}/{{numberOfPages()}}</span>
+                <button class="waves-effect waves-teal btn pagination" ng-disabled="currentPage >= communityPosts.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
         </div>
     </div>
     </section>
     </div>
-</div>
+  </div>
