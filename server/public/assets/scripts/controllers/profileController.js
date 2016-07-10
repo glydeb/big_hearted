@@ -110,7 +110,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
       });
   };
 
-
   // create a post
   $scope.sendPost = function (post) {
     $scope.post.user_verify = $scope.user.verification;
@@ -168,6 +167,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
         $scope.$digest();
       }); */
+
     } else {
       $http.post('/post', $scope.post).then(function(response) {
         console.log("Successfully posted");
@@ -181,7 +181,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
       //toastr.error('Please select a file to upload');
     }
   };
-
 
   function refreshOurProfile() {
       $http.get('/post/' +
@@ -214,11 +213,13 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
           $location.path('/home');
       }
       refreshOurProfile();
-
   }
 
   $(document).ready(function() {
-      $('.modal-trigger').leanModal();
+      $('.modal-trigger').leanModal({
+        dismissible: true,
+        opacity: .95
+      });
       console.log("picture modal");
   });
 

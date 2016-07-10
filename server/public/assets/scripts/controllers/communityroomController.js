@@ -10,6 +10,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     postedDate: new Date()
   };
 
+  $scope.userImages = {};
   $scope.updatedPost = {};
   $scope.user = {};
   $scope.communityPosts = [];
@@ -62,11 +63,25 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   function refreshCommunityRoom () {
     $http.get('/post').then(function(response) {
       $scope.communityPosts = response.data;
+      var postUsers = [];
       $scope.communityPosts.forEach(function (post) {
         if (post.anonymous === true) {
           post.username = 'Anonymous';
-          post.image = '/assets/images/mickeyanonymous.jpg';
+          post.image = '';
+        } else {
+          postUsers.push(post.user_verify);
         }
+      });
+      var userString = postUsers.join();
+      $http.get('/register/flagged/' + userString).then(function(response) {
+          var usersWithPosts = response.data;
+          console.log('User image paths loaded:', response.data);
+          usersWithPosts.forEach(function (user) {
+            $scope.userImages[user.verification] = user.image;
+          });
+          console.log('poster image loop finished, results:', $scope.userImages);
+      }, function(err) {
+          console.log('Error loading posting users:', err);
       });
     });
   }
@@ -106,6 +121,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     }
 
   }
+
 
   // create a post
   $scope.sendPost = function (post) {
@@ -182,7 +198,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         $http.post('/post', $scope.post).then(function(response) {
           console.log("Successfully posted");
           post.description = '';
-          post.dgd = false;
           post.anonymous = false;
           refreshCommunityRoom();
         });
@@ -198,9 +213,13 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     return Math.round($scope.sizeLimit / 1024 / 1024) + 'MB';
   };
 
-  $scope.initMaterialbox = function() {
-    $('.materialboxed').materialbox();
-  };
+  $(document).ready(function() {
+      $('.modal-trigger').leanModal({
+        dismissible: true,
+        opacity: 0.95
+      });
+      console.log("picture modal");
+  });
 
   //pagination functionality (taken from stackoverflow)??
     $scope.currentPage = 0;
