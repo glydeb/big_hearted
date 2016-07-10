@@ -148,6 +148,13 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
           // toastr.success('File Uploaded Successfully', 'Done');
 
           $http.post('/post', $scope.post).then(function(response) {
+            if (post.dgd) {
+              $scope.user.dgdnumber++;
+              $http.put('/register/' + $scope.user.verification,
+                $scope.user).then(function (response) {
+                  console.log('update to dgdnumber successful');
+              });
+            }
             console.log("Successfully posted");
             post.description = '';
             post.dgd = false;
@@ -170,6 +177,13 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
     } else {
       $http.post('/post', $scope.post).then(function(response) {
+        if (post.dgd) {
+          $scope.user.dgdnumber++;
+          $http.put('/register/' + $scope.user.verification,
+            $scope.user).then(function (response) {
+              console.log('update to dgdnumber successful');
+          });
+        }
         console.log("Successfully posted");
         post.description = '';
         post.dgd = false;

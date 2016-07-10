@@ -190,6 +190,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         $http.post('/post', $scope.post).then(function(response) {
           console.log("Successfully posted");
           post.description = '';
+          post.dgd = false;
           post.anonymous = false;
           refreshCommunityRoom();
         });
