@@ -8,11 +8,11 @@
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section" ng-show="edit">
             <form class="center-align upload-button">
                 <div class="btn-floating btn-large file-field">
                     <span><i class="material-icons">portrait</i></span>
-                    <input type="file" />
+                    <input type="file" name="file" file/>
                 </div>
                 </br>
                 <label>Change your picture</label>
@@ -93,7 +93,10 @@
                             </div>
                             <div class="col l5 pull-l7 s4 pull-s7 center-align">
                                 <div class="section">
-                                    <img width="150" height="150" ng-init="initMaterialbox()" materialboxed class="responsive-img hoverable post-picture" ng-src="{{file.name}}" />
+                                    <img width="150" height="150" class="responsive-img" ng-src="{{imageSrc}}" />
+                                    <p>
+                                      {{file.name}}
+                                    </p>
                                 </div>
                                 <div class="btn-floating btn-large file-field">
                                     <span class="upload-button"><i class="material-icons">portrait</i></span>
@@ -118,7 +121,7 @@
                                     </div>
                                 </nav>
                                 <div class="post_container container">
-                                    <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
+                                    <img width="150" class="responsive-img post-picture" ng-src="{{post.image}}" />
                                     </br>
                                     <p class="post_description">{{post.description}}</p>
                                     <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>
