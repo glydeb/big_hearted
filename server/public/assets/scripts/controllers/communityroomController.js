@@ -10,6 +10,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     postedDate: new Date()
   };
 
+  $scope.userImages = {};
   $scope.updatedPost = {};
   $scope.user = {};
   $scope.communityPosts = [];
@@ -62,11 +63,27 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   function refreshCommunityRoom () {
     $http.get('/post').then(function(response) {
       $scope.communityPosts = response.data;
+      console.log('Loaded community posts:', $scope.communityPosts);
+      var postUsers = [];
       $scope.communityPosts.forEach(function (post) {
+        console.log('post to be processed', post);
         if (post.anonymous === true) {
           post.username = 'Anonymous';
-          post.image = '/assets/images/mickeyanonymous.jpg';
+          post.image = '';
+        } else {
+          postUsers.push(post.user_verify);
         }
+      });
+      var userString = postUsers.join();
+      $http.get('/register/flagged/' + userString).then(function(response) {
+          var usersWithPosts = response.data;
+          console.log('User image paths loaded:', response.data);
+          usersWithPosts.forEach(function (user) {
+            $scope.userImages[user.verification] = user.image;
+          });
+          console.log('poster image loop finished, results:', $scope.userImages);
+      }, function(err) {
+          console.log('Error loading posting users:', err);
       });
     });
   }
@@ -152,10 +169,18 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
           $http.post('/post', $scope.post).then(function(response) {
             console.log("Successfully posted");
+
+            if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+                $scope.user.dgdnumber += 1;
+                $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                    console.log("Successfully posted");
+                    refreshCommunityRoom();
+                });
+            }
+
             post.description = '';
             post.dgd = false;
             post.anonymous = false;
-            refreshCommunityRoom();
           });
           /* disable progress bar
           // Reset The Progress Bar
@@ -173,10 +198,19 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       }
       else {
         $http.post('/post', $scope.post).then(function(response) {
+
+          if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+              $scope.user.dgdnumber += 1;
+              $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                  console.log("Successfully posted");
+                  refreshCommunityRoom();
+              });
+          }
+
           console.log("Successfully posted");
           post.description = '';
+          post.dgd = false;
           post.anonymous = false;
-          refreshCommunityRoom();
         });
         // No File Selected
         console.log('No file submitted');
@@ -193,9 +227,20 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   $(document).ready(function() {
       $('.modal-trigger').leanModal({
         dismissible: true,
-        opacity: .95
+        opacity: 0.95
       });
       console.log("picture modal");
   });
+
+  //pagination functionality (taken from stackoverflow)??
+    $scope.currentPage = 0;
+    $scope.pageSize = 5;
+    // $scope.data = [];
+    $scope.numberOfPages=function(){
+        return Math.ceil($scope.communityPosts.length/$scope.pageSize);
+    }
+    // for (var i=0; i<45; i++) {
+    //     $scope.data.push("Item "+i);
+    // }
 
 }]);

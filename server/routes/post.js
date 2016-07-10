@@ -9,12 +9,20 @@ var path = require('path');
 var initialPosts = 25;
 
 router.get('/', function(req, res) {
-    Post.find({}).limit(initialPosts).exec(function(err, posts) {
+    Post.find({}).sort({'postedDate': -1}).exec(function(err, posts) {
         if (err) {
             res.sendStatus(500);
             return;
         }
-        res.send(posts);
+        var recentPosts = [];
+        for (var i = 0; i <= 24; i++) {
+          if (posts[i]) {
+            recentPosts.push(posts[i]);
+          } else {
+            break;
+          }
+        }
+        res.send(recentPosts);
     });
 });
 
