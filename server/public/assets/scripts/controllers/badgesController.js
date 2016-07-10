@@ -93,13 +93,21 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
             });
         };
 
-        console.log('checking user');
-
+        function checkBadges2 () {
+          $http.get('/post').then(function(response) {
+            $scope.info = response.data;
+              var likes = $scope.info.map(function(a) {return a.likes;});
+              if (likes.length >= 1) {
+                document.getElementById('badge18').id = 'badge18New';
+          }
+        });
+}
         // go to factory to verify user
         if (doGoodFactory.factoryGetUserData() === undefined) {
             doGoodFactory.factoryRefreshUserData().then(function() {
                 $scope.user = doGoodFactory.factoryGetUserData();
                 checkBadges();
+                checkBadges2();
                 // if it's still undefined after refresh, send them to login page
                 if ($scope.user.username === undefined || $scope.user.username === '') {
                     $location.path('/home');
@@ -112,6 +120,9 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
             }
             checkBadges();
         }
+
+
+
 
         $(document).ready(function() {
             // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
@@ -204,6 +215,7 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
             document.getElementById('badge15').id = 'badge15New';
           }
         }
+
 
         function checkBadges(){
           generosity();
