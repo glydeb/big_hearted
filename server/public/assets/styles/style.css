@@ -1370,13 +1370,14 @@ box-shadow: 0 9px #999;
         -webkit-box-shadow: 0 0 30px #f7ff00;
     }
 }
-.badgeHeader {
-    height: 100px;
-    width: 800px;
-    border-style: groove;
-    border-color: #eedb58;
-    background-color: #3366ff;
-    vertical-align: middle;
+.badgeHeader2 {
+  border-style:groove;
+  border-color: #eedb58 ;
+  background-color: #426da9;
+
+  color:white;
+  text-align: center;
+
 }
 
 .badgeHeader{
@@ -1386,7 +1387,7 @@ box-shadow: 0 9px #999;
   vertical-align: middle;
   color:white;
   font-size: 20px;
-  padding:3px,3px,6px,3px;
+  padding:6px,6px,6px,6px;
   box-shadow:10px 10px 5px #888888;
   margin-left: 20px;
   margin-bottom: -10px;
@@ -1443,6 +1444,7 @@ box-shadow: 0 9px #999;
   color: white;
   box-shadow: 0px 8px 10px gray,
          -10px 8px 15px gray, 10px 8px 15px gray;
+
 }
 .post-picture {
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
@@ -1558,4 +1560,12 @@ label, placeholder {
 
 .pagination {
   margin-top: 15px;
+}
+.tracker-link:hover{
+  cursor: pointer;
+  color:orange;
+}
+.tracker-image {
+  box-shadow: 0px 8px 10px gray,
+         -10px 8px 15px gray, 10px 8px 15px gray;
 }
