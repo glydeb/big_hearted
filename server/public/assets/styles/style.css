@@ -1590,3 +1590,7 @@ label, placeholder {
   box-shadow: 0px 8px 10px gray,
          -10px 8px 15px gray, 10px 8px 15px gray;
 }
+
+.underline {
+  text-decoration: underline;
+}
