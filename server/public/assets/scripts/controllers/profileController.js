@@ -49,7 +49,8 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
           var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
           // create new image name - 6-character verification code plus
           // existing file extension.
-          var newName = $scope.user.verification +
+          newName = $scope.user.verification + '_' +
+            $scope.post.postedDate.toISOString().replace(/[\W_]/g,'') +
             $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
           $scope.file.name = newName;
 
@@ -59,7 +60,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
             Body: $scope.file,
             ServerSideEncryption: 'AES256'
           };
-          $scope.user.image = $scope.prefix + newName;
 
           bucket.putObject(params, function(err, data) {
             if(err) {
@@ -69,6 +69,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
             } else {
               // Upload Successfully Finished
               console.log('file upload finished');
+              $scope.user.image = $scope.prefix + $scope.file.name;
               // toastr.success('File Uploaded Successfully', 'Done');
               $http.put('/register/' + $scope.user.verification,
                 $scope.user).then(function(response) {
