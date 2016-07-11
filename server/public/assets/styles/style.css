@@ -13,7 +13,7 @@ main {
     flex: 1 0 auto;
 }
 .valign-wrapper {
-    background-color: snow;
+    background-color: #e9e9e9;
 }
 footer.page-footer {
   margin-top: 0px;
@@ -1459,7 +1459,7 @@ box-shadow: 0 9px #999;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
   padding: 0px !important;
   border-radius: 2px;
-  margin-left: 2%;
+  margin-left: 20px;
 
 }
 
@@ -1522,6 +1522,7 @@ box-shadow: 0 9px #999;
 
 #editbutton {
   background-color: #8752a2;
+  margin-bottom: 30px;
 }
 
 .clearfix {
@@ -1573,5 +1574,9 @@ label, placeholder {
 
 .pagination {
   margin-top: 15px;
-
+}
+.pagination_numbers{
+  display: inline;
+  margin-left: 1em;
+  margin-right: 1em;
 }

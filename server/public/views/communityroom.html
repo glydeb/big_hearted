@@ -64,7 +64,7 @@
                         <nav class="z-depth-0">
                           <div class="nav-wrapper valign-wrapper post_card_header">
                             <div class="valign">
-                              <img width="50" class="responsive-img post-profile-picture" ng-src="{{userImages[post.user_verify]}}" />
+                              <img width="50" class="responsive-img valign post-profile-picture" ng-src="{{userImages[post.user_verify]}}" />
                             </div>
                                 <a class="post_card_title">{{post.username}}</a>
                                 <form>
@@ -72,7 +72,7 @@
                             </div>
                         </nav>
                         <div class="post_container container">
-                            <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
+                            <img width="150" class="responsive-img post-picture" ng-src="{{post.image}}" />
                             </br>
                             <p class="post_description">{{post.description}}</p>
                             <span>{{post.postedDate | date : 'EEEE, MMMM d, y'}}</span>
@@ -87,9 +87,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="waves-effect waves-teal btn pagination" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
-                <span class="pagination">{{currentPage+1}}/{{numberOfPages()}}</span>
-                <button class="waves-effect waves-teal btn pagination" ng-disabled="currentPage >= communityPosts.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
+                <div class="center-align">
+                <button class="waves-effect waves-teal btn-floating pagination" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><i class="material-icons">navigate_before</i></button>
+                <p class="pagination pagination_numbers">{{currentPage+1}}/{{numberOfPages()}}</p>
+                <button class="waves-effect waves-teal btn-floating pagination" ng-disabled="currentPage >= communityPosts.length/pageSize - 1" ng-click="currentPage=currentPage+1"><i class="material-icons">navigate_next</i></button>
+                </div>
         </div>
     </div>
     </section>
