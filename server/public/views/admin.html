@@ -61,14 +61,14 @@
             <section class="displayallposts" ng-show="flaggedPosts.length > 0">
                 <div ng-repeat="post in flaggedPosts track by $index" class="flagged_content_post hoverable container">
                     <div class="individualposts">
-                        <div class="row flagged_content_position">
-                            <div class="col l2">
+                        <div class="row flagged_content_position valign-wrapper">
+                            <div class="col l2 valign">
                                 <form>
                                     <input type="checkbox" class="filled-in" id="{{post._id}}" ng-model="post.selected" />
                                     <label for="{{post._id}}">Select</label>
                                 </form>
                             </div>
-                            <div class="col s9 left-align">
+                            <div class="col s9 left-align valign">
                                 <img class="profilepicture" ng-src="{{post.image}}" />
                                 <span class="postsusername">{{post.username}}</span>
                                 <p>{{post.description}}</p>
