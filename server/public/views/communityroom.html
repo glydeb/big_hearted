@@ -72,7 +72,12 @@
                             </div>
                         </nav>
                         <div class="post_container container">
-                            <img width="150" class="responsive-img post-picture" ng-src="{{post.image}}" />
+                            <img width="150" class="responsive-img post-picture modal-trigger" href="#profile_picture_modal" ng-src="{{post.image}}" />
+                            <div id="profile_picture_modal" class="modal">
+                                <div class="modal-content profile_picture_modal valign-wrapper">
+                                    <img class="responsive-img zoom_picture valign col s12" ng-src="{{user.image}}" />
+                                </div>
+                            </div>
                             </br>
                             <p class="post_date right-align">{{post.postedDate | date : 'EEEE, MMMM d, y'}}</p>
                             <p class="post_description">{{post.description}}</p>
