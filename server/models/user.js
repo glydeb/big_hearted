@@ -21,9 +21,9 @@ var UserSchema = new Schema({
   lastname: String,
   phone: String,
   timezone: String,
-  family_members: {String, default: 'Click edit to add members to your family'},
-  about_us: {String, default: 'Click edit to write a bio about your family'},
-  our_projects: {String, default: 'Click edit to showcase your recent projects'},
+  family_members: {type: String, default: 'Click edit to add members to your family'},
+  about_us: {type: String, default: 'Click edit to write a bio about your family'},
+  our_projects: {type: String, default: 'Click edit to showcase your recent projects'},
   badges: BadgesSchema,
   rewarded: {type: Boolean, default: false}
 
