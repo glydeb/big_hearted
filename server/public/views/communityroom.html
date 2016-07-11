@@ -74,9 +74,9 @@
                         <div class="post_container container">
                             <img width="150" class="responsive-img post-picture" ng-src="{{post.image}}" />
                             </br>
+                            <p class="post_date right-align">{{post.postedDate | date : 'EEEE, MMMM d, y'}}</p>
                             <p class="post_description">{{post.description}}</p>
-                            <span>{{post.postedDate | date : 'EEEE, MMMM d, y'}}</span>
-                            <p ng-show="post.flagged">Post flagged for review</p>
+                            <p class="post_flagged right-align" ng-show="post.flagged">Post flagged for review</p>
                         </div>
                         <div class="row post_buttons_container">
                             <div class="section">
