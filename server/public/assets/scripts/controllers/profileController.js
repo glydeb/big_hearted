@@ -4,9 +4,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
   console.log('profileController running');
 
   $scope.user = {};
-  $scope.user.family_members = "Click edit to add members to your family";
-  $scope.user.about_us = "Click edit to write a bio about your family";
-  $scope.user.our_projects = "Click edit to showcase your recent projects";
   $scope.edit = false;
   $scope.visible = true;
   $scope.sizeLimit      = 2117152; // 2MB in Bytes
