@@ -200,13 +200,13 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
         }
 
         function onYourWay(){
-          if($scope.user.dgdnumber === 1 ){
+          if($scope.user.dgdnumber >= 1 ){
             document.getElementById('badge13').id = 'badge13New';
           }
         }
 
         function halfway(){
-          if($scope.user.dgdnumber === 6 ){
+          if($scope.user.dgdnumber >= 6 ){
             document.getElementById('badge14').id = 'badge14New';
           }
         }
