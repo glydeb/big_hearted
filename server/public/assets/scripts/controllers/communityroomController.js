@@ -68,15 +68,16 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       $scope.communityPosts.forEach(function (post) {
         console.log('post to be processed', post);
         if (post.anonymous === true) {
-          post.username = 'Anonymous';
-          post.image = '';
+          post.imageRef = 'anonymous';
         } else {
-          postUsers.push(post.user_verify);
+          post.imageRef = post.user_verify;
+          postUsers.push(post.imageRef);
         }
       });
       var userString = postUsers.join();
       $http.get('/register/flagged/' + userString).then(function(response) {
           var usersWithPosts = response.data;
+          $scope.userImages.anonymous =  'https://s3.amazonaws.com/bighearted/images/multiple-users-silhouette.png';
           console.log('User image paths loaded:', response.data);
           usersWithPosts.forEach(function (user) {
             $scope.userImages[user.verification] = user.image;
@@ -128,7 +129,11 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   // create a post
   $scope.sendPost = function (post) {
     $scope.post.user_verify = $scope.user.verification;
-    $scope.post.username = $scope.user.username;
+    if (post.anonymous) {
+      $scope.post.username = "One of our families";
+    } else {
+      $scope.post.username = $scope.user.username;
+    }
     $scope.post.postedDate = new Date();
 
     // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
@@ -176,6 +181,8 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
                     console.log("Successfully posted");
                     refreshCommunityRoom();
                 });
+            } else {
+              refreshCommunityRoom();
             }
 
             post.description = '';
@@ -238,7 +245,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     // $scope.data = [];
     $scope.numberOfPages=function(){
         return Math.ceil($scope.communityPosts.length/$scope.pageSize);
-    }
+    };
     // for (var i=0; i<45; i++) {
     //     $scope.data.push("Item "+i);
     // }
