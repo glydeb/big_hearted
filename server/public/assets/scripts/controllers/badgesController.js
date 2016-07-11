@@ -119,6 +119,7 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
                 $location.path('/home');
             }
             checkBadges();
+            checkBadges2();
         }
 
 
