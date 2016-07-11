@@ -1617,3 +1617,10 @@ label, placeholder {
   margin: 0px;
   color: #F44336;
 }
+
+.zoom_picture {
+  width: 65% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  height: auto;
+}
