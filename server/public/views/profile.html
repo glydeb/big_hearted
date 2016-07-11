@@ -73,7 +73,6 @@
                         <form ng-submit="sendPost(post)">
                             <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
                             <div class="col l7 push-l6 m7 push-m5 s6 push-s5 center-align">
-                                <div class="section">
                                     <label class="label">Post this anonymously?</label>
                                     <div class="switch">
                                         <label>
@@ -82,10 +81,7 @@
                                             <span class="lever"></span>Yes
                                         </label>
                                     </div>
-                                </div>
-                                <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
-                                <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
-                              </br>
+                                  </br>
                                 <button class="btn waves-effect waves-light post_button" type="submit" name="action">Post
                                     <i class="material-icons right">send</i>
                                 </button>
@@ -94,19 +90,21 @@
                                 </div>
                             </div>
                             <div class="col l5 pull-l7 s4 pull-s7 center-align">
-                                <div class="section">
-                                  <!-- not using preview for presentation <img class="responsive-img hoverable profile-picture modal-trigger" href="#post_picture-modal" width="200" ng-src="{{file}}" />
+                                <!-- <div class="section">
+                                   not using preview for presentation <img class="responsive-img hoverable profile-picture modal-trigger" href="#post_picture-modal" width="200" ng-src="{{file}}" />
                                   <div id="post_picture-modal" class="modal">
                                       <div class="col s12 modal-content post_picture_modal valign-wrapper">
                                           <img class="responsive-img zoom_picture valign" ng-src="{{file}}" />
                                       </div>
-                                  </div> -->
-                                </div>
+                                  </div>
+                                </div> -->
                                 <div class="btn-floating btn-large file-field">
                                     <span class="upload-button"><i class="material-icons">portrait</i></span>
                                     <input type="file" name="file" file></input>
                                 </div>
                                 <label class="label">Upload a picture</label>
+                                <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
+                                <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                             </div>
                         </form>
                     </div>
