@@ -1,8 +1,9 @@
 <div class="container">
+  <div class="register_container hoverable">
     <h3 class="lead">Register New User</h3>
     <form ng-submit="registerUser()">
         <div class="row input-field">
-            <div class="col l6 m6 s12">
+            <div class="col l6 m7 s12">
                 <input type="text" placeholder="Verification Code" ng-model="user.verification" class="tooltipped" data-position="bottom" data-delay="100" data-tooltip="You can find this code in your email" required />
                 </br>
                 <input type="text" placeholder="First Name" ng-model="user.firstname" required />
@@ -19,7 +20,11 @@
                 <input type="password" placeholder="Confirm Password" ng-model="user.password2" ng-blur="comparePassword()" autocomplete="off" required />
                 <p ng-if="mismatch">Passwords do not match! Please re-enter.</p>
             </div>
+            <div class="col s4 push-s2 hide-on-med-and-down">
+              <img class="responsive-img login_logo" width="200" ng-src="/assets/images/bhf_logo_large.jpg" />
+            </div>
         </div>
+
     </form>
     <!-- <div class="row">
         <form action="#">
@@ -55,3 +60,4 @@
         </div>
     </div>
 </div>
+  </div>
