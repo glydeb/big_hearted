@@ -15,7 +15,7 @@
       <label ng-show="editableDownloads" for="upload">Put the whole download file here</label>
       <input ng-show="editableDownloads" type="file" name="file" file></input>
       <p ng-hide="editableDownloads" ng-model="download1.description">{{download1.description}}</p>
-      <label ng-show="editableDownloads" for="download description">Brief description:</label>
+    </br><label ng-show="editableDownloads" for="download description">Brief description:</label>
       <textarea class="materialize-textarea" ng-show="editableDownloads" ng-model="download1.description" placeholder="Type a brief description of the download" maxlength="2500"></textarea>
     </br><a href="{{download1.link}}" ng-model="download1.link" download>Download here</a>
       <button ng-show="editableDownloads" ng-click="saveDownloadInfo(download1)">Save</button>
@@ -27,7 +27,7 @@
       <label ng-show="editableDownloads" for="upload">Put the whole download file here</label>
       <input ng-show="editableDownloads" type="file" name="file" file></input>
       <p ng-hide="editableDownloads" ng-model="download2.description">{{download2.description}}</p>
-      <label ng-show="editableDownloads" for="download description">Brief description:</label>
+    </br><label ng-show="editableDownloads" for="download description">Brief description:</label>
       <textarea class="materialize-textarea" ng-show="editableDownloads" ng-model="download2.description" placeholder="Type a brief description of the download" maxlength="2500"></textarea>
     </br><a href="{{download2.link}}" ng-model="download2.link" download>Download here</a>
       <button ng-show="editableDownloads" ng-click="saveDownloadInfo(download2)">Save</button>
@@ -44,10 +44,7 @@
         <input ng-show="visible" type="text" ng-model="organization1.name" />
       </br><img class="imagesize" ng-src="{{organization1.image}}" />
         <input ng-show="visible" type="file" name="file" file></input>
-        <label ng-show="visible" for="organization link">Link to their page:</label>
         </br><a ng-hide="visible" target="_blank" href="{{organization1.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
-        <label ng-show="visible" for="organization name">Organization Name:</label>
-        <input type="text" ng-model="organization1.name" ng-show="visible1" placeholder="Organization name" />
           <p ng-hide="visible">{{organization1.description}}</p>
           <label ng-show="visible" for="organization description">Brief description:</label>
           <textarea class="materialize-textarea" ng-show="visible" ng-model="organization1.description" placeholder="Type a brief description of the organization" maxlength="2500"></textarea>
@@ -57,14 +54,11 @@
     <div class=" col s4">
       <div class="individualorganizations">
         <h5 ng-hide="visible">{{organization2.name}}</h5>
-        <input ng-show="visible" type="text" ng-model="organization2.name" />
         <label ng-show="visible" for="organization2 name">Organization Name</label>
+        <input ng-show="visible" type="text" ng-model="organization2.name" />
         <img class="imagesize" ng-src="{{organization2.image}}" />
         <input ng-show="visible" type="file" name="file" file></input>
-        <label ng-show="visible" for="organization link">Link to their page:</label>
         </br><a ng-hide="visible" target="_blank" href="{{organization2.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
-        <label ng-show="visible" for="organization name">Organization Name:</label>
-        <input type="text" ng-model="organization2.name" ng-show="visible" placeholder="Organization name" />
           <p ng-hide="visible">{{organization2.description}}</p>
           <label ng-show="visible" for="organization description">Brief description:</label>
           <textarea class="materialize-textarea" ng-show="visible" ng-model="organization2.description" placeholder="Type a brief description of the organization" maxlength="2500"></textarea>
@@ -74,14 +68,11 @@
     <div class="col s4">
       <div class="individualorganizations">
         <h5 ng-hide="visible">{{organization3.name}}</h5>
-        <input ng-show="visible" type="text" ng-model="organization3.name" />
         <label ng-show="visible" for="organization3 name">Organization Name</label>
+        <input ng-show="visible" type="text" ng-model="organization3.name" />
         <img class="imagesize" ng-src="{{organization3.image}}" />
         <input ng-show="visible" type="file" name="file" file></input>
-        <label ng-show="visible" for="organization link">Link to their page:</label>
       </br><a ng-hide="visible" target="_blank" href="{{organization3.link}}">Find out more!</a><input type="text" ng-model="organization.link" ng-show="visible" placeholder="Put a link to the organization here" />
-        <label ng-show="visible" for="organization name">Organization Name:</label>
-        <input type="text" ng-model="organization3.name" ng-show="visible3" placeholder="Organization name" />
           <p ng-hide="visible">{{organization3.description}}</p>
           <label ng-show="visible" for="organization description">Brief description:</label>
           <textarea class="materialize-textarea" ng-show="visible" ng-model="organization3.description" placeholder="Type a brief description of the organization" maxlength="2500"></textarea>
