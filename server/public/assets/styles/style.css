@@ -15,6 +15,12 @@ main {
 .valign-wrapper {
     background-color: snow;
 }
+footer.page-footer {
+  margin-top: 0px;
+}
+h3{
+  color: #4F4F4F;
+}
 #our-posts, .family-info, .individual_profile_posts, #community-posts, .individualposts, .inactive-users, .flagged-content, .generate-code, .dgd_complete {
     background-color: white;
 }
@@ -1525,15 +1531,9 @@ box-shadow: 0 9px #999;
     zoom: 1;
     box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
-
-a {
-  color: #73bf43
-}
-
 a:hover {
-  color: #00af59;
-}
 
+}
 .post_button {
   margin-top: 7%;
 }
@@ -1558,8 +1558,24 @@ label, placeholder {
   border-radius: 2px;
 }
 
+
+.login_button {
+  margin-top: 40px;
+}
+
+.login_logo {
+  border-radius: 2px;
+}
+
+.login_screen {
+  background-color: white;
+  padding: 100px 100px 100px 100px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.12)
+}
+
 .pagination {
   margin-top: 15px;
+
 }
 .tracker-link:hover{
   cursor: pointer;

@@ -1,12 +1,12 @@
-<div class="container">
+<div class="container hoverable login_screen">
     <h3 class="lead">Big-Hearted Hangout</h3>
     <h1 class="lead alert alert-danger" role="alert" ng-if="message != ''">{{message}}</h2>
     <form ng-submit="login()">
       <div class= "row">
-      <div class= "col l4 s6 input-field">
-          <input type="text" placeholder="Username" ng-model="user.username" autocomplete="off" />
-          <input type="password" placeholder="Password" ng-model="user.password" autocomplete="off" />
-          <div class="row">
+      <div class= "col l5 m7 s12 input-field">
+          <input type="text" placeholder="Username" ng-model="user.username" />
+          <input type="password" placeholder="Password" ng-model="user.password" />
+          <div class="row login_button">
           <div class="col s7">
           <button class="waves-effect waves-light btn" type="submit" name="submit" value="Log In">Submit<i class="material-icons right">send</i>
           </button>
@@ -17,5 +17,8 @@
           </div>
       </div>
     </form>
+    <div class="col s4 push-s3 hide-on-med-and-down">
+      <img class="responsive-img login_logo" width="200" ng-src="/assets/images/bhf_logo_large.jpg" />
+    </div>
 </div>
 </div>
