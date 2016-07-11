@@ -16,7 +16,7 @@ var UserSchema = new Schema({
   timesflagged: { type: Number, required: true },
   active: { type: Boolean, default: true, required: true },
   image: {type: String, default:
-    'https://s3.amazonaws.com/bighearted/images/blue-twirl-art.jpg'},
+    'https://s3.amazonaws.com/bighearted/images/multiple-users-silhouette.png'},
   firstname: String,
   lastname: String,
   phone: String,
