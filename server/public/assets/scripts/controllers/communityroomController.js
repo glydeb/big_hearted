@@ -204,28 +204,29 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
         $scope.$digest();
       }); */
-      }
-      else {
-        $http.post('/post', $scope.post).then(function(response) {
+    } else {
+      $http.post('/post', $scope.post).then(function(response) {
 
-          if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
-              $scope.user.dgdnumber += 1;
-              $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
-                  console.log("Successfully posted");
-                  refreshCommunityRoom();
-              });
-          }
+        if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+            $scope.user.dgdnumber += 1;
+            $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                console.log("Successfully posted");
+                refreshCommunityRoom();
+            });
+        } else {
+          refreshCommunityRoom();
+        }
 
-          console.log("Successfully posted");
-          post.description = '';
-          post.dgd = false;
-          post.anonymous = false;
-        });
-        // No File Selected
-        console.log('No file submitted');
-        //toastr.error('Please select a file to upload');
-      }
-  };
+        console.log("Successfully posted");
+        post.description = '';
+        post.dgd = false;
+        post.anonymous = false;
+      });
+      // No File Selected
+      console.log('No file submitted');
+      //toastr.error('Please select a file to upload');
+    }
+};
 
 
   $scope.fileSizeLabel = function() {

@@ -218,16 +218,10 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
   };
 
   function refreshOurProfile() {
-      $http.get('/post/' +
-        $scope.user.verification).then(function(response) {
-          $scope.profilePosts = response.data;
-          $scope.profilePosts.forEach(function(post) {
-              if (post.anonymous === true) {
-                  post.username = 'Anonymous';
-                  post.image = '/assets/images/mickeyanonymous.jpg';
-              }
-          });
-      });
+    $http.get('/post/' +
+      $scope.user.verification).then(function(response) {
+      $scope.profilePosts = response.data;
+    });
   }
 
   console.log('checking user');
