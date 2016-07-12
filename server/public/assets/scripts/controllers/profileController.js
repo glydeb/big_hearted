@@ -3,6 +3,13 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
   console.log('profileController running');
 
+$scope.badge1 = false;
+$scope.badge2 = false;
+$scope.badge3 = false;
+$scope.badge5 = false;
+$scope.badge6 = false;
+
+
   $scope.user = {};
   $scope.user.family_members = "Click edit to add members to your family";
   $scope.user.about_us = "Click edit to write a bio about your family";
@@ -230,6 +237,13 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
   if (doGoodFactory.factoryGetUserData() === undefined) {
       doGoodFactory.factoryRefreshUserData().then(function() {
           $scope.user = doGoodFactory.factoryGetUserData();
+            checkProfileBadge1();
+            checkProfileBadge2();
+            checkProfileBadge3();
+            checkProfileBadge5();
+            checkProfileBadge6();
+          console.log($scope.user.dgdnumber);
+
           // if it's still undefined after refresh, send them to login page
           if ($scope.user.username === undefined || $scope.user.username === '') {
               $location.path('/home');
@@ -241,7 +255,14 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
       if ($scope.user.username === undefined || $scope.user.username === '') {
           $location.path('/home');
       }
+      checkProfileBadge1();
+      checkProfileBadge2();
+      checkProfileBadge3();
+      checkProfileBadge5();
+      checkProfileBadge6();
+
       refreshOurProfile();
+
   }
 
   $(document).ready(function() {
@@ -251,5 +272,31 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
       });
       console.log("picture modal");
   });
+
+  function checkProfileBadge1() {
+    if($scope.user.dgdnumber >= 1){
+      $scope.badge1 = true;
+    }
+  }
+  function checkProfileBadge2() {
+    if($scope.user.dgdnumber >= 6 ){
+      $scope.badge2 = true;
+    }
+  }
+  function checkProfileBadge3() {
+    if($scope.user.dgdnumber >=12 ){
+      $scope.badge3 = true;
+    }
+  }
+  function checkProfileBadge5() {
+    if($scope.user.badges.kindness_ambassador === true){
+      $scope.badge5 = true;
+    }
+  }
+  function checkProfileBadge6() {
+    if($scope.user.badges.kindness_coach === true){
+      $scope.badge6 = true;
+    }
+  }
 
 }]);

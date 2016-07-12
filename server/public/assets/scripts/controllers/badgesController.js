@@ -92,6 +92,13 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
                 console.log('updated badge');
             });
         };
+        $scope.updateBadge17 = function(badge) {
+            document.getElementById('badge17').id = 'badge17New';
+            $scope.user.badges.kindness_ambassador = true;
+            $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                console.log('updated badge');
+            });
+        };
 
         function checkBadges2 () {
           $http.get('/post').then(function(response) {
@@ -99,6 +106,10 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
               var likes = $scope.info.map(function(a) {return a.likes;});
               if (likes.length >= 1) {
                 document.getElementById('badge18').id = 'badge18New';
+                $scope.user.badges.kindness_coach = true;
+                $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                    console.log('updated badge');
+                });
           }
         });
 }
@@ -200,22 +211,28 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
         }
 
         function onYourWay(){
-          if($scope.user.dgdnumber === 1 ){
+          if($scope.user.dgdnumber > 1 ){
             document.getElementById('badge13').id = 'badge13New';
           }
         }
 
         function halfway(){
-          if($scope.user.dgdnumber === 6 ){
+          if($scope.user.dgdnumber >= 6 ){
             document.getElementById('badge14').id = 'badge14New';
           }
         }
 
         function champion(){
-          if($scope.user.dgdnumber === 12 ){
+          if($scope.user.dgdnumber >= 12 ){
             document.getElementById('badge15').id = 'badge15New';
           }
         }
+        function ambassador(){
+          if($scope.user.badges.kindness_ambassador === true ){
+            document.getElementById('badge17').id = 'badge17New';
+          }
+        }
+
 
 
         function checkBadges(){
@@ -234,6 +251,7 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
           onYourWay();
           halfway();
           champion();
+          ambassador();
         }
     }
 ]);
