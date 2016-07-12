@@ -29,8 +29,8 @@
                                     <button class="btn waves-effect waves-light post_button" type="submit" name="action">Post
                                         <i class="material-icons right">send</i>
                                     </button>
-                                    <div ng-show="loading" class="progress">
-                                        <div ng-show="loading" class="indeterminate"></div>
+                                    <div ng-show="postloading" class="progress">
+                                        <div ng-show="postloading" class="indeterminate"></div>
                                     </div>
                                 </div>
                                 <div class="col l6 pull-l7 s6 pull-s6 center-align">
@@ -72,12 +72,7 @@
                             </div>
                         </nav>
                         <div class="post_container container">
-                            <img width="150" class="responsive-img post-picture modal-trigger" href="#profile_picture_modal" ng-src="{{post.image}}" />
-                            <div id="profile_picture_modal" class="modal">
-                                <div class="modal-content profile_picture_modal valign-wrapper">
-                                    <img class="responsive-img zoom_picture valign col s12" ng-src="{{user.image}}" />
-                                </div>
-                            </div>
+                            <img width="150" class="responsive-img post-picture hoverable" ng-src="{{post.image}}" />
                             </br>
                             <p class="post_date right-align">{{post.postedDate | date : 'EEEE, MMMM d, y'}}</p>
                             <p class="post_description">{{post.description}}</p>

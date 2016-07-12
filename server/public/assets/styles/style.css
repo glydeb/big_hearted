@@ -1494,6 +1494,7 @@ box-shadow: 0 9px #999;
 }
 .post_description {
     margin: 0 0 15px 0;
+    width: 75%;
 }
 .post_buttons_container {
     margin-right: 5% !important;

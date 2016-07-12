@@ -110,6 +110,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
   // create a post
   $scope.sendPost = function (post) {
+    $scope.postloading = true;
     $scope.post.user_verify = $scope.user.verification;
     if (post.anonymous) {
       $scope.post.username = "One of our families";
@@ -120,6 +121,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
 
     if ($scope.file) {
+      $scope.pictureloading = true;
       // Perform File Size Check First
       var fileSize = Math.round(parseInt($scope.file.size));
       if (fileSize > $scope.sizeLimit) {
@@ -155,6 +157,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
               $scope.user.dgdnumber++;
               $http.put('/register/' + $scope.user.verification,
                 $scope.user).then(function (response) {
+                  $scope.pictureloading = false;
                   console.log('update to dgdnumber successful');
               });
             }
@@ -163,6 +166,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
             if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
                 $scope.user.dgdnumber += 1;
                 $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                  $scope.pictureloading = false;
                     console.log("Successfully posted");
 
                     refreshOurProfile();
@@ -192,11 +196,13 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
           $scope.user.dgdnumber++;
           $http.put('/register/' + $scope.user.verification,
             $scope.user).then(function (response) {
+              $scope.postloading = false;
               console.log('update to dgdnumber successful');
           });
         }
         console.log("Successfully posted");
         if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+          $scope.postloading = false;
             $scope.user.dgdnumber += 1;
             $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
                 console.log("Successfully posted");
@@ -218,6 +224,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
         $scope.user.verification).then(function(response) {
           $scope.profilePosts = response.data;
           $scope.profilePosts.forEach(function(post) {
+
               if (post.anonymous === true) {
                   post.username = 'Anonymous';
                   post.image = '/assets/images/mickeyanonymous.jpg';

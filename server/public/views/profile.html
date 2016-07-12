@@ -8,6 +8,9 @@
                 </div>
             </div>
         </div>
+        <div ng-show="pictureloading" class="progress">
+            <div ng-show="pictureloading" class="indeterminate"></div>
+        </div>
         <div ng-show="edit" class="section">
             <form class="center-align upload-button">
                 <div class="btn-floating btn-large file-field">
@@ -85,8 +88,8 @@
                                 <button class="btn waves-effect waves-light post_button" type="submit" name="action">Post
                                     <i class="material-icons right">send</i>
                                 </button>
-                                <div ng-show="loading" class="progress">
-                                    <div ng-show="loading" class="indeterminate"></div>
+                                <div ng-show="postloading" class="progress">
+                                    <div ng-show="postloading" class="indeterminate"></div>
                                 </div>
                             </div>
                             <div class="col l5 pull-l7 s4 pull-s7 center-align">
@@ -123,12 +126,7 @@
                                     </div>
                                 </nav>
                                 <div class="post_container container">
-                                  <img class="responsive-img hoverable profile-picture modal-trigger" href="#picture_modal" width="200" ng-src="{{post.image}}" />
-                                  <div id="picture_modal" class="modal">
-                                      <div class="col s12 modal-content picture_modal valign-wrapper">
-                                          <img class="responsive-img zoom_picture valign" ng-src="{{post.image}}" />
-                                      </div>
-                                  </div>
+                                  <img class="responsive-img hoverable post-picture" width="200" ng-src="{{post.image}}" />
                                     </br>
                                     <p class="post_description">{{post.description}}</p>
                                     <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>
