@@ -21,34 +21,34 @@
                                         <div class="switch">
                                             <label>
                                                 No
-                                                <input type="checkbox">
+                                                <input type="checkbox" ng-model="post.anonymous">
                                                 <span class="lever"></span> Yes
                                             </label>
                                         </div>
                                     </div>
-                                    <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
-                                    <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                                     <button class="btn waves-effect waves-light post_button" type="submit" name="action">Post
                                         <i class="material-icons right">send</i>
                                     </button>
-                                    <div ng-show="loading" class="progress">
-                                        <div ng-show="loading" class="indeterminate"></div>
+                                    <div ng-show="postloading" class="progress">
+                                        <div ng-show="postloading" class="indeterminate"></div>
                                     </div>
                                 </div>
                                 <div class="col l6 pull-l7 s6 pull-s6 center-align">
-                                    <div class="section">
-                                      <img class="responsive-img hoverable post_preview_modal modal-trigger" href="#post_preview_modal" width="100" ng-src="{{file}}" />
+                                    <!-- <div class="section">
+                                       remove preview for presentation <img class="responsive-img hoverable post_preview_modal modal-trigger" href="#post_preview_modal" width="100" ng-src="{{file}}" />
                                       <div id="post_preview_modal" class="modal">
                                           <div class="col s12 modal-content picture_modal valign-wrapper">
                                               <img class="responsive-img zoom_picture valign" ng-src="{{file}}" />
                                           </div>
                                       </div>
-                                    </div>
+                                    </div> -->
                                     <div class="btn-floating btn-large file-field">
                                         <span class="upload-button"><i class="material-icons">portrait</i></span>
                                         <input type="file" name="file" file></input>
                                     </div>
                                     <label class="label">Upload a picture</label>
+                                    <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
+                                    <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                                 </div>
                             </form>
                         </div>
@@ -64,7 +64,7 @@
                         <nav class="z-depth-0">
                           <div class="nav-wrapper valign-wrapper post_card_header">
                             <div class="valign">
-                              <img width="50" class="responsive-img post-profile-picture" ng-src="{{userImages[post.user_verify]}}" />
+                              <img class="responsive-img hoverable valign post-profile-picture" ng-src="{{userImages[post.imageRef]}}" />
                             </div>
                                 <a class="post_card_title">{{post.username}}</a>
                                 <form>
@@ -72,11 +72,11 @@
                             </div>
                         </nav>
                         <div class="post_container container">
-                            <img width="150" ng-init="initMaterialbox()" materialboxed class="materialboxed responsive-img post-picture" ng-src="{{post.image}}" />
+                            <img width="150" class="responsive-img post-picture hoverable" ng-src="{{post.image}}" />
                             </br>
+                            <p class="post_date right-align">{{post.postedDate | date : 'EEEE, MMMM d, y'}}</p>
                             <p class="post_description">{{post.description}}</p>
-                            <span>{{post.postedDate | date : 'EEEE, MMMM d, y'}}</span>
-                            <p ng-show="post.flagged">Post flagged for review</p>
+                            <p class="post_flagged right-align" ng-show="post.flagged">Post flagged for review</p>
                         </div>
                         <div class="row post_buttons_container">
                             <div class="section">
@@ -87,9 +87,11 @@
                         </div>
                     </div>
                 </div>
-                <button class="waves-effect waves-teal btn pagination" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">Previous</button>
-                <span class="pagination">{{currentPage+1}}/{{numberOfPages()}}</span>
-                <button class="waves-effect waves-teal btn pagination" ng-disabled="currentPage >= communityPosts.length/pageSize - 1" ng-click="currentPage=currentPage+1">Next</button>
+                <div class="center-align">
+                <button class="waves-effect waves-teal btn-floating pagination" ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1"><i class="material-icons">navigate_before</i></button>
+                <p class="pagination pagination_numbers">{{currentPage+1}}/{{numberOfPages()}}</p>
+                <button class="waves-effect waves-teal btn-floating pagination" ng-disabled="currentPage >= communityPosts.length/pageSize - 1" ng-click="currentPage=currentPage+1"><i class="material-icons">navigate_next</i></button>
+                </div>
         </div>
     </div>
     </section>

@@ -1,22 +1,25 @@
 <div class="row our-profile">
     <div class="section col s12 m8 push-m2 l3">
         <div class="section">
-            <img class="responsive-img hoverable profile-picture modal-trigger" href="#profile_picture_modal" width="400" ng-src="{{user.image}}" />
+            <img class="responsive-img hoverable profile-picture modal-trigger" href="#profile_picture_modal" width="300" ng-src="{{user.image}}" />
             <div id="profile_picture_modal" class="modal">
-                <div class="col s12 modal-content profile_picture_modal valign-wrapper">
-                    <img class="responsive-img zoom_picture valign" ng-src="{{user.image}}" />
+                <div class="modal-content profile_picture_modal valign-wrapper">
+                    <img class="responsive-img zoom_picture valign col s12" ng-src="{{user.image}}" />
                 </div>
             </div>
         </div>
+        <div ng-show="pictureloading" class="progress">
+            <div ng-show="pictureloading" class="indeterminate"></div>
+        </div>
         <div ng-show="edit" class="section">
-
             <form class="center-align upload-button">
                 <div class="btn-floating btn-large file-field">
                     <span><i class="material-icons">portrait</i></span>
                     <input type="file" name="file" file/>
                 </div>
                 </br>
-                <label>Change your picture</label>
+                <label>Change your picture</label></br>
+                <label>Click Save when you're finished!</label>
             </form>
         </div>
         <div class="section hoverable family-info">
@@ -74,40 +77,38 @@
                         <form ng-submit="sendPost(post)">
                             <textarea class="validate materialize-textarea" id="textarea2" maxlength="8000" placeholder="Tell us about your family or project!" ng-model="post.description" required></textarea>
                             <div class="col l7 push-l6 m7 push-m5 s6 push-s5 center-align">
-                                <div class="section">
                                     <label class="label">Post this anonymously?</label>
                                     <div class="switch">
                                         <label>
                                             No
-                                            <input type="checkbox">
+                                            <input type="checkbox" ng-model="post.anonymous">
                                             <span class="lever"></span>Yes
                                         </label>
                                     </div>
-                                </div>
-                                <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
-                                <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
-                              </br>
+                                  </br>
                                 <button class="btn waves-effect waves-light post_button" type="submit" name="action">Post
                                     <i class="material-icons right">send</i>
                                 </button>
-                                <div ng-show="loading" class="progress">
-                                    <div ng-show="loading" class="indeterminate"></div>
+                                <div ng-show="postloading" class="progress">
+                                    <div ng-show="postloading" class="indeterminate"></div>
                                 </div>
                             </div>
                             <div class="col l5 pull-l7 s4 pull-s7 center-align">
-                                <div class="section">
-                                  <img class="responsive-img hoverable profile-picture modal-trigger" href="#post_picture-modal" width="200" ng-src="{{file}}" />
+                                <!-- <div class="section">
+                                   not using preview for presentation <img class="responsive-img hoverable profile-picture modal-trigger" href="#post_picture-modal" width="200" ng-src="{{file}}" />
                                   <div id="post_picture-modal" class="modal">
                                       <div class="col s12 modal-content post_picture_modal valign-wrapper">
                                           <img class="responsive-img zoom_picture valign" ng-src="{{file}}" />
                                       </div>
                                   </div>
-                                </div>
+                                </div> -->
                                 <div class="btn-floating btn-large file-field">
                                     <span class="upload-button"><i class="material-icons">portrait</i></span>
                                     <input type="file" name="file" file></input>
                                 </div>
                                 <label class="label">Upload a picture</label>
+                                <input type="checkbox" id="test6" name="dgd" ng-model="post.dgd" />
+                                <label class="switch" for="test6">Do Good Dozen accomplishment?</label>
                             </div>
                         </form>
                     </div>
@@ -126,12 +127,7 @@
                                     </div>
                                 </nav>
                                 <div class="post_container container">
-                                  <img class="responsive-img hoverable profile-picture modal-trigger" href="#picture_modal" width="200" ng-src="{{post.image}}" />
-                                  <div id="picture_modal" class="modal">
-                                      <div class="col s12 modal-content picture_modal valign-wrapper">
-                                          <img class="responsive-img zoom_picture valign" ng-src="{{post.image}}" />
-                                      </div>
-                                  </div>
+                                  <img class="responsive-img hoverable post-picture" width="200" ng-src="{{post.image}}" />
                                     </br>
                                     <p class="post_description">{{post.description}}</p>
                                     <a class="waves-effect waves-teal btn"><i class="material-icons left">thumb_up</i><span>{{post.likes.length}}</span></a>

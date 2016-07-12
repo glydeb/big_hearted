@@ -1,10 +1,9 @@
 <div class="row">
     <h3 class="center-align">Administrative Functions</h3>
     <div class="row">
-        <div class="col s12">
-            <div class=" dgd_complete hoverable">
+            <div class="dgd_complete hoverable">
                 <nav class="z-depth-0">
-                    <div class="nav-wrapper teal">
+                    <div class="nav-wrapper post_card_header">
                         <a class="brand-logo card_title">Completed DGD Users</a>
                         <form>
                         </form>
@@ -12,8 +11,8 @@
                 </nav>
                 <div class="container">
                     <div class="row">
-                        <h6 ng-if="rewardUsers.length > 0" class="col l3 pull-l2 s3 center-align">User</h6>
-                        <h6 ng-if="rewardUsers.length > 0" class="col l3 pull-l1 s3 center-align">Email</h6>
+                        <h6 ng-if="rewardUsers.length > 0" class="bold underline col l3 pull-l2 s3 center-align">User</h6>
+                        <h6 ng-if="rewardUsers.length > 0" class="bold underline col l3 pull-l1 s3 center-align">Email</h6>
                     </div>
                     <div ng-if="rewardUsers.length > 0" ng-repeat="user in rewardUsers" class="row">
                         <p class="col l4 pull-l2 center-align">{{user.firstname}} {{user.lastname}}</p>
@@ -26,13 +25,10 @@
                     </div>
                 </div>
             </div>
-        </div>
     </div>
-
-    <div class="col s12">
         <div class="generate-code hoverable">
             <nav class="z-depth-0">
-                <div class="nav-wrapper">
+                <div class="nav-wrapper post_card_header">
                     <a class="brand-logo card_title">Create verification codes</a>
                     <form>
                     </form>
@@ -53,26 +49,26 @@
         </br>
         <div class="flagged-content hoverable">
             <nav class="z-depth-0">
-                <div class="nav-wrapper card_header">
+                <div class="nav-wrapper post_card_header">
                     <a class="brand-logo card_title">Flagged Content</a>
                     <form>
                     </form>
                 </div>
             </nav>
             <section class="noposts" ng-show="flaggedPosts.length === 0">
-                <p>No content has been flagged!</p>
+                <p class="col s12 push-s1 l12 push-l1">No content has been flagged!</p>
             </section>
             <section class="displayallposts" ng-show="flaggedPosts.length > 0">
                 <div ng-repeat="post in flaggedPosts track by $index" class="flagged_content_post hoverable container">
                     <div class="individualposts">
-                        <div class="row flagged_content_position">
-                            <div class="col l2">
+                        <div class="row flagged_content_position valign-wrapper">
+                            <div class="col l2 valign">
                                 <form>
                                     <input type="checkbox" class="filled-in" id="{{post._id}}" ng-model="post.selected" />
                                     <label for="{{post._id}}">Select</label>
                                 </form>
                             </div>
-                            <div class="col s9 left-align">
+                            <div class="col s9 left-align valign">
                                 <img class="profilepicture" ng-src="{{post.image}}" />
                                 <span class="postsusername">{{post.username}}</span>
                                 <p>{{post.description}}</p>
@@ -92,16 +88,16 @@
             <div id="review-modal" class="modal">
                 <div class="col s12 modal-content review-modal">
                     <nav class="z-depth-0">
-                        <div class="nav-wrapper">
+                        <div class="nav-wrapper post_card_header">
                             <a class="brand-logo.left card_title">Review/Suspend Users</a>
                             <form>
                             </form>
                         </div>
                     </nav>
                     <div class="row container center-align">
-                        <h6 class="col s1 pull-s1 m3 l3 pull-l2">User</h6>
-                        <h6 class="col s1 push-s1 m3 l3 pull-l2">Email</h6>
-                        <h6 class="col s1 push-s5 m3 l3">Flagged Posts</h6>
+                        <h6 class="bold underline col s1 pull-s1 m3 l3 pull-l2">User</h6>
+                        <h6 class="bold underline col s1 push-s1 m3 l3 pull-l2">Email</h6>
+                        <h6 class="bold underline col s1 push-s5 m3 l3">Flagged Posts</h6>
                     </div>
                     <div class="row container center-align" ng-repeat="user in flaggedUsers">
                         <p class="col s1 pull-s1 m3 l3 pull-l2">{{user.firstname}} {{user.lastname}}</p>
@@ -115,7 +111,7 @@
         </br>
         <div class="inactive-users hoverable">
             <nav class="z-depth-0">
-                <div class="nav-wrapper teal">
+                <div class="nav-wrapper post_card_header">
                     <a class="brand-logo card_title">Review/Suspend Users</a>
                     <form>
                     </form>
@@ -123,8 +119,8 @@
             </nav>
             <div class="container">
                 <div ng-show="inactiveUsers.length > 0" class="row">
-                    <h6 class="col l3 pull-l1 m3 s2 center-align">User</h6>
-                    <h6 class="col l3 pull-l1 m3 push-m1 s2 center-align">Email</h6>
+                    <h6 class="bold underline col l3 pull-l1 m3 s2 center-align">User</h6>
+                    <h6 class="bold underline col l3 pull-l1 m3 push-m1 s2 center-align">Email</h6>
                 </div>
                 <div ng-show="inactiveUsers.length > 0" class="row" ng-repeat="user in inactiveUsers">
                     <p class="col l3 pull-l1 m3 s2 center-align">{{user.firstname}} {{user.lastname}}</p>
@@ -137,5 +133,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>

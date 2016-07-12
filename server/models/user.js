@@ -16,14 +16,14 @@ var UserSchema = new Schema({
   timesflagged: { type: Number, required: true },
   active: { type: Boolean, default: true, required: true },
   image: {type: String, default:
-    'https://s3.amazonaws.com/bighearted/images/blue-twirl-art.jpg'},
+    'https://s3.amazonaws.com/bighearted/images/multiple-users-silhouette.png'},
   firstname: String,
   lastname: String,
   phone: String,
   timezone: String,
-  family_members: String,
-  about_us: String,
-  our_projects: String,
+  family_members: {type: String, default: 'Click edit to add members to your family'},
+  about_us: {type: String, default: 'Click edit to write a bio about your family'},
+  our_projects: {type: String, default: 'Click edit to showcase your recent projects'},
   badges: BadgesSchema,
   rewarded: {type: Boolean, default: false}
 

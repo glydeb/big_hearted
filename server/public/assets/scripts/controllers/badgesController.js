@@ -154,12 +154,12 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
 
         }
         function smileSharing() {
-            if ($scope.user.badges.citizenship === true) {
+            if ($scope.user.badges.smile_sharing === true) {
                 document.getElementById('badge3').id = 'badge3New';
             }
         }
         function royalty() {
-            if ($scope.user.badges.bibliophile === true) {
+            if ($scope.user.badges.royalty === true) {
                 document.getElementById('badge4').id = 'badge4New';
             }
 
@@ -195,23 +195,25 @@ myApp.controller('badgesController', ['doGoodFactory', '$scope', '$http',
             }
         }
         function flashKindness() {
-            if ($scope.user.badges.citizenship === true) {
+            if ($scope.user.badges.flash_kindness === true) {
                 document.getElementById('badge10').id = 'badge10New';
             }
         }
         function wildernessHero() {
-            if ($scope.user.badges.citizenship === true) {
+            if ($scope.user.badges.wilderness_hero === true) {
                 document.getElementById('badge11').id = 'badge11New';
             }
         }
         function urgentNeeds() {
-            if ($scope.user.badges.citizenship === true) {
+            if ($scope.user.badges.urgent_needs === true) {
                 document.getElementById('badge12').id = 'badge12New';
             }
         }
 
         function onYourWay(){
-          if($scope.user.dgdnumber > 1 ){
+
+          if($scope.user.dgdnumber >= 1 ){
+
             document.getElementById('badge13').id = 'badge13New';
           }
         }

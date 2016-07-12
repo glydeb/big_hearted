@@ -11,9 +11,6 @@ $scope.badge6 = false;
 
 
   $scope.user = {};
-  $scope.user.family_members = "Click edit to add members to your family";
-  $scope.user.about_us = "Click edit to write a bio about your family";
-  $scope.user.our_projects = "Click edit to showcase your recent projects";
   $scope.edit = false;
   $scope.visible = true;
   $scope.sizeLimit      = 2117152; // 2MB in Bytes
@@ -56,17 +53,17 @@ $scope.badge6 = false;
           var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
           // create new image name - 6-character verification code plus
           // existing file extension.
-          var newName = $scope.user.verification +
+          $scope.newName = $scope.user.verification + '_' +
+            $scope.post.postedDate.toISOString().replace(/[\W_]/g,'') +
             $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
-          $scope.file.name = newName;
+          $scope.file.name = $scope.newName;
 
           var params = {
-            Key:  'images/' + newName,
+            Key:  'images/' + $scope.newName,
             ContentType: $scope.file.type,
             Body: $scope.file,
             ServerSideEncryption: 'AES256'
           };
-          $scope.user.image = $scope.prefix + newName;
 
           bucket.putObject(params, function(err, data) {
             if(err) {
@@ -76,6 +73,7 @@ $scope.badge6 = false;
             } else {
               // Upload Successfully Finished
               console.log('file upload finished');
+              $scope.user.image = $scope.prefix + $scope.newName;
               // toastr.success('File Uploaded Successfully', 'Done');
               $http.put('/register/' + $scope.user.verification,
                 $scope.user).then(function(response) {
@@ -119,12 +117,18 @@ $scope.badge6 = false;
 
   // create a post
   $scope.sendPost = function (post) {
+    $scope.postloading = true;
     $scope.post.user_verify = $scope.user.verification;
-    $scope.post.username = $scope.user.username;
+    if (post.anonymous) {
+      $scope.post.username = "One of our families";
+    } else {
+      $scope.post.username = $scope.user.username;
+    }
     $scope.post.postedDate = new Date();
 
 
     if ($scope.file) {
+      $scope.pictureloading = true;
       // Perform File Size Check First
       var fileSize = Math.round(parseInt($scope.file.size));
       if (fileSize > $scope.sizeLimit) {
@@ -160,6 +164,7 @@ $scope.badge6 = false;
               $scope.user.dgdnumber++;
               $http.put('/register/' + $scope.user.verification,
                 $scope.user).then(function (response) {
+                  $scope.pictureloading = false;
                   console.log('update to dgdnumber successful');
               });
             }
@@ -168,10 +173,13 @@ $scope.badge6 = false;
             if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
                 $scope.user.dgdnumber += 1;
                 $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                  $scope.pictureloading = false;
                     console.log("Successfully posted");
 
                     refreshOurProfile();
                 });
+            } else {
+              refreshOurProfile();
             }
             $scope.post.description = '';
             $scope.post.dgd = false;
@@ -197,16 +205,20 @@ $scope.badge6 = false;
           $scope.user.dgdnumber++;
           $http.put('/register/' + $scope.user.verification,
             $scope.user).then(function (response) {
+              $scope.postloading = false;
               console.log('update to dgdnumber successful');
           });
         }
         console.log("Successfully posted");
         if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+          $scope.postloading = false;
             $scope.user.dgdnumber += 1;
             $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
                 console.log("Successfully posted");
                 refreshOurProfile();
             });
+        } else {
+          refreshOurProfile();
         }
         $scope.post.description = '';
         $scope.post.dgd = false;
@@ -219,16 +231,10 @@ $scope.badge6 = false;
   };
 
   function refreshOurProfile() {
-      $http.get('/post/' +
-        $scope.user.verification).then(function(response) {
-          $scope.profilePosts = response.data;
-          $scope.profilePosts.forEach(function(post) {
-              if (post.anonymous === true) {
-                  post.username = 'Anonymous';
-                  post.image = '/assets/images/mickeyanonymous.jpg';
-              }
-          });
-      });
+    $http.get('/post/' +
+      $scope.user.verification).then(function(response) {
+      $scope.profilePosts = response.data;
+    });
   }
 
   console.log('checking user');

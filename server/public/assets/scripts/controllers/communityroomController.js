@@ -38,26 +38,27 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     } else {
       var response = confirm('Press Ok to flag this post for review by a site administrator, press Cancel to return to the Community Room');
       if (response) {
-      post.flagged = true;
-      $http.get('/register/' + post.user_verify).then(function (response) {
-        $scope.flaggedUser = response.data[0];
-        console.log($scope.flaggedUser);
-        $scope.flaggedUser.timesflagged += 1;
-        $http.put('/register/' + $scope.flaggedUser.verification, $scope.flaggedUser).then(function(response) {
-          console.log('Posted update to the user');
-          refreshCommunityRoom();
+        post.flagged = true;
+        $http.get('/register/' + post.user_verify).then(function (response) {
+          $scope.flaggedUser = response.data[0];
+          console.log($scope.flaggedUser);
+          $scope.flaggedUser.timesflagged += 1;
+          $http.put('/register/' + $scope.flaggedUser.verification, $scope.flaggedUser).then(function(response) {
+            console.log('Posted update to the user');
+            refreshCommunityRoom();
+          });
         });
-      });
+        $http.put('/post/' + post._id, post).then(function(response) {
+          console.log('updated post');
+          refreshCommunityRoom();
+        }, function(err) {
+          console.log('Error updating post');
+        });
+      }
+      else {
+        return;
+      }
     }
-    else {
-      return;
-    }
-  }
-      $http.put('/post/' + post._id, post).then(function(response) {
-        console.log('updated post');
-        refreshCommunityRoom();
-      });
-
   };
 
   function refreshCommunityRoom () {
@@ -68,15 +69,16 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       $scope.communityPosts.forEach(function (post) {
         console.log('post to be processed', post);
         if (post.anonymous === true) {
-          post.username = 'Anonymous';
-          post.image = '';
+          post.imageRef = 'anonymous';
         } else {
-          postUsers.push(post.user_verify);
+          post.imageRef = post.user_verify;
+          postUsers.push(post.imageRef);
         }
       });
       var userString = postUsers.join();
       $http.get('/register/flagged/' + userString).then(function(response) {
           var usersWithPosts = response.data;
+          $scope.userImages.anonymous =  'https://s3.amazonaws.com/bighearted/images/multiple-users-silhouette.png';
           console.log('User image paths loaded:', response.data);
           usersWithPosts.forEach(function (user) {
             $scope.userImages[user.verification] = user.image;
@@ -127,8 +129,13 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
   // create a post
   $scope.sendPost = function (post) {
+    $scope.postloading = true;
     $scope.post.user_verify = $scope.user.verification;
-    $scope.post.username = $scope.user.username;
+    if (post.anonymous) {
+      $scope.post.username = "One of our families";
+    } else {
+      $scope.post.username = $scope.user.username;
+    }
     $scope.post.postedDate = new Date();
 
     // CHANGE TO USE ENVIRONMENT - REQUEST FROM SERVER
@@ -138,6 +145,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     console.log($scope.file);
 
     if ($scope.file) {
+      $scope.pictureloading = true;
       // Perform File Size Check First
       var fileSize = Math.round(parseInt($scope.file.size));
       if (fileSize > $scope.sizeLimit) {
@@ -168,14 +176,18 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
           // toastr.success('File Uploaded Successfully', 'Done');
 
           $http.post('/post', $scope.post).then(function(response) {
+            $scope.pictureloading = false;
             console.log("Successfully posted");
 
             if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
                 $scope.user.dgdnumber += 1;
                 $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
-                    console.log("Successfully posted");
+                    console.log("Successfully updated dgd count - call refresh");
                     refreshCommunityRoom();
                 });
+            } else {
+              console.log('Call refresh');
+              refreshCommunityRoom();
             }
 
             post.description = '';
@@ -195,29 +207,30 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         $scope.uploadProgress = Math.round(progress.loaded / progress.total * 100);
         $scope.$digest();
       }); */
-      }
-      else {
-        $http.post('/post', $scope.post).then(function(response) {
 
-          if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
-              $scope.user.dgdnumber += 1;
-              $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
-                  console.log("Successfully posted");
-                  refreshCommunityRoom();
-              });
-          }
+    } else {
+      $http.post('/post', $scope.post).then(function(response) {
 
-          console.log("Successfully posted");
-          post.description = '';
-          post.dgd = false;
-          post.anonymous = false;
-        });
-        // No File Selected
-        console.log('No file submitted');
-        //toastr.error('Please select a file to upload');
-      }
-  };
+        if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
+            $scope.user.dgdnumber += 1;
+            $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
+                console.log("Successfully posted");
+                refreshCommunityRoom();
+            });
+        } else {
+          refreshCommunityRoom();
+        }
 
+        console.log("Successfully posted");
+        post.description = '';
+        post.dgd = false;
+        post.anonymous = false;
+      });
+      // No File Selected
+      console.log('No file submitted');
+      //toastr.error('Please select a file to upload');
+    }
+};
 
   $scope.fileSizeLabel = function() {
     // Convert Bytes To MB
@@ -238,7 +251,7 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     // $scope.data = [];
     $scope.numberOfPages=function(){
         return Math.ceil($scope.communityPosts.length/$scope.pageSize);
-    }
+    };
     // for (var i=0; i<45; i++) {
     //     $scope.data.push("Item "+i);
     // }
