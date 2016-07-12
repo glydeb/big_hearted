@@ -167,6 +167,8 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
                     refreshOurProfile();
                 });
+            } else {
+              refreshOurProfile();
             }
             $scope.post.description = '';
             $scope.post.dgd = false;
@@ -202,6 +204,8 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
                 console.log("Successfully posted");
                 refreshOurProfile();
             });
+        } else {
+          refreshOurProfile();
         }
         $scope.post.description = '';
         $scope.post.dgd = false;
