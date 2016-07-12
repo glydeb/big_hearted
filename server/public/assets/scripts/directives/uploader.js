@@ -20,3 +20,22 @@ directives.directive('file', function() {
     }
   };
 });
+
+directives.directive('profileFile', function() {
+  return {
+    restrict: 'AE',
+    scope: {
+      file: '@'
+    },
+    link: function(scope, el, attrs){
+      el.bind('change', function(event){
+        var files = event.target.files;
+        var file = files[0];
+        scope.$parent.profileFile = file;
+        scope.profileFile = file;
+        scope.$apply();
+        // scope.getfile();
+      });
+    }
+  };
+});

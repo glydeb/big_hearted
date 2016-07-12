@@ -35,9 +35,10 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
     $scope.edit = !$scope.edit;
     if ($scope.visible) {
 
-      if ($scope.file) {
+      if ($scope.profileFile) {
+        $scope.pictureloading = true;
         // Perform File Size Check First
-        var fileSize = Math.round(parseInt($scope.file.size));
+        var fileSize = Math.round(parseInt($scope.profileFile.size));
         if (fileSize > $scope.sizeLimit) {
           console.log('size limit exceeded');
           alert('Sorry, your attachment is too big. <br/> Maximum '  + $scope.fileSizeLabel() + ' file attachment allowed','File Too Large');
@@ -48,13 +49,13 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
           // existing file extension.
           $scope.newName = $scope.user.verification + '_' +
             $scope.post.postedDate.toISOString().replace(/[\W_]/g,'') +
-            $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
-          $scope.file.name = $scope.newName;
+            $scope.profileFile.name.substr($scope.profileFile.name.lastIndexOf('.'));
+          $scope.profileFile.name = $scope.newName;
 
           var params = {
             Key:  'images/' + $scope.newName,
-            ContentType: $scope.file.type,
-            Body: $scope.file,
+            ContentType: $scope.profileFile.type,
+            Body: $scope.profileFile,
             ServerSideEncryption: 'AES256'
           };
 
@@ -70,6 +71,7 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
               // toastr.success('File Uploaded Successfully', 'Done');
               $http.put('/register/' + $scope.user.verification,
                 $scope.user).then(function(response) {
+                  $scope.pictureloading = false;
                 console.log('family info saved');
                 refreshOurProfile();
               });
@@ -121,7 +123,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
 
     if ($scope.file) {
-      $scope.pictureloading = true;
       // Perform File Size Check First
       var fileSize = Math.round(parseInt($scope.file.size));
       if (fileSize > $scope.sizeLimit) {
@@ -153,11 +154,12 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
           // toastr.success('File Uploaded Successfully', 'Done');
 
           $http.post('/post', $scope.post).then(function(response) {
+            $scope.postloading = false;
+            $scope.pictureloading = false;
             if (post.dgd) {
               $scope.user.dgdnumber++;
               $http.put('/register/' + $scope.user.verification,
                 $scope.user).then(function (response) {
-                  $scope.pictureloading = false;
                   console.log('update to dgdnumber successful');
               });
             }
@@ -166,7 +168,6 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
             if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
                 $scope.user.dgdnumber += 1;
                 $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
-                  $scope.pictureloading = false;
                     console.log("Successfully posted");
 
                     refreshOurProfile();
@@ -194,20 +195,21 @@ myApp.controller('profileController', ['doGoodFactory', '$scope', '$http',
 
     } else {
       $http.post('/post', $scope.post).then(function(response) {
+        $scope.postloading = false;
+        $scope.pictureloading = false;
         if (post.dgd) {
           $scope.user.dgdnumber++;
           $http.put('/register/' + $scope.user.verification,
             $scope.user).then(function (response) {
-              $scope.postloading = false;
               console.log('update to dgdnumber successful');
           });
         }
         console.log("Successfully posted");
         if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
-          $scope.postloading = false;
             $scope.user.dgdnumber += 1;
             $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
                 console.log("Successfully posted");
+                $scope.postloading = false;
                 refreshOurProfile();
             });
         } else {

@@ -145,7 +145,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     console.log($scope.file);
 
     if ($scope.file) {
-      $scope.pictureloading = true;
       // Perform File Size Check First
       var fileSize = Math.round(parseInt($scope.file.size));
       if (fileSize > $scope.sizeLimit) {
@@ -176,14 +175,14 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
           // toastr.success('File Uploaded Successfully', 'Done');
 
           $http.post('/post', $scope.post).then(function(response) {
-            $scope.pictureloading = false;
             console.log("Successfully posted");
-
+            $scope.postloading = false;
             if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
                 $scope.user.dgdnumber += 1;
                 $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
                     console.log("Successfully updated dgd count - call refresh");
                     refreshCommunityRoom();
+
                 });
             } else {
               console.log('Call refresh');
@@ -210,7 +209,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
 
     } else {
       $http.post('/post', $scope.post).then(function(response) {
-
         if ($scope.post.dgd === true && $scope.user.dgdnumber !== 12) {
             $scope.user.dgdnumber += 1;
             $http.put('/register/' + $scope.user.verification, $scope.user).then(function(response) {
