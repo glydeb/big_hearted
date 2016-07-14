@@ -22,7 +22,6 @@ $scope.badge6 = false;
   if (doGoodFactory.getSettings() === undefined) {
     doGoodFactory.refreshSettings().then(function () {
       $scope.creds = doGoodFactory.getSettings();
-      console.log('refreshed creds: ', $scope.creds);
 
       // aws settings
       AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });

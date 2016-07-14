@@ -43,9 +43,7 @@ router.post('/scheduled', function (req, res) {
 });
 
 function sendSMS(queue) {
-  console.log('sendSMS', queue);
   queue.forEach(function (options) {
-    console.log('sending to: ', options.phone);
     client.messages.create(options, function (err, res) {
       if (err) {
         console.log('Send failed', err);

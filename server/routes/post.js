@@ -43,7 +43,6 @@ router.get('/flagged', function(req, res) {
 // Get posts for a single user
 router.get('/:verCode', function(req, res) {
     var verification = req.params.verCode;
-    console.log('Verification: ', verification);
     Post.find({
         user_verify: verification
     }).limit(initialPosts).exec(function(err, posts) {
@@ -92,7 +91,6 @@ router.put('/clear', function(req, res) {
         multi: true
     }, function(err, post) {
         if (err) {
-            console.log(req.body);
             res.sendStatus(500);
             return;
         }
@@ -104,7 +102,6 @@ router.put('/clear', function(req, res) {
 router.put('/:id', function(req, res) {
     Post.findByIdAndUpdate(req.params.id, req.body, function(err, post) {
         if (err) {
-            console.log(req.body);
             res.sendStatus(500);
             return;
         }

@@ -42,7 +42,6 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
             $http.get('/post/flagged').then(function(response) {
                 var flaggedVerifications = [];
                 $scope.flaggedPosts = response.data;
-                console.log($scope.flaggedPosts);
                 // create query string of verification codes
                 $scope.flaggedPosts.forEach(function(post, i) {
                     flaggedVerifications.push(post.user_verify);
@@ -50,7 +49,6 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
                 var flaggedString = flaggedVerifications.join();
                 $http.get('/register/flagged/' + flaggedString).then(function(response) {
                     $scope.flaggedUsers = response.data;
-                    console.log($scope.flaggedUsers);
                 }, function(err) {
                     console.log('Error loading flagged users:', err);
                 });
@@ -62,7 +60,6 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
         function getInactive() {
             $http.get('/register/inactive').then(function(response) {
                 $scope.inactiveUsers = response.data;
-                console.log($scope.inactiveUsers);
             }, function(err) {
                 console.log('Error loading inactive users:', err);
             });
@@ -71,7 +68,6 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
         function getDGDReward() {
             $http.get('/register/dgdreward').then(function(response) {
                 $scope.rewardUsers = response.data;
-                console.log(response.data);
             }, function(err) {
                 console.log('Error loading all users:', err);
             });
@@ -90,9 +86,7 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
         function getSelected() {
             var selected = [];
             $scope.flaggedPosts.forEach(function(post, i) {
-                console.log(post.selected);
                 if (post.selected === true) {
-                    console.log(post._id);
                     selected.push(post._id);
                 }
             });
@@ -109,7 +103,6 @@ myApp.controller('adminController', ['doGoodFactory', '$scope', '$http',
 
         $scope.generateCode = function() {
             $http.get('/verification').then(function(response) {
-                console.log('generateCode response', response);
                 $scope.verification = response.data.verification;
             });
         };
