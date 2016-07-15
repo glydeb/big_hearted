@@ -39,11 +39,7 @@ passport.use('local', new LocalStrategy({
       if (!user) {
         // user not found
         console.log('userStrategy.js :: no user found');
-        return done(null, false, { message: 'Incorrect credentials.' });
-      } else if (!user.active) {
-        // user suspended
-        console.log('userStrategy.js :: suspended');
-        return done(null, false, { message: 'Your account has been suspended.' });
+        return done(null, false, { message: 'Incorrect username or password.' });
       } else {
         // found active user! Now check their given password against the one stored in the DB
         user.comparePassword(password, function (err, isMatch) {
