@@ -76,7 +76,7 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
           $location.path('/landingpage');
         } else {
           console.log('failure: ', response);
-          $scope.message = 'Username/Password combination not found';
+          $scope.message = response.data.message;
         }
       });
     }
