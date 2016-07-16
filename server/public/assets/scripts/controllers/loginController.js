@@ -74,7 +74,8 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
           // location works with SPA (ng-route)
           $location.path('/landingpage');
         } else {
-          $scope.message = 'Username/Password combination not found';
+          console.log('failure: ', response);
+          $scope.message = response.data.message;
         }
       });
     }
