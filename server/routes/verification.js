@@ -15,7 +15,6 @@ Verifications.find({}, function (err, codes) {
   codes.forEach(function (code, i) {
     usedCodes.push(code.verification);
   });
-  console.log(usedCodes);
 });
 
 // authenticate verification code

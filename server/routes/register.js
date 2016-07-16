@@ -28,7 +28,6 @@ router.put('/reward', function(req, res) {
         rewarded: true
     }, function(err, post) {
         if (err) {
-            console.log(req.body);
             res.sendStatus(500);
             return;
         }
@@ -43,7 +42,6 @@ router.put('/:verCode', function(req, res) {
         verification: req.params.verCode
     }, req.body, function(err, user) {
         if (err) {
-            console.log(req.body);
             res.sendStatus(500);
             return;
         }
@@ -56,7 +54,6 @@ router.put('/:verCode', function(req, res) {
 router.post('/', function(req, res, next) {
     Users.create(req.body, function(err, post) {
         if (err) {
-            console.log('error on user creation', req.body);
             res.sendStatus(500);
         } else {
 
@@ -116,7 +113,6 @@ router.get('/dgdreward', function(req, res) {
 
 // find a user by verification code
 router.get('/:id', function(req, res) {
-    console.log(req.params.id);
     Users.find({
         verification: req.params.id
     }, function(err, user) {
@@ -125,7 +121,6 @@ router.get('/:id', function(req, res) {
             return;
         }
 
-        console.log(user);
         res.send(user);
     });
 });
@@ -148,7 +143,6 @@ router.delete('/:id', function (req, res) {
 
 // retrieve flagged users
 router.get('/flagged/:ids', function(req, res) {
-    console.log(req.params.ids);
 
     // re-form string of ids into an array and put in 'find' object
     var verCodeList = {
@@ -162,7 +156,6 @@ router.get('/flagged/:ids', function(req, res) {
             return;
         }
 
-        console.log(users);
         res.send(users);
     });
 });

@@ -66,7 +66,6 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
     if ($scope.user.username === '' || $scope.user.password === '') {
       $scope.message = 'Please enter a valid username and password';
     } else {
-      console.log('sending to server...', $scope.user);
       $http.post('/', $scope.user).then(function (response) {
         if (response.data.username) {
           console.log('success: ', response.data);
@@ -75,7 +74,6 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
           // location works with SPA (ng-route)
           $location.path('/landingpage');
         } else {
-          console.log('failure: ', response);
           $scope.message = 'Username/Password combination not found';
         }
       });
@@ -98,7 +96,6 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
       // check verification code
       var candidate = $scope.user.verification;
       $http.get('/verification/' + candidate).then(function (response) {
-        console.log('code checked, returning:', response.data.result);
         if (response.data.result) {
 
           // all checks passed - create user
@@ -123,7 +120,6 @@ myApp.controller('LoginController', ['doGoodFactory', '$scope', '$http',
 
       // error handling for verification code check
       function (response) {
-        console.log('code verification error', response);
         $scope.message = 'Code verification failed - please check your code';
       });
 

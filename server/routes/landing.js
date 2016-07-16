@@ -28,7 +28,6 @@ res.send(organization);
 router.put('/organization/:id', function (req, res) {
   Organization.findByIdAndUpdate(req.params.id, req.body, function (err, organization) {
     if (err) {
-      console.log(req.body);
       res.sendStatus(500);
       return;
     }
@@ -39,7 +38,6 @@ router.put('/organization/:id', function (req, res) {
 router.put('/download/:id', function (req, res) {
   Download.findByIdAndUpdate(req.params.id, req.body, function (err, download) {
     if (err) {
-      console.log(req.body);
       res.sendStatus(500);
       return;
     }

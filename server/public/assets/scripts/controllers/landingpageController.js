@@ -69,7 +69,6 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
   function getAWSCredentials() {
     $http.get('/s3').then(function (response) {
       $scope.creds = response.data;
-      console.log($scope.creds);
     });
   }
 
@@ -126,7 +125,6 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
                 var params = { Key:  'featuredOrganizations/' + filepath, ContentType: $scope.file.type, Body: $scope.file, ServerSideEncryption: 'AES256' };
                 organization.image = $scope.prefix + organization.filepath + $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
 
-                console.log(params);
                 bucket.putObject(params, function(err, data) {
                   if(err) {
                     // toastr.error(err.message,err.code);
@@ -163,7 +161,6 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
             AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
             AWS.config.region = 'us-east-1';
             var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
-            console.log($scope.file);
 
             if ($scope.file) {
                 // Perform File Size Check First
@@ -180,7 +177,6 @@ myApp.controller('landingpageController', ['doGoodFactory', '$scope', '$http',
                 var params = { Key:  'downloads/' + filepath, ContentType: $scope.file.type, Body: $scope.file, ServerSideEncryption: 'AES256' };
                 download.link = $scope.prefix2 + download.filepath + $scope.file.name.substr($scope.file.name.lastIndexOf('.'));
 
-                console.log(params);
                 bucket.putObject(params, function(err, data) {
                   if(err) {
                     // toastr.error(err.message,err.code);
