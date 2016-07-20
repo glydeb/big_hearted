@@ -24,7 +24,6 @@ $(".button-collapse").sideNav({
   $scope.$on('$routeChangeSuccess', function () {
     console.log('update function called');
     $scope.navUser = doGoodFactory.factoryGetUserData();
-    console.log('navUser set to:', $scope.navUser);
   });
 
 

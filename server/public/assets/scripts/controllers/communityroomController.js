@@ -41,7 +41,6 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
         post.flagged = true;
         $http.get('/register/' + post.user_verify).then(function (response) {
           $scope.flaggedUser = response.data[0];
-          console.log($scope.flaggedUser);
           $scope.flaggedUser.timesflagged += 1;
           $http.put('/register/' + $scope.flaggedUser.verification, $scope.flaggedUser).then(function(response) {
             console.log('Posted update to the user');
@@ -64,10 +63,8 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
   function refreshCommunityRoom () {
     $http.get('/post').then(function(response) {
       $scope.communityPosts = response.data;
-      console.log('Loaded community posts:', $scope.communityPosts);
       var postUsers = [];
       $scope.communityPosts.forEach(function (post) {
-        console.log('post to be processed', post);
         if (post.anonymous === true) {
           post.imageRef = 'anonymous';
         } else {
@@ -79,11 +76,9 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
       $http.get('/register/flagged/' + userString).then(function(response) {
           var usersWithPosts = response.data;
           $scope.userImages.anonymous =  'https://s3.amazonaws.com/bighearted/images/multiple-users-silhouette.png';
-          console.log('User image paths loaded:', response.data);
           usersWithPosts.forEach(function (user) {
             $scope.userImages[user.verification] = user.image;
           });
-          console.log('poster image loop finished, results:', $scope.userImages);
       }, function(err) {
           console.log('Error loading posting users:', err);
       });
@@ -142,14 +137,12 @@ myApp.controller('communityroomController', ['doGoodFactory', '$scope', '$http',
     AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
     AWS.config.region = 'us-east-1';
     var bucket = new AWS.S3({ params: { Bucket: $scope.creds.bucket } });
-    console.log($scope.file);
 
     if ($scope.file) {
       // Perform File Size Check First
       var fileSize = Math.round(parseInt($scope.file.size));
       if (fileSize > $scope.sizeLimit) {
         console.log('size limit exceeded');
-        toastr.error('Sorry, your attachment is too big. <br/> Maximum '  + $scope.fileSizeLabel() + ' file attachment allowed','File Too Large');
         return false;
       }
 

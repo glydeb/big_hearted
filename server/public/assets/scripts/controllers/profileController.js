@@ -14,6 +14,7 @@ $scope.badge6 = false;
   $scope.edit = false;
   $scope.visible = true;
   $scope.sizeLimit      = 2117152; // 2MB in Bytes
+  $scope.fileSizeLabel = '2 MB';
   $scope.uploadProgress = 0;
   $scope.creds          = {};
   $scope.prefix = 'https://s3.amazonaws.com/bighearted/images/';
@@ -22,7 +23,6 @@ $scope.badge6 = false;
   if (doGoodFactory.getSettings() === undefined) {
     doGoodFactory.refreshSettings().then(function () {
       $scope.creds = doGoodFactory.getSettings();
-      console.log('refreshed creds: ', $scope.creds);
 
       // aws settings
       AWS.config.update({ accessKeyId: $scope.creds.access_key, secretAccessKey: $scope.creds.secret_key });
@@ -276,7 +276,7 @@ $scope.badge6 = false;
   $(document).ready(function() {
       $('.modal-trigger').leanModal({
         dismissible: true,
-        opacity: .95
+        opacity: 0.95
       });
       console.log("picture modal");
   });
