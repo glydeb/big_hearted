@@ -42,6 +42,10 @@
                 <h6 class="section" ng-show="visible" ng-model="user.our_projects">{{user.our_projects}}</h6>
                 <textarea class="materialize-textarea" ng-show="edit" ng-model="user.our_projects" onclick="this.focus();this.select()"></textarea>
                 <div class="divider"></div>
+                <div class="family-info-buttons center-align">
+                    <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="visible">Edit<i class="material-icons right">edit</i></button>
+                    <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="edit">Save<i class="material-icons right">save</i></button>
+                </div>
                 <h5 class="center-align">Our Badges</h5>
                 <div class "row">
                     <img class="center-align hoverable responsive-img small_badges" ng-show="badge1" src="/assets/images/badge1.png" />
@@ -51,10 +55,6 @@
                     <img class="center-align hoverable responsive-img small_badges" ng-show="badge5" src="/assets/images/small_badge5.png" />
                     <img class="center-align hoverable responsive-img small_badges" ng-show="badge6" src="/assets/images/small_badge6.png" />
                     <img class="center-align hoverable responsive-img small_badges" ng-show="badge7" src="/assets/images/small_badge7.png" />
-                </div>
-                <div class="family-info-buttons center-align">
-                    <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="visible">Edit<i class="material-icons right">edit</i></button>
-                    <button class="waves-effect waves-light btn" ng-click="toggle()" ng-show="edit">Save<i class="material-icons right">save</i></button>
                 </div>
             </div>
         </div>
